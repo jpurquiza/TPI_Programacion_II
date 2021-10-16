@@ -49,11 +49,11 @@
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Cuenta.cs" />
     <Compile Include="Entities\Persona.cs" />
-    <Compile Include="GUI\Form1.cs">
+    <Compile Include="GUI\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FrmNuevaTransferencia.cs">
       <SubType>Form</SubType>
@@ -69,8 +69,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmNuevaTransferencia.resx">
       <DependentUpon>FrmNuevaTransferencia.cs</DependentUpon>
