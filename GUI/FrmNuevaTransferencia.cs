@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Banco
+namespace Banco.GUI
 {
-    public partial class FrmLogin : Form
+    public partial class FrmNuevaTransferencia : Form
     {
-        public FrmLogin()
+        public FrmNuevaTransferencia()
         {
             InitializeComponent();
         }
+
+
     }
 }
