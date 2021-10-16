@@ -1,7 +1,7 @@
 ﻿
 namespace Banco
 {
-    partial class Form1
+    partial class FrmLogin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,13 +29,129 @@ namespace Banco
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gpbLogin = new System.Windows.Forms.GroupBox();
+            this.lblClave = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gpbLogin.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(500, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // gpbLogin
+            // 
+            this.gpbLogin.Controls.Add(this.btnRegistrar);
+            this.gpbLogin.Controls.Add(this.btnIngresar);
+            this.gpbLogin.Controls.Add(this.txtDni);
+            this.gpbLogin.Controls.Add(this.lblDni);
+            this.gpbLogin.Controls.Add(this.txtClave);
+            this.gpbLogin.Controls.Add(this.lblClave);
+            this.gpbLogin.Location = new System.Drawing.Point(230, 15);
+            this.gpbLogin.Name = "gpbLogin";
+            this.gpbLogin.Size = new System.Drawing.Size(216, 230);
+            this.gpbLogin.TabIndex = 7;
+            this.gpbLogin.TabStop = false;
+            // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClave.Location = new System.Drawing.Point(-4, 69);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(58, 20);
+            this.lblClave.TabIndex = 3;
+            this.lblClave.Text = "Clave:";
+            // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(60, 69);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(127, 20);
+            this.txtClave.TabIndex = 5;
+            // 
+            // lblDni
+            // 
+            this.lblDni.AutoSize = true;
+            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDni.Location = new System.Drawing.Point(2, 28);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(45, 20);
+            this.lblDni.TabIndex = 2;
+            this.lblDni.Text = "DNI:";
+            // 
+            // txtDni
+            // 
+            this.txtDni.Location = new System.Drawing.Point(60, 30);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(127, 20);
+            this.txtDni.TabIndex = 4;
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.Location = new System.Drawing.Point(60, 124);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(113, 23);
+            this.btnIngresar.TabIndex = 6;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(60, 170);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(113, 23);
+            this.btnRegistrar.TabIndex = 7;
+            this.btnRegistrar.Text = "No estoy registrado";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.gpbLogin);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(463, 258);
+            this.panel1.TabIndex = 6;
+            // 
+            // FrmLogin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(500, 293);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "FrmLogin";
+            this.Text = "Ingreso";
+            this.gpbLogin.ResumeLayout(false);
+            this.gpbLogin.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.GroupBox gpbLogin;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.Label lblDni;
+        private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.Label lblClave;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
