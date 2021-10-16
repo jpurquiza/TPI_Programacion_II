@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Cuenta.cs" />
+    <Compile Include="Dominio\Cliente.cs" />
+    <Compile Include="Dominio\Cuenta.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
