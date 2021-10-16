@@ -11,6 +11,7 @@ namespace Banco.Dominio
     {
        
         public int  IdCliente { get; set; }
+
         
         public Cliente (int idCliente, string nombre , string apellido, int dni):base(nombre, apellido, dni)
         {
