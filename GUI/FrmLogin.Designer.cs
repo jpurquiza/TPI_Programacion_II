@@ -29,116 +29,148 @@ namespace Banco
         /// </summary>
         private void InitializeComponent()
         {
-            this.gpbLogin = new System.Windows.Forms.GroupBox();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.txtDni = new System.Windows.Forms.TextBox();
-            this.lblDni = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.lblClave = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gpbLogin.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lklblRegistro = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.btnIngresar = new Banco.Resources.RButton();
+            this.lblClave = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gpbLogin
+            // panel1
             // 
-            this.gpbLogin.Controls.Add(this.btnRegistrar);
-            this.gpbLogin.Controls.Add(this.btnIngresar);
-            this.gpbLogin.Controls.Add(this.txtDni);
-            this.gpbLogin.Controls.Add(this.lblDni);
-            this.gpbLogin.Controls.Add(this.txtClave);
-            this.gpbLogin.Controls.Add(this.lblClave);
-            this.gpbLogin.Location = new System.Drawing.Point(230, 15);
-            this.gpbLogin.Name = "gpbLogin";
-            this.gpbLogin.Size = new System.Drawing.Size(216, 230);
-            this.gpbLogin.TabIndex = 7;
-            this.gpbLogin.TabStop = false;
+            this.panel1.BackgroundImage = global::Banco.Properties.Resources.login_background_2;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(-2, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 500);
+            this.panel1.TabIndex = 6;
             // 
-            // btnRegistrar
+            // panel2
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(60, 170);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(113, 23);
-            this.btnRegistrar.TabIndex = 7;
-            this.btnRegistrar.Text = "No estoy registrado";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.lklblRegistro);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblDni);
+            this.panel2.Controls.Add(this.btnIngresar);
+            this.panel2.Controls.Add(this.lblClave);
+            this.panel2.Controls.Add(this.txtClave);
+            this.panel2.Controls.Add(this.txtDni);
+            this.panel2.Location = new System.Drawing.Point(487, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 464);
+            this.panel2.TabIndex = 10;
             // 
-            // btnIngresar
+            // lklblRegistro
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(60, 124);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(113, 23);
-            this.btnIngresar.TabIndex = 6;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.lklblRegistro.ActiveLinkColor = System.Drawing.Color.Black;
+            this.lklblRegistro.AutoSize = true;
+            this.lklblRegistro.Font = new System.Drawing.Font("Calibri", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklblRegistro.LinkArea = new System.Windows.Forms.LinkArea(0, 19);
+            this.lklblRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lklblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.lklblRegistro.Location = new System.Drawing.Point(92, 377);
+            this.lklblRegistro.Name = "lklblRegistro";
+            this.lklblRegistro.Size = new System.Drawing.Size(115, 15);
+            this.lklblRegistro.TabIndex = 12;
+            this.lklblRegistro.TabStop = true;
+            this.lklblRegistro.Text = "No estoy registrado";
+            this.lklblRegistro.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtDni
+            // label1
             // 
-            this.txtDni.Location = new System.Drawing.Point(60, 30);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(127, 20);
-            this.txtDni.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(54, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(186, 26);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Ingresar a MiCuenta";
             // 
             // lblDni
             // 
             this.lblDni.AutoSize = true;
-            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDni.Location = new System.Drawing.Point(2, 28);
+            this.lblDni.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDni.Location = new System.Drawing.Point(54, 110);
             this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(45, 20);
+            this.lblDni.Size = new System.Drawing.Size(34, 19);
             this.lblDni.TabIndex = 2;
-            this.lblDni.Text = "DNI:";
+            this.lblDni.Text = "DNI";
             // 
-            // txtClave
+            // btnIngresar
             // 
-            this.txtClave.Location = new System.Drawing.Point(60, 69);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(127, 20);
-            this.txtClave.TabIndex = 5;
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.btnIngresar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.btnIngresar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnIngresar.BorderRadius = 20;
+            this.btnIngresar.BorderSize = 0;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.Location = new System.Drawing.Point(72, 207);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(153, 43);
+            this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.TextColor = System.Drawing.Color.White;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             // 
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.Location = new System.Drawing.Point(-4, 69);
+            this.lblClave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClave.Location = new System.Drawing.Point(54, 147);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(58, 20);
+            this.lblClave.Size = new System.Drawing.Size(45, 19);
             this.lblClave.TabIndex = 3;
-            this.lblClave.Text = "Clave:";
+            this.lblClave.Text = "Clave";
             // 
-            // panel1
+            // txtClave
             // 
-            this.panel1.Controls.Add(this.gpbLogin);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(463, 258);
-            this.panel1.TabIndex = 6;
+            this.txtClave.Location = new System.Drawing.Point(113, 149);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(127, 20);
+            this.txtClave.TabIndex = 5;
+            // 
+            // txtDni
+            // 
+            this.txtDni.Location = new System.Drawing.Point(113, 110);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(127, 20);
+            this.txtDni.TabIndex = 4;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 293);
+            this.ClientSize = new System.Drawing.Size(780, 457);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmLogin";
-            this.Text = "Ingreso";
-            this.gpbLogin.ResumeLayout(false);
-            this.gpbLogin.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ingreso MiCuenta";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox gpbLogin;
-        private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label lblDni;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.Panel panel1;
+        private Resources.RButton btnIngresar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel lklblRegistro;
     }
 }
 
