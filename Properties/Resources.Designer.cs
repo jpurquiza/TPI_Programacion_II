@@ -63,9 +63,9 @@ namespace Banco.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login_background {
+        internal static System.Drawing.Bitmap login_background_2 {
             get {
-                object obj = ResourceManager.GetObject("login_background", resourceCulture);
+                object obj = ResourceManager.GetObject("login_background_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Banco.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login_background_2 {
+        internal static System.Drawing.Bitmap login_background_21 {
             get {
-                object obj = ResourceManager.GetObject("login_background_2", resourceCulture);
+                object obj = ResourceManager.GetObject("login_background_21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

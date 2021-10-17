@@ -33,18 +33,16 @@ namespace Banco
             this.panel2 = new System.Windows.Forms.Panel();
             this.lklblRegistro = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblDni = new System.Windows.Forms.Label();
+            this.rTextBox1 = new Banco.Resources.RTextBox();
             this.btnIngresar = new Banco.Resources.RButton();
-            this.lblClave = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.txtDni = new System.Windows.Forms.TextBox();
+            this.rTextBox2 = new Banco.Resources.RTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Banco.Properties.Resources.login_background_2;
+            this.panel1.BackgroundImage = global::Banco.Properties.Resources.login_background_21;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Name = "panel1";
@@ -53,13 +51,11 @@ namespace Banco
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.rTextBox2);
+            this.panel2.Controls.Add(this.rTextBox1);
             this.panel2.Controls.Add(this.lklblRegistro);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.lblDni);
             this.panel2.Controls.Add(this.btnIngresar);
-            this.panel2.Controls.Add(this.lblClave);
-            this.panel2.Controls.Add(this.txtClave);
-            this.panel2.Controls.Add(this.txtDni);
             this.panel2.Location = new System.Drawing.Point(487, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 464);
@@ -69,13 +65,13 @@ namespace Banco
             // 
             this.lklblRegistro.ActiveLinkColor = System.Drawing.Color.Black;
             this.lklblRegistro.AutoSize = true;
-            this.lklblRegistro.Font = new System.Drawing.Font("Calibri", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklblRegistro.Font = new System.Drawing.Font("Calibri", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklblRegistro.LinkArea = new System.Windows.Forms.LinkArea(0, 19);
             this.lklblRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.lklblRegistro.Location = new System.Drawing.Point(92, 377);
+            this.lklblRegistro.Location = new System.Drawing.Point(61, 377);
             this.lklblRegistro.Name = "lklblRegistro";
-            this.lklblRegistro.Size = new System.Drawing.Size(115, 15);
+            this.lklblRegistro.Size = new System.Drawing.Size(181, 26);
             this.lklblRegistro.TabIndex = 12;
             this.lklblRegistro.TabStop = true;
             this.lklblRegistro.Text = "No estoy registrado";
@@ -91,15 +87,27 @@ namespace Banco
             this.label1.TabIndex = 11;
             this.label1.Text = "Ingresar a MiCuenta";
             // 
-            // lblDni
+            // rTextBox1
             // 
-            this.lblDni.AutoSize = true;
-            this.lblDni.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDni.Location = new System.Drawing.Point(54, 110);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(34, 19);
-            this.lblDni.TabIndex = 2;
-            this.lblDni.Text = "DNI";
+            this.rTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.rTextBox1.BorderColor = System.Drawing.Color.DimGray;
+            this.rTextBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.rTextBox1.BorderRadius = 0;
+            this.rTextBox1.BorderSize = 1;
+            this.rTextBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rTextBox1.Location = new System.Drawing.Point(48, 101);
+            this.rTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.rTextBox1.Multiline = false;
+            this.rTextBox1.Name = "rTextBox1";
+            this.rTextBox1.Padding = new System.Windows.Forms.Padding(7);
+            this.rTextBox1.PasswordChar = false;
+            this.rTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rTextBox1.PlaceholderText = "DNI";
+            this.rTextBox1.Size = new System.Drawing.Size(198, 34);
+            this.rTextBox1.TabIndex = 13;
+            this.rTextBox1.Texts = "";
+            this.rTextBox1.UnderlinedStyle = true;
             // 
             // btnIngresar
             // 
@@ -120,29 +128,27 @@ namespace Banco
             this.btnIngresar.TextColor = System.Drawing.Color.White;
             this.btnIngresar.UseVisualStyleBackColor = false;
             // 
-            // lblClave
+            // rTextBox2
             // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.Location = new System.Drawing.Point(54, 147);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(45, 19);
-            this.lblClave.TabIndex = 3;
-            this.lblClave.Text = "Clave";
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(113, 149);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(127, 20);
-            this.txtClave.TabIndex = 5;
-            // 
-            // txtDni
-            // 
-            this.txtDni.Location = new System.Drawing.Point(113, 110);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(127, 20);
-            this.txtDni.TabIndex = 4;
+            this.rTextBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.rTextBox2.BorderColor = System.Drawing.Color.DimGray;
+            this.rTextBox2.BorderFocusColor = System.Drawing.Color.Black;
+            this.rTextBox2.BorderRadius = 0;
+            this.rTextBox2.BorderSize = 1;
+            this.rTextBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rTextBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.rTextBox2.Location = new System.Drawing.Point(48, 155);
+            this.rTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.rTextBox2.Multiline = false;
+            this.rTextBox2.Name = "rTextBox2";
+            this.rTextBox2.Padding = new System.Windows.Forms.Padding(7);
+            this.rTextBox2.PasswordChar = true;
+            this.rTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rTextBox2.PlaceholderText = "Clave";
+            this.rTextBox2.Size = new System.Drawing.Size(198, 34);
+            this.rTextBox2.TabIndex = 14;
+            this.rTextBox2.Texts = "";
+            this.rTextBox2.UnderlinedStyle = true;
             // 
             // FrmLogin
             // 
@@ -162,15 +168,13 @@ namespace Banco
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtDni;
-        private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.Panel panel1;
         private Resources.RButton btnIngresar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lklblRegistro;
+        private Resources.RTextBox rTextBox1;
+        private Resources.RTextBox rTextBox2;
     }
 }
 
