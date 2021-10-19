@@ -31,11 +31,11 @@ namespace Banco
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rTextBox2 = new Banco.Resources.RTextBox();
+            this.rTextBox1 = new Banco.Resources.RTextBox();
             this.lklblRegistro = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.rTextBox1 = new Banco.Resources.RTextBox();
             this.btnIngresar = new Banco.Resources.RButton();
-            this.rTextBox2 = new Banco.Resources.RTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,50 @@ namespace Banco
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 464);
             this.panel2.TabIndex = 10;
+            // 
+            // rTextBox2
+            // 
+            this.rTextBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.rTextBox2.BorderColor = System.Drawing.Color.DimGray;
+            this.rTextBox2.BorderFocusColor = System.Drawing.Color.Black;
+            this.rTextBox2.BorderRadius = 0;
+            this.rTextBox2.BorderSize = 1;
+            this.rTextBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rTextBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.rTextBox2.Location = new System.Drawing.Point(48, 155);
+            this.rTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.rTextBox2.Multiline = false;
+            this.rTextBox2.Name = "rTextBox2";
+            this.rTextBox2.Padding = new System.Windows.Forms.Padding(7);
+            this.rTextBox2.PasswordChar = true;
+            this.rTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rTextBox2.PlaceholderText = "Clave";
+            this.rTextBox2.Size = new System.Drawing.Size(198, 34);
+            this.rTextBox2.TabIndex = 14;
+            this.rTextBox2.Texts = "";
+            this.rTextBox2.UnderlinedStyle = true;
+            // 
+            // rTextBox1
+            // 
+            this.rTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.rTextBox1.BorderColor = System.Drawing.Color.DimGray;
+            this.rTextBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.rTextBox1.BorderRadius = 0;
+            this.rTextBox1.BorderSize = 1;
+            this.rTextBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rTextBox1.Location = new System.Drawing.Point(48, 101);
+            this.rTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.rTextBox1.Multiline = false;
+            this.rTextBox1.Name = "rTextBox1";
+            this.rTextBox1.Padding = new System.Windows.Forms.Padding(7);
+            this.rTextBox1.PasswordChar = false;
+            this.rTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rTextBox1.PlaceholderText = "DNI";
+            this.rTextBox1.Size = new System.Drawing.Size(198, 34);
+            this.rTextBox1.TabIndex = 13;
+            this.rTextBox1.Texts = "";
+            this.rTextBox1.UnderlinedStyle = true;
             // 
             // lklblRegistro
             // 
@@ -87,28 +131,6 @@ namespace Banco
             this.label1.TabIndex = 11;
             this.label1.Text = "Ingresar a MiCuenta";
             // 
-            // rTextBox1
-            // 
-            this.rTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.rTextBox1.BorderColor = System.Drawing.Color.DimGray;
-            this.rTextBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.rTextBox1.BorderRadius = 0;
-            this.rTextBox1.BorderSize = 1;
-            this.rTextBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rTextBox1.Location = new System.Drawing.Point(48, 101);
-            this.rTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rTextBox1.Multiline = false;
-            this.rTextBox1.Name = "rTextBox1";
-            this.rTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.rTextBox1.PasswordChar = false;
-            this.rTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rTextBox1.PlaceholderText = "DNI";
-            this.rTextBox1.Size = new System.Drawing.Size(198, 34);
-            this.rTextBox1.TabIndex = 13;
-            this.rTextBox1.Texts = "";
-            this.rTextBox1.UnderlinedStyle = true;
-            // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
@@ -127,28 +149,6 @@ namespace Banco
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextColor = System.Drawing.Color.White;
             this.btnIngresar.UseVisualStyleBackColor = false;
-            // 
-            // rTextBox2
-            // 
-            this.rTextBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.rTextBox2.BorderColor = System.Drawing.Color.DimGray;
-            this.rTextBox2.BorderFocusColor = System.Drawing.Color.Black;
-            this.rTextBox2.BorderRadius = 0;
-            this.rTextBox2.BorderSize = 1;
-            this.rTextBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.rTextBox2.Location = new System.Drawing.Point(48, 155);
-            this.rTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rTextBox2.Multiline = false;
-            this.rTextBox2.Name = "rTextBox2";
-            this.rTextBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.rTextBox2.PasswordChar = true;
-            this.rTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rTextBox2.PlaceholderText = "Clave";
-            this.rTextBox2.Size = new System.Drawing.Size(198, 34);
-            this.rTextBox2.TabIndex = 14;
-            this.rTextBox2.Texts = "";
-            this.rTextBox2.UnderlinedStyle = true;
             // 
             // FrmLogin
             // 
