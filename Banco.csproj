@@ -61,6 +61,12 @@
     <Compile Include="GUI\FrmNuevaTransferencia.Designer.cs">
       <DependentUpon>FrmNuevaTransferencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FrmNuevoDestinatario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmNuevoDestinatario.Designer.cs">
+      <DependentUpon>FrmNuevoDestinatario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +99,14 @@
     <EmbeddedResource Include="GUI\FrmNuevaTransferencia.resx">
       <DependentUpon>FrmNuevaTransferencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmNuevoDestinatario.resx">
+      <DependentUpon>FrmNuevoDestinatario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmRegistro.resx">
+      <DependentUpon>FrmRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -17,6 +17,15 @@ namespace Banco.GUI
             InitializeComponent();
         }
 
+        private void rbtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
 
+        private void btnAgregarDest_Click(object sender, EventArgs e)
+        {
+            FrmNuevoDestinatario destNuevo = new FrmNuevoDestinatario();
+            destNuevo.ShowDialog();
+        }
     }
 }

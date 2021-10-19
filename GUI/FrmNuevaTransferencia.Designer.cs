@@ -38,239 +38,184 @@ namespace Banco.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.cboDestinatario = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtCbu = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.lblCbu = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblApelldio = new System.Windows.Forms.Label();
-            this.lblDni = new System.Windows.Forms.Label();
-            this.txtDni = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.btnAgregarDest = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbtnCancelar = new Banco.Resources.RButton();
+            this.rbtnConfirmar = new Banco.Resources.RButton();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDestinatario
             // 
             this.lblDestinatario.AutoSize = true;
-            this.lblDestinatario.Location = new System.Drawing.Point(274, 64);
+            this.lblDestinatario.Location = new System.Drawing.Point(13, 221);
             this.lblDestinatario.Name = "lblDestinatario";
-            this.lblDestinatario.Size = new System.Drawing.Size(66, 13);
+            this.lblDestinatario.Size = new System.Drawing.Size(79, 13);
             this.lblDestinatario.TabIndex = 0;
             this.lblDestinatario.Text = "Destinatario:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 64);
+            this.label2.Location = new System.Drawing.Point(39, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Importe:";
             // 
             // lblConcepto
             // 
             this.lblConcepto.AutoSize = true;
-            this.lblConcepto.Location = new System.Drawing.Point(30, 108);
+            this.lblConcepto.Location = new System.Drawing.Point(31, 112);
             this.lblConcepto.Name = "lblConcepto";
-            this.lblConcepto.Size = new System.Drawing.Size(53, 13);
+            this.lblConcepto.Size = new System.Drawing.Size(65, 13);
             this.lblConcepto.TabIndex = 4;
-            this.lblConcepto.Text = "Concepto";
+            this.lblConcepto.Text = "Concepto:";
             // 
             // txtImporte
             // 
-            this.txtImporte.Location = new System.Drawing.Point(114, 64);
+            this.txtImporte.Location = new System.Drawing.Point(128, 65);
             this.txtImporte.Name = "txtImporte";
-            this.txtImporte.Size = new System.Drawing.Size(121, 20);
+            this.txtImporte.Size = new System.Drawing.Size(175, 20);
             this.txtImporte.TabIndex = 5;
             // 
             // txtConcepto
             // 
-            this.txtConcepto.Location = new System.Drawing.Point(114, 101);
+            this.txtConcepto.Location = new System.Drawing.Point(128, 109);
             this.txtConcepto.Name = "txtConcepto";
-            this.txtConcepto.Size = new System.Drawing.Size(121, 20);
+            this.txtConcepto.Size = new System.Drawing.Size(175, 20);
             this.txtConcepto.TabIndex = 7;
             // 
             // cboOrigen
             // 
             this.cboOrigen.FormattingEnabled = true;
-            this.cboOrigen.Location = new System.Drawing.Point(367, 18);
+            this.cboOrigen.Location = new System.Drawing.Point(128, 148);
             this.cboOrigen.Name = "cboOrigen";
-            this.cboOrigen.Size = new System.Drawing.Size(121, 21);
+            this.cboOrigen.Size = new System.Drawing.Size(175, 21);
             this.cboOrigen.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(274, 21);
+            this.label3.Location = new System.Drawing.Point(3, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Cuenta Origen:";
             // 
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(494, 21);
+            this.lblSaldo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSaldo.Location = new System.Drawing.Point(125, 181);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(95, 13);
+            this.lblSaldo.Size = new System.Drawing.Size(113, 13);
             this.lblSaldo.TabIndex = 13;
             this.lblSaldo.Text = "Saldo Disponible $";
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(35, 21);
+            this.lblFecha.Location = new System.Drawing.Point(46, 23);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(40, 13);
+            this.lblFecha.Size = new System.Drawing.Size(46, 13);
             this.lblFecha.TabIndex = 14;
             this.lblFecha.Text = "Fecha:";
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(208, 364);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(167, 23);
-            this.btnConfirmar.TabIndex = 15;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(546, 364);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 16;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // cboDestinatario
             // 
             this.cboDestinatario.FormattingEnabled = true;
-            this.cboDestinatario.Location = new System.Drawing.Point(367, 64);
+            this.cboDestinatario.Location = new System.Drawing.Point(128, 218);
             this.cboDestinatario.Name = "cboDestinatario";
-            this.cboDestinatario.Size = new System.Drawing.Size(121, 21);
+            this.cboDestinatario.Size = new System.Drawing.Size(175, 21);
             this.cboDestinatario.TabIndex = 17;
             // 
-            // groupBox1
+            // btnAgregarDest
             // 
-            this.groupBox1.Controls.Add(this.txtDni);
-            this.groupBox1.Controls.Add(this.lblDni);
-            this.groupBox1.Controls.Add(this.lblApelldio);
-            this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Controls.Add(this.lblCbu);
-            this.groupBox1.Controls.Add(this.txtApellido);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtCbu);
-            this.groupBox1.Location = new System.Drawing.Point(300, 132);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 198);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nuevo Destino";
+            this.btnAgregarDest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAgregarDest.Location = new System.Drawing.Point(128, 254);
+            this.btnAgregarDest.Name = "btnAgregarDest";
+            this.btnAgregarDest.Size = new System.Drawing.Size(175, 23);
+            this.btnAgregarDest.TabIndex = 19;
+            this.btnAgregarDest.Text = "Agregar Destinatario";
+            this.btnAgregarDest.UseVisualStyleBackColor = true;
+            this.btnAgregarDest.Click += new System.EventHandler(this.btnAgregarDest_Click);
             // 
-            // button1
+            // panel1
             // 
-            this.button1.Location = new System.Drawing.Point(494, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Agregar Destinatario";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.rbtnCancelar);
+            this.panel1.Controls.Add(this.rbtnConfirmar);
+            this.panel1.Controls.Add(this.lblFecha);
+            this.panel1.Controls.Add(this.btnAgregarDest);
+            this.panel1.Controls.Add(this.cboOrigen);
+            this.panel1.Controls.Add(this.txtConcepto);
+            this.panel1.Controls.Add(this.txtImporte);
+            this.panel1.Controls.Add(this.cboDestinatario);
+            this.panel1.Controls.Add(this.lblConcepto);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblDestinatario);
+            this.panel1.Controls.Add(this.lblSaldo);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(116, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(358, 363);
+            this.panel1.TabIndex = 20;
             // 
-            // txtCbu
+            // rbtnCancelar
             // 
-            this.txtCbu.Location = new System.Drawing.Point(135, 49);
-            this.txtCbu.Name = "txtCbu";
-            this.txtCbu.Size = new System.Drawing.Size(100, 20);
-            this.txtCbu.TabIndex = 0;
+            this.rbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.rbtnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.rbtnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbtnCancelar.BorderRadius = 20;
+            this.rbtnCancelar.BorderSize = 0;
+            this.rbtnCancelar.FlatAppearance.BorderSize = 0;
+            this.rbtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.rbtnCancelar.Location = new System.Drawing.Point(214, 303);
+            this.rbtnCancelar.Name = "rbtnCancelar";
+            this.rbtnCancelar.Size = new System.Drawing.Size(89, 43);
+            this.rbtnCancelar.TabIndex = 21;
+            this.rbtnCancelar.Text = "Cancelar";
+            this.rbtnCancelar.TextColor = System.Drawing.Color.White;
+            this.rbtnCancelar.UseVisualStyleBackColor = false;
+            this.rbtnCancelar.Click += new System.EventHandler(this.rbtnCancelar_Click);
             // 
-            // txtNombre
+            // rbtnConfirmar
             // 
-            this.txtNombre.Location = new System.Drawing.Point(135, 76);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(135, 103);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtApellido.TabIndex = 2;
-            // 
-            // lblCbu
-            // 
-            this.lblCbu.AutoSize = true;
-            this.lblCbu.Location = new System.Drawing.Point(23, 52);
-            this.lblCbu.Name = "lblCbu";
-            this.lblCbu.Size = new System.Drawing.Size(29, 13);
-            this.lblCbu.TabIndex = 3;
-            this.lblCbu.Text = "CBU";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(17, 76);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 4;
-            this.lblNombre.Text = "Nombre:";
-            // 
-            // lblApelldio
-            // 
-            this.lblApelldio.AutoSize = true;
-            this.lblApelldio.Location = new System.Drawing.Point(17, 106);
-            this.lblApelldio.Name = "lblApelldio";
-            this.lblApelldio.Size = new System.Drawing.Size(44, 13);
-            this.lblApelldio.TabIndex = 5;
-            this.lblApelldio.Text = "Apellido";
-            // 
-            // lblDni
-            // 
-            this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(17, 138);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(29, 13);
-            this.lblDni.TabIndex = 6;
-            this.lblDni.Text = "DNI:";
-            // 
-            // txtDni
-            // 
-            this.txtDni.Location = new System.Drawing.Point(135, 138);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(100, 20);
-            this.txtDni.TabIndex = 7;
+            this.rbtnConfirmar.BackColor = System.Drawing.Color.Green;
+            this.rbtnConfirmar.BackgroundColor = System.Drawing.Color.Green;
+            this.rbtnConfirmar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbtnConfirmar.BorderRadius = 20;
+            this.rbtnConfirmar.BorderSize = 0;
+            this.rbtnConfirmar.FlatAppearance.BorderSize = 0;
+            this.rbtnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnConfirmar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.rbtnConfirmar.Location = new System.Drawing.Point(120, 303);
+            this.rbtnConfirmar.Name = "rbtnConfirmar";
+            this.rbtnConfirmar.Size = new System.Drawing.Size(88, 43);
+            this.rbtnConfirmar.TabIndex = 20;
+            this.rbtnConfirmar.Text = "Confirmar";
+            this.rbtnConfirmar.TextColor = System.Drawing.Color.White;
+            this.rbtnConfirmar.UseVisualStyleBackColor = false;
             // 
             // FrmNuevaTransferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 399);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.cboDestinatario);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblDestinatario);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.lblSaldo);
-            this.Controls.Add(this.cboOrigen);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtConcepto);
-            this.Controls.Add(this.txtImporte);
-            this.Controls.Add(this.lblConcepto);
-            this.Controls.Add(this.label2);
+            this.BackgroundImage = global::Banco.Properties.Resources.login_background_2;
+            this.ClientSize = new System.Drawing.Size(633, 439);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmNuevaTransferencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Nueva Transferencia";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -285,18 +230,10 @@ namespace Banco.GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cboDestinatario;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtDni;
-        private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.Label lblApelldio;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblCbu;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCbu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarDest;
+        private System.Windows.Forms.Panel panel1;
+        private Resources.RButton rbtnCancelar;
+        private Resources.RButton rbtnConfirmar;
     }
 }

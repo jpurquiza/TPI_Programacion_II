@@ -30,33 +30,23 @@ namespace Banco.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.PanelSeleccionPrincipal = new System.Windows.Forms.Panel();
             this.PanelTransaccionDropDown = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelSeleccionPrincipal = new System.Windows.Forms.Panel();
             this.btnOpc5 = new Banco.Resources.RButton();
             this.btnOpc4 = new Banco.Resources.RButton();
             this.btnOpc3 = new Banco.Resources.RButton();
             this.btnopc2 = new Banco.Resources.RButton();
             this.btnOpc1 = new Banco.Resources.RButton();
             this.btnTransaccion = new Banco.Resources.RButton();
+            this.rButton1 = new Banco.Resources.RButton();
             this.btnSoporte = new Banco.Resources.RButton();
             this.btnArchivo = new Banco.Resources.RButton();
             this.btnCerrarSesion = new Banco.Resources.RButton();
-            this.rButton1 = new Banco.Resources.RButton();
-            this.PanelSeleccionPrincipal.SuspendLayout();
             this.PanelTransaccionDropDown.SuspendLayout();
+            this.PanelSeleccionPrincipal.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // PanelSeleccionPrincipal
-            // 
-            this.PanelSeleccionPrincipal.Controls.Add(this.rButton1);
-            this.PanelSeleccionPrincipal.Controls.Add(this.btnSoporte);
-            this.PanelSeleccionPrincipal.Controls.Add(this.btnArchivo);
-            this.PanelSeleccionPrincipal.Controls.Add(this.btnCerrarSesion);
-            this.PanelSeleccionPrincipal.Location = new System.Drawing.Point(12, 13);
-            this.PanelSeleccionPrincipal.Name = "PanelSeleccionPrincipal";
-            this.PanelSeleccionPrincipal.Size = new System.Drawing.Size(230, 443);
-            this.PanelSeleccionPrincipal.TabIndex = 0;
             // 
             // PanelTransaccionDropDown
             // 
@@ -77,6 +67,26 @@ namespace Banco.GUI
             // 
             this.timer1.Interval = 15;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Banco.Properties.Resources.login_background_2;
+            this.panel1.Location = new System.Drawing.Point(296, -5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(373, 553);
+            this.panel1.TabIndex = 2;
+            // 
+            // PanelSeleccionPrincipal
+            // 
+            this.PanelSeleccionPrincipal.BackColor = System.Drawing.SystemColors.Control;
+            this.PanelSeleccionPrincipal.Controls.Add(this.rButton1);
+            this.PanelSeleccionPrincipal.Controls.Add(this.btnSoporte);
+            this.PanelSeleccionPrincipal.Controls.Add(this.btnArchivo);
+            this.PanelSeleccionPrincipal.Controls.Add(this.btnCerrarSesion);
+            this.PanelSeleccionPrincipal.Location = new System.Drawing.Point(12, 13);
+            this.PanelSeleccionPrincipal.Name = "PanelSeleccionPrincipal";
+            this.PanelSeleccionPrincipal.Size = new System.Drawing.Size(230, 443);
+            this.PanelSeleccionPrincipal.TabIndex = 0;
             // 
             // btnOpc5
             // 
@@ -177,6 +187,7 @@ namespace Banco.GUI
             this.btnOpc1.Text = "Opción 1";
             this.btnOpc1.TextColor = System.Drawing.Color.White;
             this.btnOpc1.UseVisualStyleBackColor = false;
+            this.btnOpc1.Click += new System.EventHandler(this.btnOpc1_Click_1);
             // 
             // btnTransaccion
             // 
@@ -201,6 +212,25 @@ namespace Banco.GUI
             this.btnTransaccion.UseVisualStyleBackColor = false;
             this.btnTransaccion.Click += new System.EventHandler(this.btnTransaccion_Click);
             // 
+            // rButton1
+            // 
+            this.rButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.rButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.rButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rButton1.BorderRadius = 0;
+            this.rButton1.BorderSize = 0;
+            this.rButton1.FlatAppearance.BorderSize = 0;
+            this.rButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rButton1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButton1.ForeColor = System.Drawing.Color.White;
+            this.rButton1.Location = new System.Drawing.Point(-3, 214);
+            this.rButton1.Name = "rButton1";
+            this.rButton1.Size = new System.Drawing.Size(230, 31);
+            this.rButton1.TabIndex = 12;
+            this.rButton1.Text = "Soporte";
+            this.rButton1.TextColor = System.Drawing.Color.White;
+            this.rButton1.UseVisualStyleBackColor = false;
+            // 
             // btnSoporte
             // 
             this.btnSoporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
@@ -214,7 +244,7 @@ namespace Banco.GUI
             this.btnSoporte.ForeColor = System.Drawing.Color.White;
             this.btnSoporte.Location = new System.Drawing.Point(-1, 69);
             this.btnSoporte.Name = "btnSoporte";
-            this.btnSoporte.Size = new System.Drawing.Size(230, 51);
+            this.btnSoporte.Size = new System.Drawing.Size(230, 33);
             this.btnSoporte.TabIndex = 11;
             this.btnSoporte.Text = "Soporte";
             this.btnSoporte.TextColor = System.Drawing.Color.White;
@@ -233,7 +263,7 @@ namespace Banco.GUI
             this.btnArchivo.ForeColor = System.Drawing.Color.White;
             this.btnArchivo.Location = new System.Drawing.Point(0, 12);
             this.btnArchivo.Name = "btnArchivo";
-            this.btnArchivo.Size = new System.Drawing.Size(230, 51);
+            this.btnArchivo.Size = new System.Drawing.Size(230, 35);
             this.btnArchivo.TabIndex = 10;
             this.btnArchivo.Text = "Archivo";
             this.btnArchivo.TextColor = System.Drawing.Color.White;
@@ -250,63 +280,49 @@ namespace Banco.GUI
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(31, 388);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 388);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(153, 43);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(224, 43);
             this.btnCerrarSesion.TabIndex = 9;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.TextColor = System.Drawing.Color.White;
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            // 
-            // rButton1
-            // 
-            this.rButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
-            this.rButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
-            this.rButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rButton1.BorderRadius = 0;
-            this.rButton1.BorderSize = 0;
-            this.rButton1.FlatAppearance.BorderSize = 0;
-            this.rButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rButton1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rButton1.ForeColor = System.Drawing.Color.White;
-            this.rButton1.Location = new System.Drawing.Point(0, 196);
-            this.rButton1.Name = "rButton1";
-            this.rButton1.Size = new System.Drawing.Size(230, 51);
-            this.rButton1.TabIndex = 12;
-            this.rButton1.Text = "Soporte";
-            this.rButton1.TextColor = System.Drawing.Color.White;
-            this.rButton1.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 460);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(660, 454);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelTransaccionDropDown);
             this.Controls.Add(this.PanelSeleccionPrincipal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
-            this.PanelSeleccionPrincipal.ResumeLayout(false);
             this.PanelTransaccionDropDown.ResumeLayout(false);
+            this.PanelSeleccionPrincipal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel PanelSeleccionPrincipal;
         private System.Windows.Forms.Panel PanelTransaccionDropDown;
-        private Resources.RButton btnCerrarSesion;
-        private Resources.RButton btnArchivo;
         private Resources.RButton btnOpc5;
         private Resources.RButton btnOpc4;
         private Resources.RButton btnOpc3;
         private Resources.RButton btnopc2;
         private Resources.RButton btnOpc1;
         private Resources.RButton btnTransaccion;
-        private Resources.RButton btnSoporte;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
+        private Resources.RButton btnCerrarSesion;
+        private Resources.RButton btnArchivo;
+        private Resources.RButton btnSoporte;
         private Resources.RButton rButton1;
+        private System.Windows.Forms.Panel PanelSeleccionPrincipal;
     }
 }

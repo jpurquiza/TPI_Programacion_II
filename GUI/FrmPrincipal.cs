@@ -16,6 +16,7 @@ namespace Banco.GUI
         public FrmPrincipal()
         {
             InitializeComponent();
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -47,7 +48,21 @@ namespace Banco.GUI
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            
+        }
+        //private void  btnOpc1_Click(object sender, EventArgs e)
+        //{
 
+        //}
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnOpc1_Click_1(object sender, EventArgs e)
+        {
+            FrmNuevaTransferencia nuevaTrans = new FrmNuevaTransferencia();
+            nuevaTrans.ShowDialog();
         }
     }
 }
