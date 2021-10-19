@@ -31,10 +31,10 @@ namespace Banco
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rTextBox2 = new Banco.Resources.RTextBox();
-            this.rTextBox1 = new Banco.Resources.RTextBox();
             this.lklblRegistro = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.rTextBox2 = new Banco.Resources.RTextBox();
+            this.rTextBox1 = new Banco.Resources.RTextBox();
             this.btnIngresar = new Banco.Resources.RButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,6 +60,32 @@ namespace Banco
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 464);
             this.panel2.TabIndex = 10;
+            // 
+            // lklblRegistro
+            // 
+            this.lklblRegistro.ActiveLinkColor = System.Drawing.Color.Black;
+            this.lklblRegistro.AutoSize = true;
+            this.lklblRegistro.Font = new System.Drawing.Font("Calibri", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklblRegistro.LinkArea = new System.Windows.Forms.LinkArea(0, 19);
+            this.lklblRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lklblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.lklblRegistro.Location = new System.Drawing.Point(61, 377);
+            this.lklblRegistro.Name = "lklblRegistro";
+            this.lklblRegistro.Size = new System.Drawing.Size(181, 26);
+            this.lklblRegistro.TabIndex = 12;
+            this.lklblRegistro.TabStop = true;
+            this.lklblRegistro.Text = "No estoy registrado";
+            this.lklblRegistro.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(54, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(186, 26);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Ingresar a MiCuenta";
             // 
             // rTextBox2
             // 
@@ -105,32 +131,6 @@ namespace Banco
             this.rTextBox1.Texts = "";
             this.rTextBox1.UnderlinedStyle = true;
             // 
-            // lklblRegistro
-            // 
-            this.lklblRegistro.ActiveLinkColor = System.Drawing.Color.Black;
-            this.lklblRegistro.AutoSize = true;
-            this.lklblRegistro.Font = new System.Drawing.Font("Calibri", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklblRegistro.LinkArea = new System.Windows.Forms.LinkArea(0, 19);
-            this.lklblRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lklblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.lklblRegistro.Location = new System.Drawing.Point(61, 377);
-            this.lklblRegistro.Name = "lklblRegistro";
-            this.lklblRegistro.Size = new System.Drawing.Size(181, 26);
-            this.lklblRegistro.TabIndex = 12;
-            this.lklblRegistro.TabStop = true;
-            this.lklblRegistro.Text = "No estoy registrado";
-            this.lklblRegistro.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 26);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Ingresar a MiCuenta";
-            // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
@@ -168,13 +168,13 @@ namespace Banco
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
         private Resources.RButton btnIngresar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lklblRegistro;
         private Resources.RTextBox rTextBox1;
         private Resources.RTextBox rTextBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

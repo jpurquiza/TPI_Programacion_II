@@ -340,15 +340,18 @@ namespace Banco.Resources
             private void textBox1_Click(object sender, EventArgs e)
             {
                 this.OnClick(e);
+                RemovePlaceholder();
             }
             private void textBox1_MouseEnter(object sender, EventArgs e)
             {
                     this.OnMouseEnter(e);
+                    RemovePlaceholder();
 
             }
             private void textBox1_MouseLeave(object sender, EventArgs e)
             {
                 this.OnMouseLeave(e);
+                SetPlaceholder();
             }
 
             private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -360,11 +363,13 @@ namespace Banco.Resources
             {
                 isFocused = true;
                 this.Invalidate();
+                RemovePlaceholder();
             }
             private void textBox1_Leave(object sender, EventArgs e)
             {
                 isFocused = false;
                 this.Invalidate();
+                SetPlaceholder();
             }
             private void textBox1_MouseClick(object sender, MouseEventArgs e)
             {
