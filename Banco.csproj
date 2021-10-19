@@ -132,5 +132,11 @@
   <ItemGroup>
     <None Include="Resources\login_background_21.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amplia3.tiff" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comprime3.tiff" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
