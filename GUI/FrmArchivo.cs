@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Banco.GUI
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmArchivo : Form
     {
-        public FrmPrincipal()
+        public FrmArchivo()
         {
             InitializeComponent();
         }
 
-        private void rButton1_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(" Esta seguro que desea Salir", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
         }
     }
 }
