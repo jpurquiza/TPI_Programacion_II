@@ -35,9 +35,9 @@ namespace Banco.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Banco.Properties.Resources.login_background_2;
-            this.ClientSize = new System.Drawing.Size(773, 399);
+            this.ClientSize = new System.Drawing.Size(764, 411);
             this.Name = "FrmRegistro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegistro";
             this.ResumeLayout(false);
 

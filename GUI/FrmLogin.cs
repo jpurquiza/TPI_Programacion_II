@@ -23,7 +23,7 @@ namespace Banco
         {
             //ClientExist = 0;
             
-            if (rTextBox1.Texts == "1")
+            if (txtDNI.Texts == "1")
             {
                 FrmPrincipal princi = new FrmPrincipal();
                 princi.ShowDialog();

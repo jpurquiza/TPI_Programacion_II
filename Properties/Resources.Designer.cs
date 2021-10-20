@@ -63,9 +63,9 @@ namespace Banco.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap amplia3 {
+        internal static System.Drawing.Bitmap amplia {
             get {
-                object obj = ResourceManager.GetObject("amplia3", resourceCulture);
+                object obj = ResourceManager.GetObject("amplia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Banco.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap comprime3 {
+        internal static System.Drawing.Bitmap background {
             get {
-                object obj = ResourceManager.GetObject("comprime3", resourceCulture);
+                object obj = ResourceManager.GetObject("background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,19 +83,9 @@ namespace Banco.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login_background_2 {
+        internal static System.Drawing.Bitmap comprime {
             get {
-                object obj = ResourceManager.GetObject("login_background_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap login_background_21 {
-            get {
-                object obj = ResourceManager.GetObject("login_background_21", resourceCulture);
+                object obj = ResourceManager.GetObject("comprime", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

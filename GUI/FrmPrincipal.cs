@@ -12,7 +12,7 @@ namespace Banco.GUI
 {
     public partial class FrmPrincipal : Form
     {
-        private bool isCollapsed;
+        private bool isCollapsed = true;
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -23,6 +23,7 @@ namespace Banco.GUI
         {
             if (isCollapsed)
             {
+                btnTransaccion.Image = Properties.Resources.comprime;
                 PanelTransaccionDropDown.Height += 10;
                 if (PanelTransaccionDropDown.Size == PanelTransaccionDropDown.MaximumSize)
                 {
@@ -32,6 +33,7 @@ namespace Banco.GUI
             }
             else
             {
+                btnTransaccion.Image = Properties.Resources.amplia;
                 PanelTransaccionDropDown.Height -= 10;
                 if (PanelTransaccionDropDown.Size == PanelTransaccionDropDown.MinimumSize)
                 {
@@ -50,21 +52,18 @@ namespace Banco.GUI
         {
             
         }
-        //private void  btnOpc1_Click(object sender, EventArgs e)
-        //{
 
-        //}
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void btnOpc1_Click_1(object sender, EventArgs e)
+        private void btnNvaTransferencia_Click(object sender, EventArgs e)
         {
-            FrmNuevaTransferencia nuevaTrans = new FrmNuevaTransferencia();
-            nuevaTrans.ShowDialog();
+            FrmNuevaTransferencia frmNuevaTransf = new FrmNuevaTransferencia() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            pContainer.Controls.Add(frmNuevaTransf);
+            pContainer.Visible = true;
+            frmNuevaTransf.Show();
         }
-
-
     }
 }
