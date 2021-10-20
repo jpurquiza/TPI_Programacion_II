@@ -64,5 +64,7 @@ namespace Banco.GUI
             FrmNuevaTransferencia nuevaTrans = new FrmNuevaTransferencia();
             nuevaTrans.ShowDialog();
         }
+
+
     }
 }
