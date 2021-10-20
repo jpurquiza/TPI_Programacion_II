@@ -27,5 +27,15 @@ namespace Banco.GUI
             FrmNuevoDestinatario destNuevo = new FrmNuevoDestinatario();
             destNuevo.ShowDialog();
         }
+
+        private void rbtnConfirmar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rbtnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
