@@ -30,11 +30,12 @@ namespace Banco
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtDNI = new Banco.Resources.RTextBox();
             this.lblRegistro = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnIngresar = new Banco.Resources.RButton();
+            this.pPrincipal = new System.Windows.Forms.Panel();
             this.txtClave = new Banco.Resources.RTextBox();
+            this.txtDNI = new Banco.Resources.RTextBox();
+            this.btnIngresar = new Banco.Resources.RButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,32 +47,10 @@ namespace Banco
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnIngresar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(480, 0);
+            this.panel2.Location = new System.Drawing.Point(630, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 450);
             this.panel2.TabIndex = 10;
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDNI.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.txtDNI.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.txtDNI.BorderRadius = 0;
-            this.txtDNI.BorderSize = 2;
-            this.txtDNI.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDNI.Location = new System.Drawing.Point(48, 101);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDNI.Multiline = false;
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Padding = new System.Windows.Forms.Padding(7);
-            this.txtDNI.PasswordChar = false;
-            this.txtDNI.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDNI.PlaceholderText = "DNI";
-            this.txtDNI.Size = new System.Drawing.Size(198, 34);
-            this.txtDNI.TabIndex = 13;
-            this.txtDNI.Texts = "";
-            this.txtDNI.UnderlinedStyle = true;
             // 
             // lblRegistro
             // 
@@ -99,25 +78,13 @@ namespace Banco
             this.label1.TabIndex = 11;
             this.label1.Text = "Ingresar a MiCuenta";
             // 
-            // btnIngresar
+            // pPrincipal
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.btnIngresar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.btnIngresar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnIngresar.BorderRadius = 20;
-            this.btnIngresar.BorderSize = 0;
-            this.btnIngresar.FlatAppearance.BorderSize = 0;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(56, 216);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(176, 40);
-            this.btnIngresar.TabIndex = 8;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.TextColor = System.Drawing.Color.White;
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.pPrincipal.Location = new System.Drawing.Point(-2, 0);
+            this.pPrincipal.Name = "pPrincipal";
+            this.pPrincipal.Size = new System.Drawing.Size(930, 450);
+            this.pPrincipal.TabIndex = 11;
+            this.pPrincipal.Visible = false;
             // 
             // txtClave
             // 
@@ -141,12 +108,55 @@ namespace Banco
             this.txtClave.Texts = "";
             this.txtClave.UnderlinedStyle = true;
             // 
+            // txtDNI
+            // 
+            this.txtDNI.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDNI.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.txtDNI.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.txtDNI.BorderRadius = 0;
+            this.txtDNI.BorderSize = 2;
+            this.txtDNI.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDNI.Location = new System.Drawing.Point(48, 101);
+            this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDNI.Multiline = false;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDNI.PasswordChar = false;
+            this.txtDNI.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDNI.PlaceholderText = "DNI";
+            this.txtDNI.Size = new System.Drawing.Size(198, 34);
+            this.txtDNI.TabIndex = 13;
+            this.txtDNI.Texts = "";
+            this.txtDNI.UnderlinedStyle = true;
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.btnIngresar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.btnIngresar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnIngresar.BorderRadius = 20;
+            this.btnIngresar.BorderSize = 0;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.Location = new System.Drawing.Point(56, 216);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(176, 40);
+            this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.TextColor = System.Drawing.Color.White;
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Banco.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(780, 450);
+            this.ClientSize = new System.Drawing.Size(930, 450);
+            this.Controls.Add(this.pPrincipal);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
@@ -166,6 +176,7 @@ namespace Banco
         private System.Windows.Forms.Label label1;
         private Resources.RButton btnIngresar;
         private Resources.RTextBox txtClave;
+        private System.Windows.Forms.Panel pPrincipal;
     }
 }
 
