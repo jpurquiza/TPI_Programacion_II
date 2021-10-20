@@ -55,7 +55,7 @@ namespace Banco.GUI
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void btnNvaTransferencia_Click(object sender, EventArgs e)

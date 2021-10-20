@@ -25,8 +25,12 @@ namespace Banco
             
             if (txtDNI.Texts == "1")
             {
-                FrmPrincipal princi = new FrmPrincipal();
-                princi.ShowDialog();
+                FrmPrincipal principal = new FrmPrincipal() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
+
+                pPrincipal.Controls.Add(principal);
+                pPrincipal.Visible = true;
+                principal.Show();
+                
             }
             else
             {
