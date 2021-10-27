@@ -43,6 +43,31 @@ namespace Banco.GUI
             }
         }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (isCollapsed)
+            {
+                btnAltaProductos.Image = Properties.Resources.comprime;
+                pnlAltaProductosDD.Height += 10;
+                if (pnlAltaProductosDD.Size == pnlAltaProductosDD.MaximumSize)
+                {
+                    timer2.Stop();
+                    isCollapsed = false;
+                }
+            }
+            else
+            {
+                btnAltaProductos.Image = Properties.Resources.amplia;
+                pnlAltaProductosDD.Height -= 10;
+                if (pnlAltaProductosDD.Size == pnlAltaProductosDD.MinimumSize)
+                {
+                    timer2.Stop();
+                    isCollapsed = true;
+                }
+            }
+
+        }
+
         private void btnTransaccion_Click(object sender, EventArgs e)
         {
             timer1.Start();
@@ -53,9 +78,9 @@ namespace Banco.GUI
             
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnNvaTransferencia_Click(object sender, EventArgs e)
@@ -64,6 +89,11 @@ namespace Banco.GUI
             pContainer.Controls.Add(frmNuevaTransf);
             pContainer.Visible = true;
             frmNuevaTransf.Show();
+        }
+
+        private void btnAltaProductos_Click(object sender, EventArgs e)
+        {
+            timer2.Start();
         }
     }
 }

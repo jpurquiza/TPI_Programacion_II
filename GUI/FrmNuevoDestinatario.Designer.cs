@@ -30,14 +30,14 @@ namespace Banco.GUI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rButton1 = new Banco.Resources.RButton();
-            this.btnIngresar = new Banco.Resources.RButton();
             this.lblDestinatario = new System.Windows.Forms.Label();
             this.rTxtMail = new Banco.Resources.RTextBox();
             this.rDNI = new Banco.Resources.RTextBox();
             this.rTxtApellido = new Banco.Resources.RTextBox();
             this.rTxtNombre = new Banco.Resources.RTextBox();
             this.rtxtCbu = new Banco.Resources.RTextBox();
+            this.rButton1 = new Banco.Resources.RButton();
+            this.btnIngresar = new Banco.Resources.RButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,45 +55,6 @@ namespace Banco.GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 408);
             this.panel1.TabIndex = 23;
-            // 
-            // rButton1
-            // 
-            this.rButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
-            this.rButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
-            this.rButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rButton1.BorderRadius = 20;
-            this.rButton1.BorderSize = 0;
-            this.rButton1.FlatAppearance.BorderSize = 0;
-            this.rButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rButton1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rButton1.ForeColor = System.Drawing.Color.White;
-            this.rButton1.Location = new System.Drawing.Point(207, 352);
-            this.rButton1.Name = "rButton1";
-            this.rButton1.Size = new System.Drawing.Size(47, 32);
-            this.rButton1.TabIndex = 21;
-            this.rButton1.Text = "X";
-            this.rButton1.TextColor = System.Drawing.Color.White;
-            this.rButton1.UseVisualStyleBackColor = false;
-            this.rButton1.Click += new System.EventHandler(this.rButton1_Click);
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.BackColor = System.Drawing.Color.Green;
-            this.btnIngresar.BackgroundColor = System.Drawing.Color.Green;
-            this.btnIngresar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnIngresar.BorderRadius = 20;
-            this.btnIngresar.BorderSize = 0;
-            this.btnIngresar.FlatAppearance.BorderSize = 0;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(34, 352);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(156, 32);
-            this.btnIngresar.TabIndex = 20;
-            this.btnIngresar.Text = "Aceptar";
-            this.btnIngresar.TextColor = System.Drawing.Color.White;
-            this.btnIngresar.UseVisualStyleBackColor = false;
             // 
             // lblDestinatario
             // 
@@ -216,6 +177,45 @@ namespace Banco.GUI
             this.rtxtCbu.TabIndex = 14;
             this.rtxtCbu.Texts = "";
             this.rtxtCbu.UnderlinedStyle = true;
+            // 
+            // rButton1
+            // 
+            this.rButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.rButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.rButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rButton1.BorderRadius = 20;
+            this.rButton1.BorderSize = 0;
+            this.rButton1.FlatAppearance.BorderSize = 0;
+            this.rButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rButton1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButton1.ForeColor = System.Drawing.Color.White;
+            this.rButton1.Location = new System.Drawing.Point(207, 352);
+            this.rButton1.Name = "rButton1";
+            this.rButton1.Size = new System.Drawing.Size(47, 32);
+            this.rButton1.TabIndex = 21;
+            this.rButton1.Text = "X";
+            this.rButton1.TextColor = System.Drawing.Color.White;
+            this.rButton1.UseVisualStyleBackColor = false;
+            this.rButton1.Click += new System.EventHandler(this.rButton1_Click);
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.BackColor = System.Drawing.Color.Green;
+            this.btnIngresar.BackgroundColor = System.Drawing.Color.Green;
+            this.btnIngresar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnIngresar.BorderRadius = 20;
+            this.btnIngresar.BorderSize = 0;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.Location = new System.Drawing.Point(34, 352);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(156, 32);
+            this.btnIngresar.TabIndex = 20;
+            this.btnIngresar.Text = "Aceptar";
+            this.btnIngresar.TextColor = System.Drawing.Color.White;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             // 
             // FrmNuevoDestinatario
             // 

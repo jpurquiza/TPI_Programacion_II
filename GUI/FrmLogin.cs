@@ -25,8 +25,8 @@ namespace Banco
             
             if (txtDNI.Texts == "1")
             {
-                FrmPrincipal principal = new FrmPrincipal() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
-
+                FrmPrincipal principal = new FrmPrincipal() {TopLevel = false, TopMost = true };
+                pPrincipal.BringToFront();
                 pPrincipal.Controls.Add(principal);
                 pPrincipal.Visible = true;
                 principal.Show();
@@ -36,6 +36,11 @@ namespace Banco
             {
                  MessageBox.Show("usted no esta registrado", "Aviso" );
             }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

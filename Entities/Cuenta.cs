@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banco.Dominio
+namespace Banco.Entities
 {
     class Cuenta
     {
-        public int id_tipoCuenta { get; set; }
-        public int NumCuenta { get; set; }
+        public int IdCuenta { get; set; }
+        public string TipoCuenta { get; set; }
+        public int NroCbu { get; set; }
+        public double Saldo { get; set; }
 
     }
 }

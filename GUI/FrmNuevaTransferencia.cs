@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Banco.DataAccess;
+using Banco.Entities;
+using Banco.Servicios;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -12,9 +15,11 @@ namespace Banco.GUI
 {
     public partial class FrmNuevaTransferencia : Form
     {
+        private GestorClientes _gestorClientes;
         public FrmNuevaTransferencia()
         {
             InitializeComponent();
+            _gestorClientes = new GestorClientes(new ClienteDaoFactory());
         }
 
         private void rbtnCancelar_Click(object sender, EventArgs e)
@@ -37,5 +42,20 @@ namespace Banco.GUI
         {
             this.Dispose();
         }
+        private void FrmNuevaTransferencia_Load(object sender, EventArgs e)
+        {
+            CargarCboCuentas();
+        }
+        private void CargarCboCuentas()
+        {
+            List<Cuenta> lst = _gestorClientes.GetCuentas();
+
+            cboOrigen.DataSource = lst;
+            cboOrigen.ValueMember = "IdCuenta";
+            cboOrigen.DisplayMember = "TipoCuenta" + "Saldo";
+
+        }
+
+
     }
 }

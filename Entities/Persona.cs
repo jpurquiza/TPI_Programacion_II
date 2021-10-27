@@ -8,11 +8,12 @@ namespace Banco.Entities
 {
     class Persona
     {
-        public Persona(string nombre, string apellido, int dni)
+        public Persona(string nombre, string apellido, int dni, string email)
         {
             Nombre = nombre;
             Apellido = apellido;
             Dni = dni;
+            Email = email;
         }
 
         public Persona()
@@ -22,6 +23,8 @@ namespace Banco.Entities
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int Dni { get; set; }
+
+        public string Email { get; set; }
 
 
     }

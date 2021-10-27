@@ -35,6 +35,13 @@ namespace Banco.GUI
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelTransaccionDropDown = new System.Windows.Forms.Panel();
             this.pContainer = new System.Windows.Forms.Panel();
+            this.pnlAltaProductosDD = new System.Windows.Forms.Panel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.rButton6 = new Banco.Resources.RButton();
+            this.rButton5 = new Banco.Resources.RButton();
+            this.rButton2 = new Banco.Resources.RButton();
+            this.rButton3 = new Banco.Resources.RButton();
+            this.btnAltaProductos = new Banco.Resources.RButton();
             this.btnDestinatarios = new Banco.Resources.RButton();
             this.btnNvaTransferencia = new Banco.Resources.RButton();
             this.btnTransaccion = new Banco.Resources.RButton();
@@ -42,10 +49,9 @@ namespace Banco.GUI
             this.btnCerrarSesion = new Banco.Resources.RButton();
             this.rButton1 = new Banco.Resources.RButton();
             this.rbtnAcercaDe = new Banco.Resources.RButton();
-            this.btnArchivo = new Banco.Resources.RButton();
-            this.btnSoporte = new Banco.Resources.RButton();
             this.panel2.SuspendLayout();
             this.PanelTransaccionDropDown.SuspendLayout();
+            this.pnlAltaProductosDD.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -63,14 +69,13 @@ namespace Banco.GUI
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pnlAltaProductosDD);
             this.panel2.Controls.Add(this.PanelTransaccionDropDown);
             this.panel2.Controls.Add(this.btnReportes);
             this.panel2.Controls.Add(this.btnCerrarSesion);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.rButton1);
             this.panel2.Controls.Add(this.rbtnAcercaDe);
-            this.panel2.Controls.Add(this.btnArchivo);
-            this.panel2.Controls.Add(this.btnSoporte);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -83,7 +88,7 @@ namespace Banco.GUI
             this.PanelTransaccionDropDown.Controls.Add(this.btnDestinatarios);
             this.PanelTransaccionDropDown.Controls.Add(this.btnNvaTransferencia);
             this.PanelTransaccionDropDown.Controls.Add(this.btnTransaccion);
-            this.PanelTransaccionDropDown.Location = new System.Drawing.Point(16, 160);
+            this.PanelTransaccionDropDown.Location = new System.Drawing.Point(16, 128);
             this.PanelTransaccionDropDown.Margin = new System.Windows.Forms.Padding(4);
             this.PanelTransaccionDropDown.MaximumSize = new System.Drawing.Size(200, 168);
             this.PanelTransaccionDropDown.MinimumSize = new System.Drawing.Size(200, 40);
@@ -94,10 +99,134 @@ namespace Banco.GUI
             // pContainer
             // 
             this.pContainer.BackgroundImage = global::Banco.Properties.Resources.background;
+            this.pContainer.Dock = System.Windows.Forms.DockStyle.Right;
             this.pContainer.Location = new System.Drawing.Point(232, 0);
             this.pContainer.Name = "pContainer";
-            this.pContainer.Size = new System.Drawing.Size(700, 450);
+            this.pContainer.Size = new System.Drawing.Size(698, 450);
             this.pContainer.TabIndex = 15;
+            // 
+            // pnlAltaProductosDD
+            // 
+            this.pnlAltaProductosDD.Controls.Add(this.rButton6);
+            this.pnlAltaProductosDD.Controls.Add(this.rButton5);
+            this.pnlAltaProductosDD.Controls.Add(this.rButton2);
+            this.pnlAltaProductosDD.Controls.Add(this.rButton3);
+            this.pnlAltaProductosDD.Controls.Add(this.btnAltaProductos);
+            this.pnlAltaProductosDD.Location = new System.Drawing.Point(16, 64);
+            this.pnlAltaProductosDD.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlAltaProductosDD.MaximumSize = new System.Drawing.Size(200, 296);
+            this.pnlAltaProductosDD.MinimumSize = new System.Drawing.Size(200, 40);
+            this.pnlAltaProductosDD.Name = "pnlAltaProductosDD";
+            this.pnlAltaProductosDD.Size = new System.Drawing.Size(200, 40);
+            this.pnlAltaProductosDD.TabIndex = 15;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 15;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // rButton6
+            // 
+            this.rButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rButton6.BorderRadius = 20;
+            this.rButton6.BorderSize = 0;
+            this.rButton6.FlatAppearance.BorderSize = 0;
+            this.rButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rButton6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButton6.ForeColor = System.Drawing.Color.White;
+            this.rButton6.Location = new System.Drawing.Point(0, 256);
+            this.rButton6.Margin = new System.Windows.Forms.Padding(4);
+            this.rButton6.Name = "rButton6";
+            this.rButton6.Size = new System.Drawing.Size(200, 40);
+            this.rButton6.TabIndex = 15;
+            this.rButton6.Text = "Préstamos";
+            this.rButton6.TextColor = System.Drawing.Color.White;
+            this.rButton6.UseVisualStyleBackColor = false;
+            // 
+            // rButton5
+            // 
+            this.rButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rButton5.BorderRadius = 20;
+            this.rButton5.BorderSize = 0;
+            this.rButton5.FlatAppearance.BorderSize = 0;
+            this.rButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rButton5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButton5.ForeColor = System.Drawing.Color.White;
+            this.rButton5.Location = new System.Drawing.Point(0, 192);
+            this.rButton5.Margin = new System.Windows.Forms.Padding(4);
+            this.rButton5.Name = "rButton5";
+            this.rButton5.Size = new System.Drawing.Size(200, 40);
+            this.rButton5.TabIndex = 14;
+            this.rButton5.Text = "Tarjetas de Crédito";
+            this.rButton5.TextColor = System.Drawing.Color.White;
+            this.rButton5.UseVisualStyleBackColor = false;
+            // 
+            // rButton2
+            // 
+            this.rButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rButton2.BorderRadius = 20;
+            this.rButton2.BorderSize = 0;
+            this.rButton2.FlatAppearance.BorderSize = 0;
+            this.rButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rButton2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButton2.ForeColor = System.Drawing.Color.White;
+            this.rButton2.Location = new System.Drawing.Point(0, 128);
+            this.rButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.rButton2.Name = "rButton2";
+            this.rButton2.Size = new System.Drawing.Size(200, 40);
+            this.rButton2.TabIndex = 13;
+            this.rButton2.Text = "Cuenta Corriente";
+            this.rButton2.TextColor = System.Drawing.Color.White;
+            this.rButton2.UseVisualStyleBackColor = false;
+            // 
+            // rButton3
+            // 
+            this.rButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rButton3.BorderRadius = 20;
+            this.rButton3.BorderSize = 0;
+            this.rButton3.FlatAppearance.BorderSize = 0;
+            this.rButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rButton3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButton3.ForeColor = System.Drawing.Color.White;
+            this.rButton3.Location = new System.Drawing.Point(0, 64);
+            this.rButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.rButton3.Name = "rButton3";
+            this.rButton3.Size = new System.Drawing.Size(200, 40);
+            this.rButton3.TabIndex = 12;
+            this.rButton3.Text = "Caja de Ahorro";
+            this.rButton3.TextColor = System.Drawing.Color.White;
+            this.rButton3.UseVisualStyleBackColor = false;
+            // 
+            // btnAltaProductos
+            // 
+            this.btnAltaProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaProductos.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAltaProductos.BorderRadius = 20;
+            this.btnAltaProductos.BorderSize = 0;
+            this.btnAltaProductos.FlatAppearance.BorderSize = 0;
+            this.btnAltaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaProductos.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaProductos.ForeColor = System.Drawing.Color.White;
+            this.btnAltaProductos.Image = global::Banco.Properties.Resources.amplia;
+            this.btnAltaProductos.Location = new System.Drawing.Point(0, 0);
+            this.btnAltaProductos.Name = "btnAltaProductos";
+            this.btnAltaProductos.Size = new System.Drawing.Size(200, 40);
+            this.btnAltaProductos.TabIndex = 11;
+            this.btnAltaProductos.Text = "Alta de productos";
+            this.btnAltaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAltaProductos.TextColor = System.Drawing.Color.White;
+            this.btnAltaProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAltaProductos.UseVisualStyleBackColor = false;
+            this.btnAltaProductos.Click += new System.EventHandler(this.btnAltaProductos_Click);
             // 
             // btnDestinatarios
             // 
@@ -156,7 +285,7 @@ namespace Banco.GUI
             this.btnTransaccion.Name = "btnTransaccion";
             this.btnTransaccion.Size = new System.Drawing.Size(200, 40);
             this.btnTransaccion.TabIndex = 11;
-            this.btnTransaccion.Text = "Transacciones";
+            this.btnTransaccion.Text = "Transferencias";
             this.btnTransaccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTransaccion.TextColor = System.Drawing.Color.White;
             this.btnTransaccion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -174,7 +303,7 @@ namespace Banco.GUI
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(16, 224);
+            this.btnReportes.Location = new System.Drawing.Point(16, 192);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(200, 40);
@@ -202,7 +331,7 @@ namespace Banco.GUI
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.TextColor = System.Drawing.Color.White;
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            this.btnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
             // 
             // rButton1
             // 
@@ -244,46 +373,6 @@ namespace Banco.GUI
             this.rbtnAcercaDe.TextColor = System.Drawing.Color.White;
             this.rbtnAcercaDe.UseVisualStyleBackColor = false;
             // 
-            // btnArchivo
-            // 
-            this.btnArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.btnArchivo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.btnArchivo.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnArchivo.BorderRadius = 20;
-            this.btnArchivo.BorderSize = 0;
-            this.btnArchivo.FlatAppearance.BorderSize = 0;
-            this.btnArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArchivo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArchivo.ForeColor = System.Drawing.Color.White;
-            this.btnArchivo.Location = new System.Drawing.Point(16, 32);
-            this.btnArchivo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnArchivo.Name = "btnArchivo";
-            this.btnArchivo.Size = new System.Drawing.Size(200, 40);
-            this.btnArchivo.TabIndex = 10;
-            this.btnArchivo.Text = "Archivo";
-            this.btnArchivo.TextColor = System.Drawing.Color.White;
-            this.btnArchivo.UseVisualStyleBackColor = false;
-            // 
-            // btnSoporte
-            // 
-            this.btnSoporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.btnSoporte.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.btnSoporte.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSoporte.BorderRadius = 20;
-            this.btnSoporte.BorderSize = 0;
-            this.btnSoporte.FlatAppearance.BorderSize = 0;
-            this.btnSoporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSoporte.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSoporte.ForeColor = System.Drawing.Color.White;
-            this.btnSoporte.Location = new System.Drawing.Point(16, 96);
-            this.btnSoporte.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSoporte.Name = "btnSoporte";
-            this.btnSoporte.Size = new System.Drawing.Size(200, 40);
-            this.btnSoporte.TabIndex = 11;
-            this.btnSoporte.Text = "Soporte";
-            this.btnSoporte.TextColor = System.Drawing.Color.White;
-            this.btnSoporte.UseVisualStyleBackColor = false;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -301,6 +390,7 @@ namespace Banco.GUI
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panel2.ResumeLayout(false);
             this.PanelTransaccionDropDown.ResumeLayout(false);
+            this.pnlAltaProductosDD.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -313,12 +403,17 @@ namespace Banco.GUI
         private Resources.RButton btnReportes;
         private Resources.RButton rButton1;
         private Resources.RButton rbtnAcercaDe;
-        private Resources.RButton btnArchivo;
         private System.Windows.Forms.Panel PanelTransaccionDropDown;
         private Resources.RButton btnDestinatarios;
         private Resources.RButton btnNvaTransferencia;
         private Resources.RButton btnTransaccion;
-        private Resources.RButton btnSoporte;
         private System.Windows.Forms.Panel pContainer;
+        private System.Windows.Forms.Panel pnlAltaProductosDD;
+        private Resources.RButton rButton6;
+        private Resources.RButton rButton5;
+        private Resources.RButton rButton2;
+        private Resources.RButton rButton3;
+        private Resources.RButton btnAltaProductos;
+        private System.Windows.Forms.Timer timer2;
     }
 }

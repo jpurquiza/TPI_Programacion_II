@@ -30,12 +30,12 @@ namespace Banco
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblRegistro = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pPrincipal = new System.Windows.Forms.Panel();
             this.txtClave = new Banco.Resources.RTextBox();
             this.txtDNI = new Banco.Resources.RTextBox();
+            this.lblRegistro = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnIngresar = new Banco.Resources.RButton();
+            this.pPrincipal = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,40 +51,6 @@ namespace Banco
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 450);
             this.panel2.TabIndex = 10;
-            // 
-            // lblRegistro
-            // 
-            this.lblRegistro.ActiveLinkColor = System.Drawing.Color.Black;
-            this.lblRegistro.AutoSize = true;
-            this.lblRegistro.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistro.LinkArea = new System.Windows.Forms.LinkArea(0, 19);
-            this.lblRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.lblRegistro.Location = new System.Drawing.Point(61, 377);
-            this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(164, 23);
-            this.lblRegistro.TabIndex = 12;
-            this.lblRegistro.TabStop = true;
-            this.lblRegistro.Text = "No estoy registrado";
-            this.lblRegistro.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(64, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 23);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Ingresar a MiCuenta";
-            // 
-            // pPrincipal
-            // 
-            this.pPrincipal.Location = new System.Drawing.Point(-2, 0);
-            this.pPrincipal.Name = "pPrincipal";
-            this.pPrincipal.Size = new System.Drawing.Size(930, 450);
-            this.pPrincipal.TabIndex = 11;
-            this.pPrincipal.Visible = false;
             // 
             // txtClave
             // 
@@ -130,6 +96,32 @@ namespace Banco
             this.txtDNI.Texts = "";
             this.txtDNI.UnderlinedStyle = true;
             // 
+            // lblRegistro
+            // 
+            this.lblRegistro.ActiveLinkColor = System.Drawing.Color.Black;
+            this.lblRegistro.AutoSize = true;
+            this.lblRegistro.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistro.LinkArea = new System.Windows.Forms.LinkArea(0, 19);
+            this.lblRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.lblRegistro.Location = new System.Drawing.Point(61, 377);
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(164, 23);
+            this.lblRegistro.TabIndex = 12;
+            this.lblRegistro.TabStop = true;
+            this.lblRegistro.Text = "No estoy registrado";
+            this.lblRegistro.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(64, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 23);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Ingresar a MiCuenta";
+            // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
@@ -150,18 +142,28 @@ namespace Banco
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // pPrincipal
+            // 
+            this.pPrincipal.BackgroundImage = global::Banco.Properties.Resources.background;
+            this.pPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.pPrincipal.Name = "pPrincipal";
+            this.pPrincipal.Size = new System.Drawing.Size(930, 450);
+            this.pPrincipal.TabIndex = 11;
+            this.pPrincipal.Visible = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Banco.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(930, 450);
-            this.Controls.Add(this.pPrincipal);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

@@ -211,6 +211,7 @@ namespace Banco.GUI
             this.Name = "FrmNuevaTransferencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Nueva Transferencia";
+            this.Load += new System.EventHandler(this.FrmNuevaTransferencia_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
