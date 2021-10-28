@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Banco.Properties {
+namespace BancoFrontend.Properties {
     using System;
     
     

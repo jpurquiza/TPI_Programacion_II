@@ -1,11 +1,11 @@
-﻿using Banco.GUI;
+﻿using BancoFrontend.GUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Banco
+namespace BancoFrontend
 {
     static class Program
     {

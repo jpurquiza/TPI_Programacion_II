@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Banco.DataAccess;
-using Banco.Entities;
-using Banco.Servicios;
+using BackendBanco.DataAccess;
+using BackendBanco.Entities;
+using BackendBanco.Servicios;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -52,7 +52,9 @@ namespace Banco.GUI
 
             cboOrigen.DataSource = lst;
             cboOrigen.ValueMember = "IdCuenta";
-            cboOrigen.DisplayMember = "TipoCuenta" + "Saldo";
+            cboOrigen.DisplayMember = "TipoCuenta";
+            string saldo = "Saldo";
+            lblSaldo.Text = "Saldo disponble $" + saldo;
 
         }
 

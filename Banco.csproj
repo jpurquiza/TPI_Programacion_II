@@ -46,15 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\AbstractFactoryDao.cs" />
-    <Compile Include="DataAccess\ClienteDao.cs" />
-    <Compile Include="DataAccess\ClienteDaoFactory.cs" />
-    <Compile Include="DataAccess\HelperDao.cs" />
-    <Compile Include="DataAccess\IClienteDao.cs" />
-    <Compile Include="Entities\Cliente.cs" />
-    <Compile Include="Entities\Cuenta.cs" />
-    <Compile Include="Entities\Destinatarios.cs" />
-    <Compile Include="Entities\Persona.cs" />
     <Compile Include="GUI\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,7 +92,6 @@
     <Compile Include="Resources\RTextBox.Designer.cs">
       <DependentUpon>RTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Servicios\GestorClientes.cs" />
     <EmbeddedResource Include="GUI\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>

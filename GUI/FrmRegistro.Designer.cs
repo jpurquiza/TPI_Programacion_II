@@ -1,5 +1,5 @@
 ﻿
-namespace Banco.GUI
+namespace BancoFrontend.GUI
 {
     partial class FrmRegistro
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace Banco.Resources
+namespace BancoFrontend.Resources
 {
     partial class RTextBox
     {

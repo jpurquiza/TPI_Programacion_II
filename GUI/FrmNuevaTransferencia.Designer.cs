@@ -1,5 +1,5 @@
 ﻿
-namespace Banco.GUI
+namespace BancoFrontend.GUI
 {
     partial class FrmNuevaTransferencia
     {
@@ -30,14 +30,14 @@ namespace Banco.GUI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rbtnCancelar = new Banco.Resources.RButton();
-            this.rbtnConfirmar = new Banco.Resources.RButton();
-            this.btnAgregarDest = new Banco.Resources.RButton();
+            this.rbtnCancelar = new BancoFrontend.Resources.RButton();
+            this.rbtnConfirmar = new BancoFrontend.Resources.RButton();
+            this.btnAgregarDest = new BancoFrontend.Resources.RButton();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.cboDestinatario = new System.Windows.Forms.ComboBox();
             this.cboOrigen = new System.Windows.Forms.ComboBox();
-            this.txtConcepto = new Banco.Resources.RTextBox();
-            this.txtImporte = new Banco.Resources.RTextBox();
+            this.txtConcepto = new BancoFrontend.Resources.RTextBox();
+            this.txtImporte = new BancoFrontend.Resources.RTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -202,7 +202,7 @@ namespace Banco.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Banco.Properties.Resources.background;
+            this.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(700, 450);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

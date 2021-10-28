@@ -1,5 +1,5 @@
 ﻿
-namespace Banco
+namespace BancoFrontend
 {
     partial class FrmLogin
     {
@@ -30,11 +30,11 @@ namespace Banco
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtClave = new Banco.Resources.RTextBox();
-            this.txtDNI = new Banco.Resources.RTextBox();
+            this.txtClave = new BancoFrontend.Resources.RTextBox();
+            this.txtDNI = new BancoFrontend.Resources.RTextBox();
             this.lblRegistro = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnIngresar = new Banco.Resources.RButton();
+            this.btnIngresar = new BancoFrontend.Resources.RButton();
             this.pPrincipal = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -144,7 +144,7 @@ namespace Banco
             // 
             // pPrincipal
             // 
-            this.pPrincipal.BackgroundImage = global::Banco.Properties.Resources.background;
+            this.pPrincipal.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
             this.pPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pPrincipal.Name = "pPrincipal";
             this.pPrincipal.Size = new System.Drawing.Size(930, 450);
@@ -155,7 +155,7 @@ namespace Banco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Banco.Properties.Resources.background;
+            this.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(930, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pPrincipal);

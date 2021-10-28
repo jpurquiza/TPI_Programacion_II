@@ -1,5 +1,5 @@
 ﻿
-namespace Banco.GUI
+namespace BancoFrontend.GUI
 {
     partial class FrmNuevoDestinatario
     {
@@ -31,13 +31,13 @@ namespace Banco.GUI
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDestinatario = new System.Windows.Forms.Label();
-            this.rTxtMail = new Banco.Resources.RTextBox();
-            this.rDNI = new Banco.Resources.RTextBox();
-            this.rTxtApellido = new Banco.Resources.RTextBox();
-            this.rTxtNombre = new Banco.Resources.RTextBox();
-            this.rtxtCbu = new Banco.Resources.RTextBox();
-            this.rButton1 = new Banco.Resources.RButton();
-            this.btnIngresar = new Banco.Resources.RButton();
+            this.rTxtMail = new BancoFrontend.Resources.RTextBox();
+            this.rDNI = new BancoFrontend.Resources.RTextBox();
+            this.rTxtApellido = new BancoFrontend.Resources.RTextBox();
+            this.rTxtNombre = new BancoFrontend.Resources.RTextBox();
+            this.rtxtCbu = new BancoFrontend.Resources.RTextBox();
+            this.rButton1 = new BancoFrontend.Resources.RButton();
+            this.btnIngresar = new BancoFrontend.Resources.RButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 

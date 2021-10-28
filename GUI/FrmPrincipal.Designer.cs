@@ -1,5 +1,5 @@
 ﻿
-namespace Banco.GUI
+namespace BancoFrontend.GUI
 {
     partial class FrmPrincipal
     {
@@ -37,18 +37,18 @@ namespace Banco.GUI
             this.pContainer = new System.Windows.Forms.Panel();
             this.pnlAltaProductosDD = new System.Windows.Forms.Panel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.rButton6 = new Banco.Resources.RButton();
-            this.rButton5 = new Banco.Resources.RButton();
-            this.rButton2 = new Banco.Resources.RButton();
-            this.rButton3 = new Banco.Resources.RButton();
-            this.btnAltaProductos = new Banco.Resources.RButton();
-            this.btnDestinatarios = new Banco.Resources.RButton();
-            this.btnNvaTransferencia = new Banco.Resources.RButton();
-            this.btnTransaccion = new Banco.Resources.RButton();
-            this.btnReportes = new Banco.Resources.RButton();
-            this.btnCerrarSesion = new Banco.Resources.RButton();
-            this.rButton1 = new Banco.Resources.RButton();
-            this.rbtnAcercaDe = new Banco.Resources.RButton();
+            this.rButton6 = new BancoFrontend.Resources.RButton();
+            this.rButton5 = new BancoFrontend.Resources.RButton();
+            this.rButton2 = new BancoFrontend.Resources.RButton();
+            this.rButton3 = new BancoFrontend.Resources.RButton();
+            this.btnAltaProductos = new BancoFrontend.Resources.RButton();
+            this.btnDestinatarios = new BancoFrontend.Resources.RButton();
+            this.btnNvaTransferencia = new BancoFrontend.Resources.RButton();
+            this.btnTransaccion = new BancoFrontend.Resources.RButton();
+            this.btnReportes = new BancoFrontend.Resources.RButton();
+            this.btnCerrarSesion = new BancoFrontend.Resources.RButton();
+            this.rButton1 = new BancoFrontend.Resources.RButton();
+            this.rbtnAcercaDe = new BancoFrontend.Resources.RButton();
             this.panel2.SuspendLayout();
             this.PanelTransaccionDropDown.SuspendLayout();
             this.pnlAltaProductosDD.SuspendLayout();
@@ -98,7 +98,7 @@ namespace Banco.GUI
             // 
             // pContainer
             // 
-            this.pContainer.BackgroundImage = global::Banco.Properties.Resources.background;
+            this.pContainer.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
             this.pContainer.Dock = System.Windows.Forms.DockStyle.Right;
             this.pContainer.Location = new System.Drawing.Point(232, 0);
             this.pContainer.Name = "pContainer";
@@ -216,7 +216,7 @@ namespace Banco.GUI
             this.btnAltaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltaProductos.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaProductos.ForeColor = System.Drawing.Color.White;
-            this.btnAltaProductos.Image = global::Banco.Properties.Resources.amplia;
+            this.btnAltaProductos.Image = global::BancoFrontend.Properties.Resources.amplia;
             this.btnAltaProductos.Location = new System.Drawing.Point(0, 0);
             this.btnAltaProductos.Name = "btnAltaProductos";
             this.btnAltaProductos.Size = new System.Drawing.Size(200, 40);
@@ -280,7 +280,7 @@ namespace Banco.GUI
             this.btnTransaccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransaccion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransaccion.ForeColor = System.Drawing.Color.White;
-            this.btnTransaccion.Image = global::Banco.Properties.Resources.amplia;
+            this.btnTransaccion.Image = global::BancoFrontend.Properties.Resources.amplia;
             this.btnTransaccion.Location = new System.Drawing.Point(0, 0);
             this.btnTransaccion.Name = "btnTransaccion";
             this.btnTransaccion.Size = new System.Drawing.Size(200, 40);
