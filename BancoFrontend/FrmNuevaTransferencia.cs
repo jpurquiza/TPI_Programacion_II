@@ -51,7 +51,7 @@ namespace BancoFrontend
 
         private async Task CargarCboCuetnasAsync()
         {
-            string url = "https://localhost:44328/api/destinatarios/cuentas";
+            string url = "https://localhost:44328/api/Clientes/cuentas";
             using (HttpClient cliente = new HttpClient())
             {
                 var result = await cliente.GetAsync(url);
@@ -65,7 +65,7 @@ namespace BancoFrontend
 
         private async Task CargarCboDestinatariosAsync()
         {
-            string url = "https://localhost:44328/api/destinatarios/destinatarios";
+            string url = "https://localhost:44328/api/Clientes/destinatarios";
             using (HttpClient cliente = new HttpClient())
             {
                 var result = await cliente.GetAsync(url);

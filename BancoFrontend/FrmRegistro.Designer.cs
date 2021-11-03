@@ -31,12 +31,12 @@ namespace BancoFrontend
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.rbtnCancelar = new BancoFrontend.Resources.RButton();
-            this.rbtnConfirmar = new BancoFrontend.Resources.RButton();
-            this.rTextBox3 = new BancoFrontend.Resources.RTextBox();
-            this.rTextBox2 = new BancoFrontend.Resources.RTextBox();
-            this.rTextBox1 = new BancoFrontend.Resources.RTextBox();
+            this.btnCancelar = new BancoFrontend.Resources.RButton();
+            this.btnRegistrarse = new BancoFrontend.Resources.RButton();
+            this.txtEmail = new BancoFrontend.Resources.RTextBox();
             this.txtDNI = new BancoFrontend.Resources.RTextBox();
+            this.txtApellido = new BancoFrontend.Resources.RTextBox();
+            this.txtNombre = new BancoFrontend.Resources.RTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,12 +44,12 @@ namespace BancoFrontend
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.rbtnCancelar);
-            this.panel1.Controls.Add(this.rbtnConfirmar);
-            this.panel1.Controls.Add(this.rTextBox3);
-            this.panel1.Controls.Add(this.rTextBox2);
-            this.panel1.Controls.Add(this.rTextBox1);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnRegistrarse);
+            this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtDNI);
+            this.panel1.Controls.Add(this.txtApellido);
+            this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Location = new System.Drawing.Point(120, 40);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
@@ -68,108 +68,65 @@ namespace BancoFrontend
     " tu cuenta.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // rbtnCancelar
+            // btnCancelar
             // 
-            this.rbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.rbtnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.rbtnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbtnCancelar.BorderRadius = 15;
-            this.rbtnCancelar.BorderSize = 0;
-            this.rbtnCancelar.FlatAppearance.BorderSize = 0;
-            this.rbtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.rbtnCancelar.Location = new System.Drawing.Point(344, 280);
-            this.rbtnCancelar.Name = "rbtnCancelar";
-            this.rbtnCancelar.Size = new System.Drawing.Size(168, 38);
-            this.rbtnCancelar.TabIndex = 19;
-            this.rbtnCancelar.Text = " Cancelar";
-            this.rbtnCancelar.TextColor = System.Drawing.Color.White;
-            this.rbtnCancelar.UseVisualStyleBackColor = false;
-            this.rbtnCancelar.Click += new System.EventHandler(this.rbtnCancelar_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.btnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancelar.BorderRadius = 15;
+            this.btnCancelar.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(344, 280);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(168, 38);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = " Cancelar";
+            this.btnCancelar.TextColor = System.Drawing.Color.White;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.rbtnCancelar_Click);
             // 
-            // rbtnConfirmar
+            // btnRegistrarse
             // 
-            this.rbtnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(164)))), ((int)(((byte)(84)))));
-            this.rbtnConfirmar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(164)))), ((int)(((byte)(84)))));
-            this.rbtnConfirmar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbtnConfirmar.BorderRadius = 15;
-            this.rbtnConfirmar.BorderSize = 0;
-            this.rbtnConfirmar.FlatAppearance.BorderSize = 0;
-            this.rbtnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbtnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.rbtnConfirmar.Location = new System.Drawing.Point(152, 280);
-            this.rbtnConfirmar.Name = "rbtnConfirmar";
-            this.rbtnConfirmar.Size = new System.Drawing.Size(168, 38);
-            this.rbtnConfirmar.TabIndex = 18;
-            this.rbtnConfirmar.Text = "Registrarse";
-            this.rbtnConfirmar.TextColor = System.Drawing.Color.White;
-            this.rbtnConfirmar.UseVisualStyleBackColor = false;
+            this.btnRegistrarse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(164)))), ((int)(((byte)(84)))));
+            this.btnRegistrarse.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(164)))), ((int)(((byte)(84)))));
+            this.btnRegistrarse.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnRegistrarse.BorderRadius = 15;
+            this.btnRegistrarse.BorderSize = 0;
+            this.btnRegistrarse.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarse.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarse.Location = new System.Drawing.Point(152, 280);
+            this.btnRegistrarse.Name = "btnRegistrarse";
+            this.btnRegistrarse.Size = new System.Drawing.Size(168, 38);
+            this.btnRegistrarse.TabIndex = 18;
+            this.btnRegistrarse.Text = "Registrarse";
+            this.btnRegistrarse.TextColor = System.Drawing.Color.White;
+            this.btnRegistrarse.UseVisualStyleBackColor = false;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_ClickAsync);
             // 
-            // rTextBox3
+            // txtEmail
             // 
-            this.rTextBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.rTextBox3.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.rTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.rTextBox3.BorderRadius = 0;
-            this.rTextBox3.BorderSize = 2;
-            this.rTextBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.rTextBox3.Location = new System.Drawing.Point(344, 200);
-            this.rTextBox3.Margin = new System.Windows.Forms.Padding(5);
-            this.rTextBox3.Multiline = false;
-            this.rTextBox3.Name = "rTextBox3";
-            this.rTextBox3.Padding = new System.Windows.Forms.Padding(8);
-            this.rTextBox3.PasswordChar = false;
-            this.rTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rTextBox3.PlaceholderText = "Email";
-            this.rTextBox3.Size = new System.Drawing.Size(184, 36);
-            this.rTextBox3.TabIndex = 17;
-            this.rTextBox3.Texts = "";
-            this.rTextBox3.UnderlinedStyle = true;
-            // 
-            // rTextBox2
-            // 
-            this.rTextBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.rTextBox2.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.rTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.rTextBox2.BorderRadius = 0;
-            this.rTextBox2.BorderSize = 2;
-            this.rTextBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.rTextBox2.Location = new System.Drawing.Point(136, 200);
-            this.rTextBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.rTextBox2.Multiline = false;
-            this.rTextBox2.Name = "rTextBox2";
-            this.rTextBox2.Padding = new System.Windows.Forms.Padding(8);
-            this.rTextBox2.PasswordChar = false;
-            this.rTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rTextBox2.PlaceholderText = "DNI";
-            this.rTextBox2.Size = new System.Drawing.Size(184, 36);
-            this.rTextBox2.TabIndex = 16;
-            this.rTextBox2.Texts = "";
-            this.rTextBox2.UnderlinedStyle = true;
-            // 
-            // rTextBox1
-            // 
-            this.rTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.rTextBox1.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.rTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.rTextBox1.BorderRadius = 0;
-            this.rTextBox1.BorderSize = 2;
-            this.rTextBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rTextBox1.Location = new System.Drawing.Point(344, 136);
-            this.rTextBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.rTextBox1.Multiline = false;
-            this.rTextBox1.Name = "rTextBox1";
-            this.rTextBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.rTextBox1.PasswordChar = false;
-            this.rTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rTextBox1.PlaceholderText = "Apellido";
-            this.rTextBox1.Size = new System.Drawing.Size(184, 36);
-            this.rTextBox1.TabIndex = 15;
-            this.rTextBox1.Texts = "";
-            this.rTextBox1.UnderlinedStyle = true;
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEmail.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.txtEmail.BorderRadius = 0;
+            this.txtEmail.BorderSize = 2;
+            this.txtEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEmail.Location = new System.Drawing.Point(344, 200);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(8);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.PlaceholderText = "Email";
+            this.txtEmail.Size = new System.Drawing.Size(184, 36);
+            this.txtEmail.TabIndex = 17;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = true;
             // 
             // txtDNI
             // 
@@ -180,18 +137,62 @@ namespace BancoFrontend
             this.txtDNI.BorderSize = 2;
             this.txtDNI.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDNI.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDNI.Location = new System.Drawing.Point(136, 136);
+            this.txtDNI.Location = new System.Drawing.Point(136, 200);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(5);
             this.txtDNI.Multiline = false;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Padding = new System.Windows.Forms.Padding(8);
             this.txtDNI.PasswordChar = false;
             this.txtDNI.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDNI.PlaceholderText = "Nombre";
+            this.txtDNI.PlaceholderText = "DNI";
             this.txtDNI.Size = new System.Drawing.Size(184, 36);
-            this.txtDNI.TabIndex = 14;
+            this.txtDNI.TabIndex = 16;
             this.txtDNI.Texts = "";
             this.txtDNI.UnderlinedStyle = true;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.BackColor = System.Drawing.SystemColors.Control;
+            this.txtApellido.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.txtApellido.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.txtApellido.BorderRadius = 0;
+            this.txtApellido.BorderSize = 2;
+            this.txtApellido.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtApellido.ForeColor = System.Drawing.Color.DimGray;
+            this.txtApellido.Location = new System.Drawing.Point(344, 136);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(5);
+            this.txtApellido.Multiline = false;
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Padding = new System.Windows.Forms.Padding(8);
+            this.txtApellido.PasswordChar = false;
+            this.txtApellido.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtApellido.PlaceholderText = "Apellido";
+            this.txtApellido.Size = new System.Drawing.Size(184, 36);
+            this.txtApellido.TabIndex = 15;
+            this.txtApellido.Texts = "";
+            this.txtApellido.UnderlinedStyle = true;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNombre.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.txtNombre.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.txtNombre.BorderRadius = 0;
+            this.txtNombre.BorderSize = 2;
+            this.txtNombre.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombre.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNombre.Location = new System.Drawing.Point(136, 136);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(5);
+            this.txtNombre.Multiline = false;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Padding = new System.Windows.Forms.Padding(8);
+            this.txtNombre.PasswordChar = false;
+            this.txtNombre.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtNombre.PlaceholderText = "Nombre";
+            this.txtNombre.Size = new System.Drawing.Size(184, 36);
+            this.txtNombre.TabIndex = 14;
+            this.txtNombre.Texts = "";
+            this.txtNombre.UnderlinedStyle = true;
             // 
             // FrmRegistro
             // 
@@ -215,12 +216,12 @@ namespace BancoFrontend
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Resources.RTextBox rTextBox3;
-        private Resources.RTextBox rTextBox2;
-        private Resources.RTextBox rTextBox1;
+        private Resources.RTextBox txtEmail;
         private Resources.RTextBox txtDNI;
+        private Resources.RTextBox txtApellido;
+        private Resources.RTextBox txtNombre;
         private System.Windows.Forms.Label label1;
-        private Resources.RButton rbtnCancelar;
-        private Resources.RButton rbtnConfirmar;
+        private Resources.RButton btnCancelar;
+        private Resources.RButton btnRegistrarse;
     }
 }

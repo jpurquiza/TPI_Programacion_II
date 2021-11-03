@@ -10,6 +10,11 @@ namespace BancoBackend.DataAccess
 {
     public class ClienteDao : IClienteDao
     {
+        public bool AltaCliente(Cliente oCliente)
+        {
+            return HelperDao.ObtenerInstancia().AltaCliente("SP_ALTA_CLIENTE", oCliente);
+        }
+
         public List<Cuenta> GetCuentas()
         {
             List<Cuenta> lstCuentas = new List<Cuenta>();

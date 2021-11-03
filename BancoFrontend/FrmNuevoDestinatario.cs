@@ -53,5 +53,10 @@ namespace BancoFrontend
                 });
             }
         }
+
+        private void rbtnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

@@ -42,22 +42,22 @@ namespace BancoWebAPI.Controllers
         }
 
         // POST api/<DestinatariosController>
-        [HttpPost("consultarCuentas")]
-        public string Pendiente()
+        [HttpPost("altaCliente")]
+        public IActionResult AltaCliente(Cliente oCliente)
         {
-            throw new NotImplementedException();
+            return Ok(gestor.AltaCliente(oCliente));
         }
 
-        // PUT api/<DestinatariosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //// PUT api/<DestinatariosController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
 
-        // DELETE api/<DestinatariosController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/<DestinatariosController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

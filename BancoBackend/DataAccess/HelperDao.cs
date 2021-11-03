@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using BancoBackend.Cache;
+using BancoBackend.Entities;
 
 namespace BancoBackend.DataAccess
 {
@@ -38,8 +39,7 @@ namespace BancoBackend.DataAccess
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = SPName;
-                cmd.Parameters.AddWithValue("@id_cliente", 3);
-                //UserCache.IdClienteLogin
+                cmd.Parameters.AddWithValue("@id_cliente", UserCache.IdClienteLogin);
                 tabla.Load(cmd.ExecuteReader());
                 return tabla;
             }
@@ -91,6 +91,44 @@ namespace BancoBackend.DataAccess
             }
             finally { this.CloseConnection(cnn); }
         }
+
+        public bool AltaCliente(string SPName, Cliente oCliente)
+
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlTransaction transaccion = null;
+            bool flag = true;
+
+            try
+            {
+                cnn.ConnectionString = connectionString;
+                cnn.Open();
+                transaccion = cnn.BeginTransaction();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = SPName;
+                cmd.Transaction = transaccion;
+                cmd.Parameters.AddWithValue("@nro_dni", oCliente.Dni);
+                cmd.Parameters.AddWithValue("@apellido", oCliente.Apellido);
+                cmd.Parameters.AddWithValue("@nombre", oCliente.Nombre);
+                cmd.Parameters.AddWithValue("@email", oCliente.Email);
+
+                cmd.ExecuteNonQuery();
+
+                transaccion.Commit();
+
+            }
+            catch
+            {
+                transaccion.Rollback();
+                flag = false;
+            }
+            finally { this.CloseConnection(cnn); }
+
+            return flag;
+        }
+
 
 
         public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)

@@ -12,6 +12,7 @@ namespace BancoBackend.Entities
         public string TipoCuenta { get; set; }
         public int NroCbu { get; set; }
         public double Saldo { get; set; }
+        public int IdCliente { get; set; }
 
     }
 }

@@ -72,7 +72,7 @@ namespace BancoFrontend.Resources
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
-            this.BackColor = Color.MediumSlateBlue;
+            this.BackColor = Color.Blue;
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
         }
@@ -133,7 +133,7 @@ namespace BancoFrontend.Resources
                     using (Pen penBorder = new Pen(borderColor, borderSize))
                     {
                         penBorder.Alignment = PenAlignment.Inset;
-                        pevent.Graphics.DrawRectangle(penBorder, 0, 0, this.Width - 1, this.Height - 1);
+                        pevent.Graphics.DrawRectangle(penBorder, 0, 0, this.Width - 0, this.Height - 0);
                     }
                 }
             }

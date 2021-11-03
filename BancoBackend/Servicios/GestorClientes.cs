@@ -18,6 +18,12 @@ namespace BancoBackend.Servicios
         {
             _clienteDao = new ClienteDao();
         }
+
+        public bool AltaCliente(Cliente oCliente)
+        {
+            return _clienteDao.AltaCliente(oCliente);
+        }
+
         public List<Cuenta> GetCuentas()
         {
             return _clienteDao.GetCuentas();
