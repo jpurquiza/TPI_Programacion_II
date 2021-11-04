@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BancoBackend.Cache;
 
 namespace BancoBackend.DataAccess
 {
@@ -57,6 +58,76 @@ namespace BancoBackend.DataAccess
         public bool Login(int DNI, string Pass)
         {
             return HelperDao.ObtenerInstancia().ValidacionLogin("SP_LOGIN", DNI, Pass);
+        }
+
+
+
+        public bool InsertDestinatario(Destinatarios oDestinatario)
+        {
+            bool bandera = true;
+            try
+            {
+                //cambiar el id de cliente por el del cache??
+                Dictionary<string, object> insert = new Dictionary<string, object>();
+                insert.Add("@id_cliente", UserCache.IdClienteLogin);
+                insert.Add("@nro_cbu", oDestinatario.NroCbu);
+                insert.Add("@nro_dni", oDestinatario.Dni);
+                insert.Add("@apellido", oDestinatario.Apellido);
+                insert.Add("@nombre", oDestinatario.Nombre);
+                insert.Add("@email", oDestinatario.Email);
+
+                HelperDao.ObtenerInstancia().EjecutarSQL("SP_INSERTAR_DESTINATARIO", insert);
+            }
+            catch (Exception)
+            {
+                bandera = false;
+            }
+
+            return bandera;
+        }
+
+        public bool UpdateDestinatario(Destinatarios oDestinatario)
+        {
+            bool bandera = true;
+            try
+            {
+                Dictionary<string, object> update = new Dictionary<string, object>();
+                update.Add("@idDestinatario", oDestinatario.IdDestinatario);
+                update.Add("@id_cliente", UserCache.IdClienteLogin);
+                update.Add("@nro_cbu", oDestinatario.NroCbu);
+                update.Add("@nro_dni", oDestinatario.Dni);
+                update.Add("@apellido", oDestinatario.Apellido);
+                update.Add("@nombre", oDestinatario.Nombre);
+                update.Add("@email", oDestinatario.Email);
+
+                HelperDao.ObtenerInstancia().EjecutarSQL("SP_MODIFICAR_DESTINATARIO", update);
+            }
+            catch (Exception)
+            {
+                bandera = false;
+            }
+
+            return bandera;
+        }
+
+        public bool DeleteDestinatario(int idDestinatario)
+        {
+            bool bandera = true;
+            try
+            {
+                Dictionary<string, object> delete = new Dictionary<string, object>();
+                delete.Add("@id_destinatario", idDestinatario);
+
+                HelperDao.ObtenerInstancia().EjecutarSQL("SP_ELIMINAR_DESTINATARIO", delete);
+            }
+            catch (Exception)
+            {
+
+                bandera = false;
+            }
+
+            return bandera;
+
         }
     }
 }

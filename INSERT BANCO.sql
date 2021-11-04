@@ -192,10 +192,21 @@ BEGIN
 	SELECT COUNT(*) FROM CLIENTES
 	WHERE nro_dni = @dni AND clave = @password
 END
+----------------
+CREATE PROC SP_LOGIN
+	@DniLogin int,
+	@ClaveLogin varchar(30)
+AS
+BEGIN
+	SELECT * FROM CLIENTES
+	WHERE @DniLogin = nro_dni and @ClaveLogin = clave
+END
+
 
 
 EXEC SP_VALIDAR_LOGIN 82119, 'lapicera'
 
 SELECT * FROM CLIENTES
+SELECT * FROM DESTINATARIOS
 
 --------------------------------------------------------------------------------

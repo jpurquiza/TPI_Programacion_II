@@ -14,5 +14,9 @@ namespace BancoBackend.Servicios
         public bool Login(int DNI, string Pass);
 
         public bool AltaCliente(Cliente oCliente);
+
+
+        bool EditarDestinatario(Destinatarios oDestinatario);
+        bool GrabarDestinatario(Destinatarios oDestinatario);
     }
 }
