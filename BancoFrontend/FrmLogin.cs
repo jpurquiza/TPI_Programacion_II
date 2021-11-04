@@ -1,5 +1,6 @@
 ﻿using BancoBackend.DataAccess;
 using BancoBackend.Cache;
+using BancoBackend.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,19 +12,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BancoBackend.Entities;
 using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace BancoFrontend
 {
     public partial class FrmLogin : Form
     {
+
+        UserLogin oUsuario = new UserLogin();
+
         public FrmLogin()
         {
             InitializeComponent();
         }
 
-        private async void btnIngresar_ClickAsync(object sender, EventArgs e)
+        private async void btnIngresar_Click(object sender, EventArgs e)
         {
-            await LoginAsync();
+            await LoginAsync(oUsuario);
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
@@ -39,19 +44,16 @@ namespace BancoFrontend
             pPrincipal.Visible = true;
             FRegistro.Show();
         }
-        private async Task<bool> LoginAsync()
+        private async Task<bool> LoginAsync(UserLogin oUsuario)
         {
 
             if (!string.IsNullOrEmpty(txtDNI.Texts))
             {
                 if (!string.IsNullOrEmpty(txtClave.Texts))
                 {
-                    int DniLogin = Convert.ToInt32(txtDNI.Texts);
-                    string ClaveLogin = txtClave.Texts;
-
                     string url = "https://localhost:44328/api/Clientes/login";
-                    string loginJson = JsonConvert.SerializeObject(new { DniLogin, ClaveLogin });
-                    var result = await ClientSingleton.GetInstance().GetAsync(url, loginJson);
+                    string loginJson = JsonConvert.SerializeObject(new UserLogin() {DNI = Convert.ToInt32(txtDNI.Texts), Pass = txtClave.Texts });
+                    var result = await ClientSingleton.GetInstance().PostAsync(url, loginJson);
 
                     if (result == "true")
                     {
@@ -76,3 +78,4 @@ namespace BancoFrontend
         }
     }
 }
+

@@ -75,7 +75,7 @@ namespace BancoFrontend
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            lblBienvenido.Text = "Bienvenido\n" +  UserCache.NombreLogin;
+           lblBienvenido.Text = "Bienvenido\n" +  UserCache.NombreLogin;
         }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)

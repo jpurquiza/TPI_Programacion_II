@@ -34,9 +34,9 @@ namespace BancoBackend.Servicios
             return _clienteDao.GetDestinatarios();
         }
 
-        public bool Login(int DniLogin, string ClaveLogin)
+        public bool Login(int DNI, string Pass)
         {
-            return _clienteDao.Login(DniLogin, ClaveLogin);
+            return _clienteDao.Login(DNI, Pass);
         }
     }
 }

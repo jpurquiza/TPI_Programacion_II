@@ -54,9 +54,9 @@ namespace BancoBackend.DataAccess
             return lstDestinatarios;
         } 
 
-        public bool Login(int DniLogin, string ClaveLogin)
+        public bool Login(int DNI, string Pass)
         {
-            return HelperDao.ObtenerInstancia().ValidacionLogin("SP_LOGIN", DniLogin, ClaveLogin);
+            return HelperDao.ObtenerInstancia().ValidacionLogin("SP_LOGIN", DNI, Pass);
         }
     }
 }

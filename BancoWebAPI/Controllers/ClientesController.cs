@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BancoBackend.Servicios;
+using BancoBackend.Cache;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -35,10 +36,10 @@ namespace BancoWebAPI.Controllers
             return Ok(gestor.GetDestinatarios());
         }
 
-        [HttpGet("login")]
-        public IActionResult Login( int dniLogin, string claveLogin)
+        [HttpPost("login")]
+        public IActionResult Login(UserLogin oUsuario)
         {
-            return Ok(gestor.Login(dniLogin, claveLogin));
+            return Ok(gestor.Login(oUsuario.DNI, oUsuario.Pass));
         }
 
         // POST api/<DestinatariosController>

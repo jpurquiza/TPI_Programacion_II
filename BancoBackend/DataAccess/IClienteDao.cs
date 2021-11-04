@@ -11,7 +11,7 @@ namespace BancoBackend.DataAccess
     {
         List<Cuenta> GetCuentas();
         List<Destinatarios> GetDestinatarios();
-        bool Login(int DniLogin, string ClaveLogin);
+        bool Login(int DNI, string Pass);
         bool AltaCliente(Cliente oCliente);
 
     }

@@ -43,14 +43,14 @@ namespace BancoBackend.DataAccess
                 tabla.Load(cmd.ExecuteReader());
                 return tabla;
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw ex;
+                throw;
             }
             finally { this.CloseConnection(cnn); }
         }
 
-        public bool ValidacionLogin(string SPName, int DniLogin, string ClaveLogin)
+        public bool ValidacionLogin(string SPName, int DNI, string Pass)
         {
             SqlConnection cnn = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
@@ -63,16 +63,14 @@ namespace BancoBackend.DataAccess
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = SPName;
-                cmd.Parameters.AddWithValue("@DniLogin", DniLogin);
-                cmd.Parameters.AddWithValue("@ClaveLogin", ClaveLogin);
+                cmd.Parameters.AddWithValue("@DniLogin", DNI);
+                cmd.Parameters.AddWithValue("@ClaveLogin", Pass);
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
                         UserCache.IdClienteLogin = reader.GetInt32(0);
-                        UserCache.DniLogin = reader.GetInt32(1);
-                        UserCache.ClaveLogin = reader.GetString(2);
                         UserCache.ApellidoLogin = reader.GetString(3);
                         UserCache.NombreLogin = reader.GetString(4);
                         UserCache.EmailLogin = reader.GetString(5);
@@ -85,9 +83,10 @@ namespace BancoBackend.DataAccess
                 else return false;
                
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw ex;
+                throw;
+
             }
             finally { this.CloseConnection(cnn); }
         }
