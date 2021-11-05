@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using BancoBackend.Servicios;
 using BancoBackend.Cache;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BancoWebAPI.Controllers
 {
@@ -22,14 +21,12 @@ namespace BancoWebAPI.Controllers
             gestor = new GestorClientes();
         }
 
-        // GET: api/<DestinatariosController>
         [HttpGet("cuentas")]
         public IActionResult GetCuentas()
         {
             return Ok(gestor.GetCuentas());
         }
 
-        // GET api/<DestinatariosController>/5
         [HttpGet("destinatarios")]
         public IActionResult GetDestinatarios()
         {
@@ -42,28 +39,12 @@ namespace BancoWebAPI.Controllers
             return Ok(gestor.Login(oUsuario.DNI, oUsuario.Pass));
         }
 
-        // POST api/<DestinatariosController>
         [HttpPost("altaCliente")]
         public IActionResult AltaCliente(Cliente oCliente)
         {
             return Ok(gestor.AltaCliente(oCliente));
         }
-
-        //// PUT api/<DestinatariosController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/<DestinatariosController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
-
-
-
-
+        
         [HttpPost("altaDestinatario")]
         public IActionResult InsertReceta(Destinatarios oDestinatario)
         {
@@ -92,5 +73,20 @@ namespace BancoWebAPI.Controllers
                 //BR o OK
                 return Ok("No se pudo modificar el destinatario");
         }
+
+        [HttpPost("altaTransferencia")]
+        public IActionResult GrabarTransferencia(Transferencia oTransferencia)
+        {
+
+            return Ok(gestor.GrabarTransferencia(oTransferencia));
+
+        }
+
+        [HttpGet("proximoID")]
+        public IActionResult GetProximoID()
+        {
+            return Ok(gestor.GetProximoID().ToString());
+        }
     }
+    
 }

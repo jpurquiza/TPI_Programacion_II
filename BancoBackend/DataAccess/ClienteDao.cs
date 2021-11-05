@@ -11,11 +11,6 @@ namespace BancoBackend.DataAccess
 {
     public class ClienteDao : IClienteDao
     {
-        public bool AltaCliente(Cliente oCliente)
-        {
-            return HelperDao.ObtenerInstancia().AltaCliente("SP_ALTA_CLIENTE", oCliente);
-        }
-
         public List<Cuenta> GetCuentas()
         {
             List<Cuenta> lstCuentas = new List<Cuenta>();
@@ -59,8 +54,6 @@ namespace BancoBackend.DataAccess
         {
             return HelperDao.ObtenerInstancia().ValidacionLogin("SP_LOGIN", DNI, Pass);
         }
-
-
 
         public bool InsertDestinatario(Destinatarios oDestinatario)
         {
@@ -128,6 +121,52 @@ namespace BancoBackend.DataAccess
 
             return bandera;
 
+        }
+
+        public bool AltaCliente(Cliente oCliente)
+        {
+            return HelperDao.ObtenerInstancia().AltaCliente("SP_ALTA_CLIENTE", oCliente);
+        }
+
+        public bool GrabarTransferencia(Transferencia oTransferencia)
+        {
+            return HelperDao.ObtenerInstancia().AltaTransferencia("SP_INSERTAR_TRANSACCION", oTransferencia);
+
+            //bool bandera = true;
+            //try
+            //{
+            //    //cambiar el id de cliente por el del cache??
+            //    Dictionary<string, object> insert = new Dictionary<string, object>();
+            //    insert.Add("@id_cuenta", oTransferencia.IdCuenta);
+            //    insert.Add("@id_destinatario", oTransferencia.IdDestinatario);
+            //    insert.Add("@fecha", oTransferencia.Fecha);
+            //    insert.Add("@monto", oTransferencia.Importe);
+            //    insert.Add("@concepto", oTransferencia.Concepto);
+
+
+            //    HelperDao.ObtenerInstancia().EjecutarSQL("SP_INSERTAR_TRANSACCION", insert);
+            //}
+            //catch (Exception)
+            //{
+            //    bandera = false;
+            //}
+
+            //return bandera;
+        }
+
+        public int ProximoNro()
+        {
+            try
+            {
+
+                return HelperDao.ObtenerInstancia().ProximoID("SP_PROXIMO_ID", "@next");
+
+            }
+            catch (Exception)
+            {
+                return 1;
+                throw;
+            }
         }
     }
 }

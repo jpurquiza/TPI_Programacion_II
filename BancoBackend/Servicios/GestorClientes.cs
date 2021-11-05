@@ -50,5 +50,15 @@ namespace BancoBackend.Servicios
         {
             return _clienteDao.InsertDestinatario(oDestinatario);
         }
+
+        public bool GrabarTransferencia(Transferencia oTransferencia)
+        {
+            return _clienteDao.GrabarTransferencia(oTransferencia);
+        }
+
+        public int GetProximoID()
+        {
+            return _clienteDao.ProximoNro();
+        }
     }
 }

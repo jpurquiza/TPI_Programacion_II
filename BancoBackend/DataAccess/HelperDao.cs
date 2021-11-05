@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using BancoBackend.Cache;
 using BancoBackend.Entities;
+using System.IO;
 
 namespace BancoBackend.DataAccess
 {
@@ -127,8 +128,43 @@ namespace BancoBackend.DataAccess
 
             return flag;
         }
+        public bool AltaTransferencia(string SPName, Transferencia oTransferencia)
 
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlTransaction transaccion = null;
+            bool flag = true;
 
+            try
+            {
+                cnn.ConnectionString = connectionString;
+                cnn.Open();
+                transaccion = cnn.BeginTransaction();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = SPName;
+                cmd.Transaction = transaccion;
+                cmd.Parameters.AddWithValue("@id_transaccion", oTransferencia.IdTransferencia);
+                cmd.Parameters.AddWithValue("@id_cuenta", oTransferencia.IdCuenta);
+                cmd.Parameters.AddWithValue("@id_destinatario", oTransferencia.IdDestinatario);
+                cmd.Parameters.AddWithValue("@fecha", oTransferencia.Fecha);
+                cmd.Parameters.AddWithValue("@concepto", oTransferencia.Concepto);
+
+                cmd.ExecuteNonQuery();
+
+                transaccion.Commit();
+
+            }
+            catch
+            {
+                transaccion.Rollback();
+                flag = false;
+            }
+            finally { this.CloseConnection(cnn); }
+
+            return flag;
+        }
 
         public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)
         {
@@ -159,15 +195,11 @@ namespace BancoBackend.DataAccess
             }
             finally
             {
-                if (cnn.State == ConnectionState.Open)
-                {
-                    cnn.Close();
-                }
+                this.CloseConnection(cnn);
             }
 
             return val;
         }
-
 
         //PROBAR
         public int EjecutarSQL(string nombreSP, Dictionary<string, object> parametros)
@@ -195,18 +227,60 @@ namespace BancoBackend.DataAccess
             }
             catch (Exception ex)
             {
-                throw (ex);
+                string filePath = @"C:\Users\Error.txt";
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine("-----------------------------------------------------------------------------");
+                    writer.WriteLine("Date : " + DateTime.Now.ToString());
+                    writer.WriteLine();
+
+                    while (ex != null)
+                    {
+                        writer.WriteLine(ex.GetType().FullName);
+                        writer.WriteLine("Message : " + ex.Message);
+                        writer.WriteLine("StackTrace : " + ex.StackTrace);
+
+                        ex = ex.InnerException;
+                    }
+                }
             }
             finally
             {
-                if (cnn.State == ConnectionState.Open)
-                    cnn.Close();
+                this.CloseConnection(cnn);
             }
 
             return filasAfectadas;
         }
         //
+        public int ProximoID(string nombreSP, string paramSP)
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlParameter param = new SqlParameter(paramSP, SqlDbType.Int);
 
+            try
+            {
+                cnn.ConnectionString = connectionString;
+                cnn.Open();
+
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = nombreSP;
+
+                param.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(param);
+                cmd.ExecuteNonQuery();
+
+                return Convert.ToInt32(param.Value);
+            }
+
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+            finally { this.CloseConnection(cnn); }
+        }
 
         private void CloseConnection(SqlConnection cnn)
         {
