@@ -73,10 +73,28 @@ namespace BancoFrontend
                 List<Destinatarios> lst = JsonConvert.DeserializeObject<List<Destinatarios>>(bodyJSON);
                 cboDestinatario.DataSource = lst;
                 cboDestinatario.ValueMember = "IdDestinatario";
-                cboDestinatario.DisplayMember = "Apellido";
+                cboDestinatario.DisplayMember = "CboAux";
             }
         }
 
-
+        private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -33,7 +33,6 @@ namespace BancoFrontend
             this.rbtnCancelar = new BancoFrontend.Resources.RButton();
             this.rbtnConfirmar = new BancoFrontend.Resources.RButton();
             this.btnAgregarDest = new BancoFrontend.Resources.RButton();
-            this.lblSaldo = new System.Windows.Forms.Label();
             this.cboDestinatario = new System.Windows.Forms.ComboBox();
             this.cboOrigen = new System.Windows.Forms.ComboBox();
             this.txtConcepto = new BancoFrontend.Resources.RTextBox();
@@ -47,7 +46,6 @@ namespace BancoFrontend
             this.panel1.Controls.Add(this.rbtnCancelar);
             this.panel1.Controls.Add(this.rbtnConfirmar);
             this.panel1.Controls.Add(this.btnAgregarDest);
-            this.panel1.Controls.Add(this.lblSaldo);
             this.panel1.Controls.Add(this.cboDestinatario);
             this.panel1.Controls.Add(this.cboOrigen);
             this.panel1.Controls.Add(this.txtConcepto);
@@ -116,32 +114,21 @@ namespace BancoFrontend
             this.btnAgregarDest.TextColor = System.Drawing.Color.White;
             this.btnAgregarDest.UseVisualStyleBackColor = false;
             // 
-            // lblSaldo
-            // 
-            this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblSaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.lblSaldo.Location = new System.Drawing.Point(104, 216);
-            this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(102, 15);
-            this.lblSaldo.TabIndex = 5;
-            this.lblSaldo.Text = "Saldo disponble $";
-            // 
             // cboDestinatario
             // 
             this.cboDestinatario.FormattingEnabled = true;
-            this.cboDestinatario.Location = new System.Drawing.Point(80, 256);
+            this.cboDestinatario.Location = new System.Drawing.Point(40, 240);
             this.cboDestinatario.Name = "cboDestinatario";
-            this.cboDestinatario.Size = new System.Drawing.Size(224, 27);
+            this.cboDestinatario.Size = new System.Drawing.Size(304, 27);
             this.cboDestinatario.TabIndex = 4;
             this.cboDestinatario.Text = "Seleccionar destinatario...";
             // 
             // cboOrigen
             // 
             this.cboOrigen.FormattingEnabled = true;
-            this.cboOrigen.Location = new System.Drawing.Point(80, 176);
+            this.cboOrigen.Location = new System.Drawing.Point(40, 184);
             this.cboOrigen.Name = "cboOrigen";
-            this.cboOrigen.Size = new System.Drawing.Size(224, 27);
+            this.cboOrigen.Size = new System.Drawing.Size(304, 27);
             this.cboOrigen.TabIndex = 3;
             this.cboOrigen.Text = "Seleccionar cuenta origen...";
             // 
@@ -188,15 +175,17 @@ namespace BancoFrontend
             this.txtImporte.TabIndex = 1;
             this.txtImporte.Texts = "";
             this.txtImporte.UnderlinedStyle = true;
+            this.txtImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImporte_KeyPress);
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(120, 24);
+            this.lblFecha.Location = new System.Drawing.Point(96, 24);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(145, 19);
             this.lblFecha.TabIndex = 0;
             this.lblFecha.Text = "*carga fecha actual*";
+            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmNuevaTransferencia
             // 
@@ -223,7 +212,6 @@ namespace BancoFrontend
         private Resources.RButton rbtnCancelar;
         private Resources.RButton rbtnConfirmar;
         private Resources.RButton btnAgregarDest;
-        private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.ComboBox cboDestinatario;
         private System.Windows.Forms.ComboBox cboOrigen;
         private Resources.RTextBox txtConcepto;
