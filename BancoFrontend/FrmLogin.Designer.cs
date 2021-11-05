@@ -74,6 +74,7 @@ namespace BancoFrontend
             this.txtDNI.TabIndex = 13;
             this.txtDNI.Texts = "";
             this.txtDNI.UnderlinedStyle = true;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // txtClave
             // 

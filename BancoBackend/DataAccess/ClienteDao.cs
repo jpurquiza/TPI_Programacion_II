@@ -26,7 +26,6 @@ namespace BancoBackend.DataAccess
                 Cuenta oCuenta = new Cuenta();
                 oCuenta.IdCuenta = Convert.ToInt32(row[0].ToString());
                 oCuenta.TipoCuenta = row[1].ToString();
-                oCuenta.Saldo = Convert.ToInt32(row[2].ToString());
 
                 lstCuentas.Add(oCuenta);
             }
@@ -46,8 +45,9 @@ namespace BancoBackend.DataAccess
                 oDestinatarios.NroCbu = Convert.ToInt32(row[1].ToString());
                 oDestinatarios.Nombre = row[2].ToString();
                 oDestinatarios.Apellido = row[3].ToString();
-                oDestinatarios.Dni = Convert.ToInt32(row[4].ToString());
-                oDestinatarios.Email = row[5].ToString();
+                oDestinatarios.CboAux = row[4].ToString();
+                oDestinatarios.Dni = Convert.ToInt32(row[5].ToString());
+                oDestinatarios.Email = row[6].ToString();
 
                 lstDestinatarios.Add(oDestinatarios);
             }
