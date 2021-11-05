@@ -169,6 +169,44 @@ namespace BancoBackend.DataAccess
         }
 
 
+        //PROBAR
+        public int EjecutarSQL(string nombreSP, Dictionary<string, object> parametros)
+        {
+            SqlConnection cnn = new SqlConnection(connectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            int filasAfectadas = 0;
+
+            try
+            {
+                cnn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = nombreSP;
+
+                foreach (var item in parametros)
+                {
+                    //item.Key devuelve el string del nombre del parametro
+                    //item.Value ingresa el valor al parametro
+                    //CLAVE - VALOR
+                    cmd.Parameters.AddWithValue(item.Key, item.Value);
+                }
+
+                filasAfectadas = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+
+            return filasAfectadas;
+        }
+        //
+
 
         private void CloseConnection(SqlConnection cnn)
         {

@@ -34,9 +34,21 @@ namespace BancoBackend.Servicios
             return _clienteDao.GetDestinatarios();
         }
 
+
         public bool Login(int DNI, string Pass)
         {
             return _clienteDao.Login(DNI, Pass);
+        }
+
+
+        public bool EditarDestinatario(Destinatarios oDestinatario)
+        {
+            return _clienteDao.UpdateDestinatario(oDestinatario);
+        }
+
+        public bool GrabarDestinatario(Destinatarios oDestinatario)
+        {
+            return _clienteDao.InsertDestinatario(oDestinatario);
         }
     }
 }

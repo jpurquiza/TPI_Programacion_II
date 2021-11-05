@@ -14,5 +14,9 @@ namespace BancoBackend.DataAccess
         bool Login(int DNI, string Pass);
         bool AltaCliente(Cliente oCliente);
 
+        bool InsertDestinatario(Destinatarios oDestinatario);
+        bool UpdateDestinatario(Destinatarios oDestinatario);
+        bool DeleteDestinatario(int idDestinatario);
+
     }
 }

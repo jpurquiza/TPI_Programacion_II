@@ -60,5 +60,37 @@ namespace BancoWebAPI.Controllers
         //public void Delete(int id)
         //{
         //}
+
+
+
+
+        [HttpPost("altaDestinatario")]
+        public IActionResult InsertReceta(Destinatarios oDestinatario)
+        {
+            if (oDestinatario == null)
+            {
+                return BadRequest();
+            }
+
+            if (gestor.GrabarDestinatario(oDestinatario))
+                return Ok("Ok");
+            else
+                return Ok("No se pudo grabar el destinatario");
+        }
+
+        [HttpPost("modificarDestinatario")]
+        public IActionResult UpdateReceta(Destinatarios oDestinatario)
+        {
+            if (oDestinatario == null)
+            {
+                return BadRequest();
+            }
+
+            if (gestor.EditarDestinatario(oDestinatario))
+                return Ok("Ok");
+            else
+                //BR o OK
+                return Ok("No se pudo modificar el destinatario");
+        }
     }
 }
