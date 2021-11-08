@@ -43,17 +43,17 @@ namespace BancoBackend.DataAccess
             foreach (DataRow row in table.Rows)
             {
                 Destinatarios oDestinatarios = new Destinatarios();
-                oDestinatarios.IdDestinatario = Convert.ToInt32(row[0].ToString());
-                oDestinatarios.NroCbu = Convert.ToInt32(row[1].ToString());
+                oDestinatarios.NroCbu = Convert.ToInt32(row[0].ToString());
+                oDestinatarios.Dni = Convert.ToInt32(row[3].ToString());
+                oDestinatarios.Apellido = row[1].ToString();
                 oDestinatarios.Nombre = row[2].ToString();
-                oDestinatarios.Apellido = row[3].ToString();
-                oDestinatarios.Dni = Convert.ToInt32(row[4].ToString());
-                oDestinatarios.Email = row[5].ToString();
-
+                oDestinatarios.Email = row[4].ToString();
+                oDestinatarios.IdDestinatario = Convert.ToInt32(row[5].ToString());
                 lstDestinatarios.Add(oDestinatarios);
             }
             return lstDestinatarios;
-        } 
+        }    
+
 
         public bool Login(int DNI, string Pass)
         {
@@ -66,8 +66,7 @@ namespace BancoBackend.DataAccess
         {
             bool bandera = true;
             try
-            {
-                //cambiar el id de cliente por el del cache??
+            {                
                 Dictionary<string, object> insert = new Dictionary<string, object>();
                 insert.Add("@id_cliente", UserCache.IdClienteLogin);
                 insert.Add("@nro_cbu", oDestinatario.NroCbu);
@@ -78,7 +77,7 @@ namespace BancoBackend.DataAccess
 
                 HelperDao.ObtenerInstancia().EjecutarSQL("SP_INSERTAR_DESTINATARIO", insert);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 bandera = false;
             }
@@ -93,7 +92,7 @@ namespace BancoBackend.DataAccess
             {
                 Dictionary<string, object> update = new Dictionary<string, object>();
                 update.Add("@idDestinatario", oDestinatario.IdDestinatario);
-                update.Add("@id_cliente", UserCache.IdClienteLogin);
+                update.Add("@idCliente", UserCache.IdClienteLogin);
                 update.Add("@nro_cbu", oDestinatario.NroCbu);
                 update.Add("@nro_dni", oDestinatario.Dni);
                 update.Add("@apellido", oDestinatario.Apellido);
@@ -102,7 +101,7 @@ namespace BancoBackend.DataAccess
 
                 HelperDao.ObtenerInstancia().EjecutarSQL("SP_MODIFICAR_DESTINATARIO", update);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 bandera = false;
             }

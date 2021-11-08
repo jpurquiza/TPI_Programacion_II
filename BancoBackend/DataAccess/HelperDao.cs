@@ -14,9 +14,10 @@ namespace BancoBackend.DataAccess
     {
         private static HelperDao instancia;
         private string connectionString;
+
         private HelperDao()
         {
-            connectionString = @"Data Source=DRAGONSTONE\SQLEXPRESS;Initial Catalog=banco;Integrated Security=True";
+            connectionString = @"Data Source=DESKTOP-VO7FRO7\SQLEXPRESS;Initial Catalog=db_banco;Integrated Security=True";
         }
         public static HelperDao ObtenerInstancia()
         {
@@ -39,6 +40,7 @@ namespace BancoBackend.DataAccess
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = SPName;
+                //TODO:a veces el idClienteLogin es 0,revisar kpos
                 cmd.Parameters.AddWithValue("@id_cliente", UserCache.IdClienteLogin);
                 tabla.Load(cmd.ExecuteReader());
                 return tabla;
@@ -83,8 +85,9 @@ namespace BancoBackend.DataAccess
                 else return false;
                
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                var a = e;
                 throw;
 
             }
@@ -172,14 +175,17 @@ namespace BancoBackend.DataAccess
         //PROBAR
         public int EjecutarSQL(string nombreSP, Dictionary<string, object> parametros)
         {
-            SqlConnection cnn = new SqlConnection(connectionString);
+            SqlConnection cnn = new SqlConnection();
 
             SqlCommand cmd = new SqlCommand();
             int filasAfectadas = 0;
 
             try
             {
+                cnn.ConnectionString = connectionString;
                 cnn.Open();
+
+                cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = nombreSP;
 
@@ -197,11 +203,8 @@ namespace BancoBackend.DataAccess
             {
                 throw (ex);
             }
-            finally
-            {
-                if (cnn.State == ConnectionState.Open)
-                    cnn.Close();
-            }
+            finally { this.CloseConnection(cnn); }
+
 
             return filasAfectadas;
         }

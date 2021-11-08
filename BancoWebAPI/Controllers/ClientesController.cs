@@ -65,7 +65,7 @@ namespace BancoWebAPI.Controllers
 
 
         [HttpPost("altaDestinatario")]
-        public IActionResult InsertReceta(Destinatarios oDestinatario)
+        public IActionResult InsertDestinatario(Destinatarios oDestinatario)
         {
             if (oDestinatario == null)
             {
@@ -79,7 +79,7 @@ namespace BancoWebAPI.Controllers
         }
 
         [HttpPost("modificarDestinatario")]
-        public IActionResult UpdateReceta(Destinatarios oDestinatario)
+        public IActionResult UpdateDestintario(Destinatarios oDestinatario)
         {
             if (oDestinatario == null)
             {
@@ -91,6 +91,12 @@ namespace BancoWebAPI.Controllers
             else
                 //BR o OK
                 return Ok("No se pudo modificar el destinatario");
+        }
+
+        [HttpDelete("{idDestinatario}")]
+        public void DeleteDestinatario(int idDestinatario)
+        {
+            gestor.EliminarDestinatario(idDestinatario);
         }
     }
 }

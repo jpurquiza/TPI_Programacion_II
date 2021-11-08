@@ -50,5 +50,11 @@ namespace BancoBackend.Servicios
         {
             return _clienteDao.InsertDestinatario(oDestinatario);
         }
+
+        public bool EliminarDestinatario(int idDestinatario)
+        {
+            return _clienteDao.DeleteDestinatario(idDestinatario);
+        }
+
     }
 }

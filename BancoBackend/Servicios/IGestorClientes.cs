@@ -16,7 +16,9 @@ namespace BancoBackend.Servicios
         public bool AltaCliente(Cliente oCliente);
 
 
+
         bool EditarDestinatario(Destinatarios oDestinatario);
         bool GrabarDestinatario(Destinatarios oDestinatario);
+        bool EliminarDestinatario(int idDestinatario);
     }
 }
