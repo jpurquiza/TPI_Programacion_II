@@ -17,11 +17,13 @@ namespace BancoFrontend
 {
     public partial class FrmNuevaTransferencia : Form
     {
+        GestorClientes _gestorClientes;
         Transferencia oTransferencia;
         public FrmNuevaTransferencia()
         {
             InitializeComponent();
             oTransferencia = new Transferencia();
+            _gestorClientes = new GestorClientes();
         }
 
         private void rbtnCancelar_Click(object sender, EventArgs e)
@@ -37,31 +39,30 @@ namespace BancoFrontend
 
         private async void rbtnConfirmar_Click(object sender, EventArgs e)
         {
-            await GrabarTransferencia(oTransferencia);
+            await GrabarTransferenciaAsync(oTransferencia);
+            //GrabarTransferencia();
+
         }
 
-        private async Task<bool> GrabarTransferencia(Transferencia oTransferencia)
-        {
-            oTransferencia.IdCuenta = cboOrigen.SelectedValue.ToString();
-            oTransferencia.IdDestinatario = cboDestinatario.SelectedValue.ToString();
-            oTransferencia.Fecha = DateTime.Now.ToString("dd/MM/yyyy");
-            oTransferencia.Importe = Convert.ToDouble(txtImporte.Texts);
-            oTransferencia.Concepto = txtConcepto.Texts;
+        //private void GrabarTransferencia()
+        //{
+        //    oTransferencia.IdCuenta = cboOrigen.SelectedValue.ToString();
+        //    oTransferencia.IdDestinatario = cboDestinatario.SelectedValue.ToString();
+        //    oTransferencia.Fecha = DateTime.Now.ToString("dd/MM/yyyy");
+        //    oTransferencia.Importe = Convert.ToDouble(txtImporte.Texts);
+        //    oTransferencia.Concepto = txtConcepto.Texts;
 
-            string url = "https://localhost:44328/api/Clientes/altaTransferencia";
-            string transferenciaJson = JsonConvert.SerializeObject(oTransferencia);
-            var result = await ClientSingleton.GetInstance().PostAsync(url, transferenciaJson);
-
-            if (result == "true")
-            {
-                MessageBox.Show("Se ha registrado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Error al intentar registrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return true;
-        }
+        //    if (_gestorClientes.GrabarTransferencia(oTransferencia))
+        //    {
+        //        MessageBox.Show("La transferencia se realizó correctamente!", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        this.Dispose();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("La transferencia no se realizó. Favor de verificar los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    };
+        //}
 
         private void rbtnCancelar_Click_1(object sender, EventArgs e)
         {
@@ -72,18 +73,18 @@ namespace BancoFrontend
             await CargarCboDestinatariosAsync();
             await CargarCboCuetnasAsync();
             lblFecha.Text = DateTime.Now.ToLongDateString();
-            await GetProximoIDAsync();
+            //await GetProximoIDAsync();
         }
 
-        private async Task GetProximoIDAsync()
-        {
-            string url = "https://localhost:44328/api/Clientes/proximoID";
-            using (HttpClient cliente = new HttpClient())
-            {
-                var result = await cliente.GetStringAsync(url);
-                oTransferencia.IdTransferencia = Int32.Parse(result);
-            }
-        }
+        //private async Task GetProximoIDAsync()
+        //{
+        //    string url = "https://localhost:44328/api/Clientes/proximoID";
+        //    using (HttpClient cliente = new HttpClient())
+        //    {
+        //        var result = await cliente.GetStringAsync(url);
+        //        oTransferencia.IdTransferencia = Int32.Parse(result);
+        //    }
+        //}
 
         private async Task CargarCboCuetnasAsync()
         {
@@ -112,7 +113,7 @@ namespace BancoFrontend
                 cboDestinatario.DisplayMember = "CboAux";
             }
         }
-
+        
         private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -131,6 +132,31 @@ namespace BancoFrontend
             {
                 e.Handled = true;
             }
+        }
+
+        private async Task<bool> GrabarTransferenciaAsync(Transferencia oTransferencia)
+        {
+            oTransferencia.IdCuenta = cboOrigen.SelectedValue.ToString();
+            oTransferencia.IdDestinatario = cboDestinatario.SelectedValue.ToString();
+            oTransferencia.Fecha = DateTime.Now.ToString("dd/MM/yyyy");
+            oTransferencia.Importe = Convert.ToDouble(txtImporte.Texts);
+            oTransferencia.Concepto = txtConcepto.Texts;
+
+            string url = "https://localhost:44328/api/Clientes/altaTransferencia";
+            string transferenciaJson = JsonConvert.SerializeObject(oTransferencia);
+            var result = await ClientSingleton.GetInstance().PostAsync(url, transferenciaJson);
+
+            if (result == "true")
+            {
+                MessageBox.Show("La transferencia se realizó exitosamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await CargarCboCuetnasAsync();
+                await CargarCboCuetnasAsync();
+            }
+            else
+            {
+                MessageBox.Show("Error al intentar realizar la transferencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
         }
     }
 }

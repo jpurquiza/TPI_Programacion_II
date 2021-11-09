@@ -11,6 +11,8 @@ using System.IO;
 
 namespace BancoBackend.DataAccess
 {
+    enum Errors { };
+
     public class HelperDao
     {
         private static HelperDao instancia;
@@ -135,6 +137,7 @@ namespace BancoBackend.DataAccess
             SqlCommand cmd = new SqlCommand();
             SqlTransaction transaccion = null;
             bool flag = true;
+            int filasAfectadas;
 
             try
             {
@@ -145,21 +148,48 @@ namespace BancoBackend.DataAccess
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = SPName;
                 cmd.Transaction = transaccion;
-                cmd.Parameters.AddWithValue("@id_transaccion", oTransferencia.IdTransferencia);
+                //cmd.Parameters.AddWithValue("@id_transaccion", oTransferencia.IdTransferencia);
                 cmd.Parameters.AddWithValue("@id_cuenta", oTransferencia.IdCuenta);
                 cmd.Parameters.AddWithValue("@id_destinatario", oTransferencia.IdDestinatario);
                 cmd.Parameters.AddWithValue("@fecha", oTransferencia.Fecha);
                 cmd.Parameters.AddWithValue("@concepto", oTransferencia.Concepto);
+                cmd.Parameters.AddWithValue("@monto", oTransferencia.Importe);
 
-                cmd.ExecuteNonQuery();
-
-                transaccion.Commit();
+                filasAfectadas = cmd.ExecuteNonQuery();
+                if (filasAfectadas != -1)
+                {
+                    transaccion.Commit();
+                    return flag = true;
+                }
+                else { return flag = false; }
 
             }
-            catch
+            catch (SqlException e)
             {
-                transaccion.Rollback();
-                flag = false;
+                var message = string.Empty;
+
+                foreach (SqlError sqlError in e.Errors)
+                {
+                    switch (sqlError.Number)
+                    {
+                        case 35888:
+                            message = "Índice inválido.";
+                            break;
+                        case 6540456:
+                            message = "Periodo inválido.";
+                            break;
+                    }
+                    try
+                    {
+                        transaccion.Rollback();
+                        throw new ArgumentException(message);
+                    }
+                    catch (Exception Exe)
+                    {
+                        throw new InvalidOperationException("Error en el rollback", Exe);
+                    }
+                }
+                throw new DataException("Problemas de conexión con la base de datos.", e);
             }
             finally { this.CloseConnection(cnn); }
 
