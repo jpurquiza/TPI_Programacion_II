@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banco.Dominio
+namespace BancoBackend.Cache
 {
-    class Cuenta
+    public class UserLogin
     {
-        public int id_tipoCuenta { get; set; }
-        public int NumCuenta { get; set; }
-
+        public int DNI { get; set; }
+        public string Pass { get; set; }
     }
 }
