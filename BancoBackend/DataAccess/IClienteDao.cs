@@ -13,10 +13,12 @@ namespace BancoBackend.DataAccess
         List<Destinatarios> GetDestinatarios();
         bool Login(int DNI, string Pass);
         bool AltaCliente(Cliente oCliente);
+        /*bool ValidateModifyDestinatario(int CBU, int DNI,int idDestinatario);*/
+
+        bool ValidateDestinatario(int idCliente, int CBU, int DNI);
         bool InsertDestinatario(Destinatarios oDestinatario);
         bool UpdateDestinatario(Destinatarios oDestinatario);
         bool DeleteDestinatario(int idDestinatario);
-        bool GrabarTransferencia(Transferencia oTransferencia);
-        int ProximoNro();
+
     }
 }

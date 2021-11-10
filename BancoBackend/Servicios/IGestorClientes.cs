@@ -12,10 +12,14 @@ namespace BancoBackend.Servicios
         public List<Cuenta> GetCuentas();
         public List<Destinatarios> GetDestinatarios();
         public bool Login(int DNI, string Pass);
+
         public bool AltaCliente(Cliente oCliente);
+
+        /*bool ValidarModificarDestinatario(int CBU, int DNI,int idDestinatario);*/
+
+        bool ValidarDestinatario(int idCliente, int CBU, int DNI);
         bool EditarDestinatario(Destinatarios oDestinatario);
         bool GrabarDestinatario(Destinatarios oDestinatario);
-        bool GrabarTransferencia(Transferencia oTransferencia);
-        int GetProximoID();
+        bool EliminarDestinatario(int idDestinatario);
     }
 }

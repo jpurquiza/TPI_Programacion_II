@@ -46,32 +46,50 @@ namespace BancoWebAPI.Controllers
         }
         
         [HttpPost("altaDestinatario")]
-        public IActionResult InsertReceta(Destinatarios oDestinatario)
+        public IActionResult InsertDestinatario(Destinatarios oDestinatario)
         {
             if (oDestinatario == null)
             {
                 return BadRequest();
             }
 
-            if (gestor.GrabarDestinatario(oDestinatario))
-                return Ok("Ok");
-            else
-                return Ok("No se pudo grabar el destinatario");
+            if (gestor.ValidarDestinatario(idCliente: oDestinatario.IdCliente, CBU: oDestinatario.NroCbu, DNI: oDestinatario.Dni))
+            {
+                if (gestor.GrabarDestinatario(oDestinatario))
+                    return Ok("Ok");
+                else
+                    //BR o OK
+                    return Ok("No se pudo modificar el destinatario");
+            }
+            return BadRequest();
+
         }
 
         [HttpPost("modificarDestinatario")]
-        public IActionResult UpdateReceta(Destinatarios oDestinatario)
+        public IActionResult UpdateDestintario(Destinatarios oDestinatario)
         {
             if (oDestinatario == null)
             {
                 return BadRequest();
             }
 
-            if (gestor.EditarDestinatario(oDestinatario))
-                return Ok("Ok");
-            else
-                //BR o OK
-                return Ok("No se pudo modificar el destinatario");
+            /*if(gestor.ValidarModificarDestinatario(CBU:oDestinatario.NroCbu,DNI:oDestinatario.Dni,idDestinatario:oDestinatario.IdDestinatario))
+            {*/
+                if (gestor.EditarDestinatario(oDestinatario))
+                    return Ok("Ok");
+                else
+                    //BR o OK
+                    return Ok("No se pudo modificar el destinatario");
+            //}
+            //return BadRequest();
+
+
+        }
+
+        [HttpDelete("{idDestinatario}")]
+        public void DeleteDestinatario(int idDestinatario)
+        {
+            gestor.EliminarDestinatario(idDestinatario);
         }
 
         [HttpPost("altaTransferencia")]

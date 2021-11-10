@@ -51,14 +51,18 @@ namespace BancoBackend.Servicios
             return _clienteDao.InsertDestinatario(oDestinatario);
         }
 
-        public bool GrabarTransferencia(Transferencia oTransferencia)
+        public bool EliminarDestinatario(int idDestinatario)
         {
-            return _clienteDao.GrabarTransferencia(oTransferencia);
+            return _clienteDao.DeleteDestinatario(idDestinatario);
         }
 
-        public int GetProximoID()
+        public bool ValidarDestinatario(int idCliente, int CBU, int DNI)
         {
-            return _clienteDao.ProximoNro();
+            return _clienteDao.ValidateDestinatario(idCliente, CBU, DNI);
         }
+        /*public bool ValidarModificarDestinatario(int CBU, int DNI,int idDestinatario)
+        {
+            return _clienteDao.ValidateModifyDestinatario(CBU, DNI, idDestinatario);
+        }*/
     }
 }

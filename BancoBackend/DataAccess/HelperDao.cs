@@ -7,19 +7,17 @@ using System.Data;
 using System.Data.SqlClient;
 using BancoBackend.Cache;
 using BancoBackend.Entities;
-using System.IO;
 
 namespace BancoBackend.DataAccess
 {
-    enum Errors { };
-
     public class HelperDao
     {
         private static HelperDao instancia;
         private string connectionString;
+
         private HelperDao()
         {
-            connectionString = @"Data Source=DRAGONSTONE\SQLEXPRESS;Initial Catalog=banco;Integrated Security=True";
+            connectionString = @"Data Source=DESKTOP-VO7FRO7\SQLEXPRESS;Initial Catalog=db_banco;Integrated Security=True";
         }
         public static HelperDao ObtenerInstancia()
         {
@@ -42,6 +40,7 @@ namespace BancoBackend.DataAccess
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = SPName;
+                //TODO:a veces el idClienteLogin es 0,revisar kpos
                 cmd.Parameters.AddWithValue("@id_cliente", UserCache.IdClienteLogin);
                 tabla.Load(cmd.ExecuteReader());
                 return tabla;
@@ -86,8 +85,9 @@ namespace BancoBackend.DataAccess
                 else return false;
                
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                var a = e;
                 throw;
 
             }
@@ -130,71 +130,8 @@ namespace BancoBackend.DataAccess
 
             return flag;
         }
-        public bool AltaTransferencia(string SPName, Transferencia oTransferencia)
 
-        {
-            SqlConnection cnn = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
-            SqlTransaction transaccion = null;
-            bool flag = true;
-            int filasAfectadas;
 
-            try
-            {
-                cnn.ConnectionString = connectionString;
-                cnn.Open();
-                transaccion = cnn.BeginTransaction();
-                cmd.Connection = cnn;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = SPName;
-                cmd.Transaction = transaccion;
-                //cmd.Parameters.AddWithValue("@id_transaccion", oTransferencia.IdTransferencia);
-                cmd.Parameters.AddWithValue("@id_cuenta", oTransferencia.IdCuenta);
-                cmd.Parameters.AddWithValue("@id_destinatario", oTransferencia.IdDestinatario);
-                cmd.Parameters.AddWithValue("@fecha", oTransferencia.Fecha);
-                cmd.Parameters.AddWithValue("@concepto", oTransferencia.Concepto);
-                cmd.Parameters.AddWithValue("@monto", oTransferencia.Importe);
-
-                filasAfectadas = cmd.ExecuteNonQuery();
-                if (filasAfectadas != -1)
-                {
-                    transaccion.Commit();
-                    return flag = true;
-                }
-                else { return flag = false; }
-
-            }
-            catch (SqlException e)
-            {
-                var message = string.Empty;
-
-                foreach (SqlError sqlError in e.Errors)
-                {
-                    switch (sqlError.Number)
-                    {
-                        case 35888:
-                            message = "Índice inválido.";
-                            break;
-                        case 6540456:
-                            message = "Periodo inválido.";
-                            break;
-                    }
-                    try
-                    {
-                        transaccion.Rollback();
-                        throw new ArgumentException(message);
-                    }
-                    catch (Exception Exe)
-                    {
-                        throw new InvalidOperationException("Error en el rollback", Exe);
-                    }
-                }
-                throw new DataException("Problemas de conexión con la base de datos.", e);
-            }
-            finally { this.CloseConnection(cnn); }
-
-            return flag;
-        }
 
         public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)
         {
@@ -225,23 +162,30 @@ namespace BancoBackend.DataAccess
             }
             finally
             {
-                this.CloseConnection(cnn);
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
             }
 
             return val;
         }
 
+
         //PROBAR
         public int EjecutarSQL(string nombreSP, Dictionary<string, object> parametros)
         {
-            SqlConnection cnn = new SqlConnection(connectionString);
+            SqlConnection cnn = new SqlConnection();
 
             SqlCommand cmd = new SqlCommand();
             int filasAfectadas = 0;
 
             try
             {
+                cnn.ConnectionString = connectionString;
                 cnn.Open();
+
+                cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = nombreSP;
 
@@ -257,37 +201,22 @@ namespace BancoBackend.DataAccess
             }
             catch (Exception ex)
             {
-                string filePath = @"C:\Users\Error.txt";
-
-                using (StreamWriter writer = new StreamWriter(filePath, true))
-                {
-                    writer.WriteLine("-----------------------------------------------------------------------------");
-                    writer.WriteLine("Date : " + DateTime.Now.ToString());
-                    writer.WriteLine();
-
-                    while (ex != null)
-                    {
-                        writer.WriteLine(ex.GetType().FullName);
-                        writer.WriteLine("Message : " + ex.Message);
-                        writer.WriteLine("StackTrace : " + ex.StackTrace);
-
-                        ex = ex.InnerException;
-                    }
-                }
+                throw (ex);
             }
-            finally
-            {
-                this.CloseConnection(cnn);
-            }
+            finally { this.CloseConnection(cnn); }
 
             return filasAfectadas;
         }
         //
-        public int ProximoID(string nombreSP, string paramSP)
+
+
+
+
+        //ver estoooooooooooooooooo
+        public bool ValidacionInsertDestinatario(int idCliente, int CBU,int DNI)
         {
             SqlConnection cnn = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
-            SqlParameter param = new SqlParameter(paramSP, SqlDbType.Int);
 
             try
             {
@@ -296,21 +225,64 @@ namespace BancoBackend.DataAccess
 
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = nombreSP;
+                cmd.CommandText = "SP_VALIDAR_INSERT_DESTINATARIO";
+                cmd.Parameters.AddWithValue("@idCliente", UserCache.IdClienteLogin);
+                cmd.Parameters.AddWithValue("@nro_cbu", CBU);
+                cmd.Parameters.AddWithValue("@nro_dni", DNI);
 
-                param.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(param);
-                cmd.ExecuteNonQuery();
-
-                return Convert.ToInt32(param.Value);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                   
+                    return false;
+                }
+                else return true;
             }
-
-            catch (SqlException ex)
+            catch (SqlException e)
             {
-                throw (ex);
+                var a = e;
+                throw;
             }
             finally { this.CloseConnection(cnn); }
         }
+
+
+
+        /*public bool ValidacionModifyDestinatario( int CBU, int DNI, int idDestinatario)
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                cnn.ConnectionString = connectionString;
+                cnn.Open();
+
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_VALIDAR_IMODIFY_DESTINATARIO";
+                //cmd.Parameters.AddWithValue("@idCliente", UserCache.IdClienteLogin);
+                cmd.Parameters.AddWithValue("@nro_cbu", CBU);
+                cmd.Parameters.AddWithValue("@nro_dni", DNI);
+                cmd.Parameters.AddWithValue("@id_destinatario", idDestinatario);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+
+                    return false;
+                }
+                else return true;
+            }
+            catch (SqlException e)
+            {
+                var a = e;
+                throw;
+            }
+            finally { this.CloseConnection(cnn); }
+        }*/
+
+
 
         private void CloseConnection(SqlConnection cnn)
         {
