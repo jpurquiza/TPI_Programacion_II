@@ -34,11 +34,10 @@ namespace BancoFrontend
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlAltaProductosDD = new System.Windows.Forms.Panel();
-            this.rButton6 = new BancoFrontend.Resources.RButton();
+            this.btnAltaPrestamo = new BancoFrontend.Resources.RButton();
             this.btnAltaProductos = new BancoFrontend.Resources.RButton();
-            this.rButton3 = new BancoFrontend.Resources.RButton();
-            this.rButton2 = new BancoFrontend.Resources.RButton();
-            this.rButton5 = new BancoFrontend.Resources.RButton();
+            this.btnAltaCuenta = new BancoFrontend.Resources.RButton();
+            this.btnAltaTC = new BancoFrontend.Resources.RButton();
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.PanelTransaccionDropDown = new System.Windows.Forms.Panel();
             this.btnDestinatarios = new BancoFrontend.Resources.RButton();
@@ -87,38 +86,38 @@ namespace BancoFrontend
             // 
             // pnlAltaProductosDD
             // 
-            this.pnlAltaProductosDD.Controls.Add(this.rButton6);
             this.pnlAltaProductosDD.Controls.Add(this.btnAltaProductos);
-            this.pnlAltaProductosDD.Controls.Add(this.rButton3);
-            this.pnlAltaProductosDD.Controls.Add(this.rButton2);
-            this.pnlAltaProductosDD.Controls.Add(this.rButton5);
-            this.pnlAltaProductosDD.Location = new System.Drawing.Point(16, 88);
+            this.pnlAltaProductosDD.Controls.Add(this.btnAltaPrestamo);
+            this.pnlAltaProductosDD.Controls.Add(this.btnAltaCuenta);
+            this.pnlAltaProductosDD.Controls.Add(this.btnAltaTC);
+            this.pnlAltaProductosDD.Location = new System.Drawing.Point(14, 88);
             this.pnlAltaProductosDD.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlAltaProductosDD.MaximumSize = new System.Drawing.Size(200, 296);
+            this.pnlAltaProductosDD.MaximumSize = new System.Drawing.Size(200, 232);
             this.pnlAltaProductosDD.MinimumSize = new System.Drawing.Size(200, 40);
             this.pnlAltaProductosDD.Name = "pnlAltaProductosDD";
             this.pnlAltaProductosDD.Size = new System.Drawing.Size(200, 40);
             this.pnlAltaProductosDD.TabIndex = 15;
             // 
-            // rButton6
+            // btnAltaPrestamo
             // 
-            this.rButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.rButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.rButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rButton6.BorderRadius = 20;
-            this.rButton6.BorderSize = 0;
-            this.rButton6.FlatAppearance.BorderSize = 0;
-            this.rButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rButton6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rButton6.ForeColor = System.Drawing.Color.White;
-            this.rButton6.Location = new System.Drawing.Point(0, 256);
-            this.rButton6.Margin = new System.Windows.Forms.Padding(4);
-            this.rButton6.Name = "rButton6";
-            this.rButton6.Size = new System.Drawing.Size(200, 40);
-            this.rButton6.TabIndex = 15;
-            this.rButton6.Text = "Préstamos";
-            this.rButton6.TextColor = System.Drawing.Color.White;
-            this.rButton6.UseVisualStyleBackColor = false;
+            this.btnAltaPrestamo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaPrestamo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaPrestamo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAltaPrestamo.BorderRadius = 20;
+            this.btnAltaPrestamo.BorderSize = 0;
+            this.btnAltaPrestamo.FlatAppearance.BorderSize = 0;
+            this.btnAltaPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaPrestamo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAltaPrestamo.ForeColor = System.Drawing.Color.White;
+            this.btnAltaPrestamo.Location = new System.Drawing.Point(0, 192);
+            this.btnAltaPrestamo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAltaPrestamo.Name = "btnAltaPrestamo";
+            this.btnAltaPrestamo.Size = new System.Drawing.Size(200, 40);
+            this.btnAltaPrestamo.TabIndex = 15;
+            this.btnAltaPrestamo.Text = "Préstamos";
+            this.btnAltaPrestamo.TextColor = System.Drawing.Color.White;
+            this.btnAltaPrestamo.UseVisualStyleBackColor = false;
+            this.btnAltaPrestamo.Click += new System.EventHandler(this.btnAltaPrestamo_Click);
             // 
             // btnAltaProductos
             // 
@@ -143,65 +142,47 @@ namespace BancoFrontend
             this.btnAltaProductos.UseVisualStyleBackColor = false;
             this.btnAltaProductos.Click += new System.EventHandler(this.btnAltaProductos_Click);
             // 
-            // rButton3
+            // btnAltaCuenta
             // 
-            this.rButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.rButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.rButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rButton3.BorderRadius = 20;
-            this.rButton3.BorderSize = 0;
-            this.rButton3.FlatAppearance.BorderSize = 0;
-            this.rButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rButton3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rButton3.ForeColor = System.Drawing.Color.White;
-            this.rButton3.Location = new System.Drawing.Point(0, 64);
-            this.rButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.rButton3.Name = "rButton3";
-            this.rButton3.Size = new System.Drawing.Size(200, 40);
-            this.rButton3.TabIndex = 12;
-            this.rButton3.Text = "Caja de Ahorro";
-            this.rButton3.TextColor = System.Drawing.Color.White;
-            this.rButton3.UseVisualStyleBackColor = false;
+            this.btnAltaCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaCuenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaCuenta.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAltaCuenta.BorderRadius = 20;
+            this.btnAltaCuenta.BorderSize = 0;
+            this.btnAltaCuenta.FlatAppearance.BorderSize = 0;
+            this.btnAltaCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaCuenta.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAltaCuenta.ForeColor = System.Drawing.Color.White;
+            this.btnAltaCuenta.Location = new System.Drawing.Point(0, 64);
+            this.btnAltaCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAltaCuenta.Name = "btnAltaCuenta";
+            this.btnAltaCuenta.Size = new System.Drawing.Size(200, 40);
+            this.btnAltaCuenta.TabIndex = 12;
+            this.btnAltaCuenta.Text = "Cuentas";
+            this.btnAltaCuenta.TextColor = System.Drawing.Color.White;
+            this.btnAltaCuenta.UseVisualStyleBackColor = false;
+            this.btnAltaCuenta.Click += new System.EventHandler(this.btnAltaCuenta_Click);
             // 
-            // rButton2
+            // btnAltaTC
             // 
-            this.rButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.rButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.rButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rButton2.BorderRadius = 20;
-            this.rButton2.BorderSize = 0;
-            this.rButton2.FlatAppearance.BorderSize = 0;
-            this.rButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rButton2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rButton2.ForeColor = System.Drawing.Color.White;
-            this.rButton2.Location = new System.Drawing.Point(0, 128);
-            this.rButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.rButton2.Name = "rButton2";
-            this.rButton2.Size = new System.Drawing.Size(200, 40);
-            this.rButton2.TabIndex = 13;
-            this.rButton2.Text = "Cuenta Corriente";
-            this.rButton2.TextColor = System.Drawing.Color.White;
-            this.rButton2.UseVisualStyleBackColor = false;
-            // 
-            // rButton5
-            // 
-            this.rButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.rButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.rButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rButton5.BorderRadius = 20;
-            this.rButton5.BorderSize = 0;
-            this.rButton5.FlatAppearance.BorderSize = 0;
-            this.rButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rButton5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rButton5.ForeColor = System.Drawing.Color.White;
-            this.rButton5.Location = new System.Drawing.Point(0, 192);
-            this.rButton5.Margin = new System.Windows.Forms.Padding(4);
-            this.rButton5.Name = "rButton5";
-            this.rButton5.Size = new System.Drawing.Size(200, 40);
-            this.rButton5.TabIndex = 14;
-            this.rButton5.Text = "Tarjetas de Crédito";
-            this.rButton5.TextColor = System.Drawing.Color.White;
-            this.rButton5.UseVisualStyleBackColor = false;
+            this.btnAltaTC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaTC.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaTC.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAltaTC.BorderRadius = 20;
+            this.btnAltaTC.BorderSize = 0;
+            this.btnAltaTC.FlatAppearance.BorderSize = 0;
+            this.btnAltaTC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaTC.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAltaTC.ForeColor = System.Drawing.Color.White;
+            this.btnAltaTC.Location = new System.Drawing.Point(0, 128);
+            this.btnAltaTC.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAltaTC.Name = "btnAltaTC";
+            this.btnAltaTC.Size = new System.Drawing.Size(200, 40);
+            this.btnAltaTC.TabIndex = 14;
+            this.btnAltaTC.Text = "Tarjetas de Crédito";
+            this.btnAltaTC.TextColor = System.Drawing.Color.White;
+            this.btnAltaTC.UseVisualStyleBackColor = false;
+            this.btnAltaTC.Click += new System.EventHandler(this.btnAltaTC_Click);
             // 
             // lblBienvenido
             // 
@@ -425,10 +406,9 @@ namespace BancoFrontend
         private Resources.RButton btnTransaccion;
         internal System.Windows.Forms.Panel pContainer;
         private System.Windows.Forms.Panel pnlAltaProductosDD;
-        private Resources.RButton rButton6;
-        private Resources.RButton rButton5;
-        private Resources.RButton rButton2;
-        private Resources.RButton rButton3;
+        private Resources.RButton btnAltaPrestamo;
+        private Resources.RButton btnAltaTC;
+        private Resources.RButton btnAltaCuenta;
         private Resources.RButton btnAltaProductos;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label lblBienvenido;

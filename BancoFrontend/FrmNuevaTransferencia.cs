@@ -60,11 +60,10 @@ namespace BancoFrontend
                 var result = await cliente.GetAsync(url);
                 var bodyJSON = await result.Content.ReadAsStringAsync();
                 List<Cuenta> lst = JsonConvert.DeserializeObject<List<Cuenta>>(bodyJSON);
-                cboOrigen.Items.Insert(0, "Selecciona la cuenta de origen");
                 cboOrigen.DataSource = lst;
-                cboOrigen.SelectedIndex = 0;
                 cboOrigen.ValueMember = "IdCuenta";
                 cboOrigen.DisplayMember = "TipoCuenta";
+                cboOrigen.DropDownStyle = ComboBoxStyle.DropDownList;
             }
         }
 
@@ -76,11 +75,10 @@ namespace BancoFrontend
                 var result = await cliente.GetAsync(url);
                 var bodyJSON = await result.Content.ReadAsStringAsync();
                 List<Destinatarios> lst = JsonConvert.DeserializeObject<List<Destinatarios>>(bodyJSON);
-                cboDestinatario.Items.Insert(0, "Selecciona el destinatario");
                 cboDestinatario.DataSource = lst;
-                cboDestinatario.SelectedIndex = 0;
                 cboDestinatario.ValueMember = "IdDestinatario";
                 cboDestinatario.DisplayMember = "CboAux";
+                cboDestinatario.DropDownStyle = ComboBoxStyle.DropDownList;
             }
         }
         

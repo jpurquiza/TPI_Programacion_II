@@ -103,5 +103,23 @@ namespace BancoFrontend
             pContainer.Visible = true;
             frmDestinatarios.Show();
         }
+
+        private void btnAltaCuenta_Click(object sender, EventArgs e)
+        {
+            FrmAltaCuenta frmAltaCuenta = new FrmAltaCuenta() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            pContainer.Controls.Add(frmAltaCuenta);
+            pContainer.Visible = true;
+            frmAltaCuenta.Show();
+        }
+
+        private void btnAltaTC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAltaPrestamo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

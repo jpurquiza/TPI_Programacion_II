@@ -95,9 +95,19 @@ namespace BancoWebAPI.Controllers
         [HttpPost("altaTransferencia")]
         public IActionResult GrabarTransferencia(Transferencia oTransferencia)
         {
-
             return Ok(gestor.GrabarTransferencia(oTransferencia));
+        }
 
+        [HttpPost("altaCuenta")]
+        public IActionResult GrabarCuenta(Cuenta oCuenta)
+        {
+            return Ok(gestor.GrabarCuenta(oCuenta));
+        }
+
+        [HttpGet("tipoCuentas")]
+        public IActionResult GetTiposCuentas()
+        {
+            return Ok(gestor.GetTipoCuentas());
         }
 
         //[HttpGet("proximoID")]

@@ -40,8 +40,30 @@ namespace BancoBackend.DataAccess
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = SPName;
-                //TODO:a veces el idClienteLogin es 0,revisar kpos
                 cmd.Parameters.AddWithValue("@id_cliente", UserCache.IdClienteLogin);
+                tabla.Load(cmd.ExecuteReader());
+                return tabla;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            finally { this.CloseConnection(cnn); }
+        }
+
+        public DataTable ConsultaSQLSinValor(string SPName)
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            DataTable tabla = new DataTable();
+            try
+            {
+                cnn.ConnectionString = connectionString;
+                cnn.Open();
+
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = SPName;
                 tabla.Load(cmd.ExecuteReader());
                 return tabla;
             }
@@ -131,8 +153,6 @@ namespace BancoBackend.DataAccess
             return flag;
         }
 
-
-
         public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)
         {
             SqlConnection cnn = new SqlConnection(connectionString);
@@ -170,8 +190,6 @@ namespace BancoBackend.DataAccess
 
             return val;
         }
-
-
         //PROBAR
         public int EjecutarSQL(string nombreSP, Dictionary<string, object> parametros)
         {
@@ -207,12 +225,7 @@ namespace BancoBackend.DataAccess
 
             return filasAfectadas;
         }
-        //
 
-
-
-
-        //ver estoooooooooooooooooo
         public bool ValidacionInsertDestinatario(int idCliente, int CBU,int DNI)
         {
             SqlConnection cnn = new SqlConnection();
@@ -245,8 +258,6 @@ namespace BancoBackend.DataAccess
             }
             finally { this.CloseConnection(cnn); }
         }
-
-
 
         /*public bool ValidacionModifyDestinatario( int CBU, int DNI, int idDestinatario)
         {
@@ -281,8 +292,6 @@ namespace BancoBackend.DataAccess
             }
             finally { this.CloseConnection(cnn); }
         }*/
-
-
 
         private void CloseConnection(SqlConnection cnn)
         {

@@ -34,12 +34,10 @@ namespace BancoBackend.Servicios
             return _clienteDao.GetDestinatarios();
         }
 
-
         public bool Login(int DNI, string Pass)
         {
             return _clienteDao.Login(DNI, Pass);
         }
-
 
         public bool EditarDestinatario(Destinatarios oDestinatario)
         {
@@ -64,6 +62,16 @@ namespace BancoBackend.Servicios
         public bool GrabarTransferencia(Transferencia oTransferencia)
         {
             return _clienteDao.InsertTransferencia(oTransferencia);
+        }
+
+        public bool GrabarCuenta(Cuenta oCuenta)
+        {
+            return _clienteDao.InsertCuenta(oCuenta);
+        }
+
+        public List<Cuenta> GetTipoCuentas()
+        {
+            return _clienteDao.GetTipoCuentas();
         }
 
         /*public bool ValidarModificarDestinatario(int CBU, int DNI,int idDestinatario)

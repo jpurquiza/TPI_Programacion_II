@@ -49,7 +49,6 @@ namespace BancoBackend.DataAccess
             return lstDestinatarios;
         }    
 
-
         public bool Login(int DNI, string Pass)
         {
             return HelperDao.ObtenerInstancia().ValidacionLogin("SP_LOGIN", DNI, Pass);
@@ -71,7 +70,7 @@ namespace BancoBackend.DataAccess
 
                 HelperDao.ObtenerInstancia().EjecutarSQL("SP_INSERTAR_DESTINATARIO", insert);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 bandera = false;
             }
@@ -94,7 +93,7 @@ namespace BancoBackend.DataAccess
 
                 HelperDao.ObtenerInstancia().EjecutarSQL("SP_MODIFICAR_DESTINATARIO", update);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 bandera = false;
             }
@@ -124,7 +123,24 @@ namespace BancoBackend.DataAccess
 
         public bool AltaCliente(Cliente oCliente)
         {
-            throw new NotImplementedException();
+            
+            bool bandera = true;
+            try
+            {
+                Dictionary<string, object> insert = new Dictionary<string, object>();
+                insert.Add("@nro_dni", oCliente.Dni);
+                insert.Add("@apellido", oCliente.Apellido);
+                insert.Add("@nombre", oCliente.Nombre);
+                insert.Add("@email", oCliente.Email);
+
+                HelperDao.ObtenerInstancia().EjecutarSQL("SP_ALTA_CLIENTE", insert);
+            }
+            catch (Exception)
+            {
+                bandera = false;
+            }
+
+            return bandera;
         }
 
         public bool ValidateDestinatario(int idCliente, int CBU, int DNI)
@@ -147,7 +163,7 @@ namespace BancoBackend.DataAccess
 
                 HelperDao.ObtenerInstancia().EjecutarSQL("SP_INSERTAR_TRANSACCION", insert);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 bandera = false;
             }
@@ -155,7 +171,42 @@ namespace BancoBackend.DataAccess
             return bandera;
         }
 
+        public bool InsertCuenta(Cuenta oCuenta)
+        {
+            bool bandera = true;
+            try
+            {
+                Dictionary<string, object> insert = new Dictionary<string, object>();
+                insert.Add("@id_cliente", UserCache.IdClienteLogin);
+                insert.Add("@id_tipo_cuenta", oCuenta.IdTipoCuenta);
 
+                HelperDao.ObtenerInstancia().EjecutarSQL("SP_ALTA_CUENTA", insert);
+            }
+            catch (Exception)
+            {
+                bandera = false;
+            }
+
+            return bandera;
+        }
+
+        public List<Cuenta> GetTipoCuentas()
+        {
+            List<Cuenta> lstCuentas = new List<Cuenta>();
+
+            DataTable table = HelperDao.ObtenerInstancia().ConsultaSQLSinValor("SP_CONSULTAR_TIPOS_CUENTAS");
+
+            foreach (DataRow row in table.Rows)
+            {
+                Cuenta oCuenta = new Cuenta();
+                oCuenta.IdTipoCuenta = Convert.ToInt32(row[0].ToString());
+                oCuenta.TipoCuenta = row[1].ToString();
+
+                lstCuentas.Add(oCuenta);
+            }
+
+            return lstCuentas;
+        }
 
         /*public bool ValidateModifyDestinatario(int CBU, int DNI, int idDestinatario)
         {
