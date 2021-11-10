@@ -47,7 +47,7 @@ namespace BancoFrontend
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnIngresar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(580, 0);
+            this.panel2.Location = new System.Drawing.Point(680, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 450);
@@ -154,7 +154,7 @@ namespace BancoFrontend
             this.pPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pPrincipal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pPrincipal.Name = "pPrincipal";
-            this.pPrincipal.Size = new System.Drawing.Size(930, 450);
+            this.pPrincipal.Size = new System.Drawing.Size(1030, 450);
             this.pPrincipal.TabIndex = 11;
             this.pPrincipal.Visible = false;
             // 
@@ -163,7 +163,7 @@ namespace BancoFrontend
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(930, 450);
+            this.ClientSize = new System.Drawing.Size(1030, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

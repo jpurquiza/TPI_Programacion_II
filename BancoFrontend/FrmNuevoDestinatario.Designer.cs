@@ -39,6 +39,7 @@ namespace BancoFrontend
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.rbtnCancelar = new BancoFrontend.Resources.RButton();
             this.rbtnAgregar = new BancoFrontend.Resources.RButton();
+            this.pNuevoDestinatario = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +63,7 @@ namespace BancoFrontend
             this.dgvDestinatarios.ReadOnly = true;
             this.dgvDestinatarios.RowTemplate.Height = 25;
             this.dgvDestinatarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDestinatarios.Size = new System.Drawing.Size(683, 360);
+            this.dgvDestinatarios.Size = new System.Drawing.Size(772, 360);
             this.dgvDestinatarios.TabIndex = 0;
             this.dgvDestinatarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDestinatarios_CellContentClick);
             // 
@@ -71,38 +72,44 @@ namespace BancoFrontend
             this.nombreDestinatario.HeaderText = "Nombre";
             this.nombreDestinatario.Name = "nombreDestinatario";
             this.nombreDestinatario.ReadOnly = true;
+            this.nombreDestinatario.Width = 105;
             // 
             // apellidoDestinatario
             // 
             this.apellidoDestinatario.HeaderText = "Apellido";
             this.apellidoDestinatario.Name = "apellidoDestinatario";
             this.apellidoDestinatario.ReadOnly = true;
+            this.apellidoDestinatario.Width = 105;
             // 
             // dniDestinatario
             // 
             this.dniDestinatario.HeaderText = "DNI";
             this.dniDestinatario.Name = "dniDestinatario";
             this.dniDestinatario.ReadOnly = true;
+            this.dniDestinatario.Width = 105;
             // 
             // cbuDestintario
             // 
             this.cbuDestintario.HeaderText = "CBU";
             this.cbuDestintario.Name = "cbuDestintario";
             this.cbuDestintario.ReadOnly = true;
+            this.cbuDestintario.Width = 105;
             // 
             // emailDestinatario
             // 
             this.emailDestinatario.HeaderText = "Email";
             this.emailDestinatario.Name = "emailDestinatario";
             this.emailDestinatario.ReadOnly = true;
+            this.emailDestinatario.Width = 105;
             // 
             // Acciones
             // 
             this.Acciones.HeaderText = "Editar";
             this.Acciones.Name = "Acciones";
             this.Acciones.ReadOnly = true;
-            this.Acciones.Text = "editar";
+            this.Acciones.Text = "Editar";
             this.Acciones.ToolTipText = "1";
+            this.Acciones.UseColumnTextForButtonValue = true;
             // 
             // Eliminar
             // 
@@ -111,6 +118,8 @@ namespace BancoFrontend
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // rbtnCancelar
             // 
@@ -123,7 +132,7 @@ namespace BancoFrontend
             this.rbtnCancelar.FlatAppearance.BorderSize = 0;
             this.rbtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.rbtnCancelar.Location = new System.Drawing.Point(512, 400);
+            this.rbtnCancelar.Location = new System.Drawing.Point(610, 400);
             this.rbtnCancelar.Name = "rbtnCancelar";
             this.rbtnCancelar.Size = new System.Drawing.Size(168, 38);
             this.rbtnCancelar.TabIndex = 10;
@@ -134,8 +143,8 @@ namespace BancoFrontend
             // 
             // rbtnAgregar
             // 
-            this.rbtnAgregar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rbtnAgregar.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rbtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.rbtnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
             this.rbtnAgregar.BorderColor = System.Drawing.Color.Transparent;
             this.rbtnAgregar.BorderRadius = 15;
             this.rbtnAgregar.BorderSize = 0;
@@ -143,7 +152,7 @@ namespace BancoFrontend
             this.rbtnAgregar.FlatAppearance.BorderSize = 0;
             this.rbtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.rbtnAgregar.Location = new System.Drawing.Point(326, 400);
+            this.rbtnAgregar.Location = new System.Drawing.Point(424, 400);
             this.rbtnAgregar.Name = "rbtnAgregar";
             this.rbtnAgregar.Size = new System.Drawing.Size(168, 38);
             this.rbtnAgregar.TabIndex = 11;
@@ -152,15 +161,25 @@ namespace BancoFrontend
             this.rbtnAgregar.UseVisualStyleBackColor = false;
             this.rbtnAgregar.Click += new System.EventHandler(this.rbtnAgregar_Click);
             // 
+            // pNuevoDestinatario
+            // 
+            this.pNuevoDestinatario.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
+            this.pNuevoDestinatario.Location = new System.Drawing.Point(0, 0);
+            this.pNuevoDestinatario.Name = "pNuevoDestinatario";
+            this.pNuevoDestinatario.Size = new System.Drawing.Size(800, 450);
+            this.pNuevoDestinatario.TabIndex = 12;
+            this.pNuevoDestinatario.Visible = false;
+            // 
             // FrmNuevoDestinatario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rbtnAgregar);
             this.Controls.Add(this.rbtnCancelar);
             this.Controls.Add(this.dgvDestinatarios);
+            this.Controls.Add(this.pNuevoDestinatario);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -177,6 +196,7 @@ namespace BancoFrontend
 
         private System.Windows.Forms.DataGridView dgvDestinatarios;
         private Resources.RButton rbtnCancelar;
+        private Resources.RButton rbtnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDestinatario;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDestinatario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniDestinatario;
@@ -184,6 +204,6 @@ namespace BancoFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDestinatario;
         private System.Windows.Forms.DataGridViewButtonColumn Acciones;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private Resources.RButton rbtnAgregar;
+        internal System.Windows.Forms.Panel pNuevoDestinatario;
     }
 }

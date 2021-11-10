@@ -43,6 +43,7 @@ namespace BancoBackend.DataAccess
                 oDestinatarios.Nombre = row[2].ToString();
                 oDestinatarios.Email = row[4].ToString();
                 oDestinatarios.IdDestinatario = Convert.ToInt32(row[5].ToString());
+                oDestinatarios.CboAux = row[6].ToString();
                 lstDestinatarios.Add(oDestinatarios);
             }
             return lstDestinatarios;
@@ -121,7 +122,40 @@ namespace BancoBackend.DataAccess
 
         }
 
-        
+        public bool AltaCliente(Cliente oCliente)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ValidateDestinatario(int idCliente, int CBU, int DNI)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool InsertTransferencia(Transferencia oTransferencia)
+        {
+            bool bandera = true;
+            try
+            {
+
+                Dictionary<string, object> insert = new Dictionary<string, object>();
+                insert.Add("@id_cuenta", oTransferencia.IdCuenta);
+                insert.Add("@id_destinatario", oTransferencia.IdDestinatario);
+                insert.Add("@fecha", oTransferencia.Fecha);
+                insert.Add("@monto", oTransferencia.Monto); 
+                insert.Add("@concepto", oTransferencia.Concepto);
+
+                HelperDao.ObtenerInstancia().EjecutarSQL("SP_INSERTAR_TRANSACCION", insert);
+            }
+            catch (Exception e)
+            {
+                bandera = false;
+            }
+
+            return bandera;
+        }
+
+
 
         /*public bool ValidateModifyDestinatario(int CBU, int DNI, int idDestinatario)
         {

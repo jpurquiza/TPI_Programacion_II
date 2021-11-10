@@ -100,11 +100,11 @@ namespace BancoWebAPI.Controllers
 
         }
 
-        [HttpGet("proximoID")]
-        public IActionResult GetProximoID()
-        {
-            return Ok(gestor.GetProximoID().ToString());
-        }
+        //[HttpGet("proximoID")]
+        //public IActionResult GetProximoID()
+        //{
+        //    return Ok(gestor.GetProximoID().ToString());
+        //}
     }
     
 }

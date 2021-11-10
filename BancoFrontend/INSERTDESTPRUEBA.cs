@@ -111,14 +111,13 @@ namespace BancoFrontend
         }
         //                dgvDestinatarios.Rows.Clear();
 
-
-
         private void rbtnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Está seguro que desea cancelar?",
                 "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
-                this.Dispose();
+
+            Close();
         }
 
 

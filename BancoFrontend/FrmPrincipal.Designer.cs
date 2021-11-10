@@ -33,13 +33,13 @@ namespace BancoFrontend
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblBienvenido = new System.Windows.Forms.Label();
             this.pnlAltaProductosDD = new System.Windows.Forms.Panel();
             this.rButton6 = new BancoFrontend.Resources.RButton();
             this.btnAltaProductos = new BancoFrontend.Resources.RButton();
             this.rButton3 = new BancoFrontend.Resources.RButton();
             this.rButton2 = new BancoFrontend.Resources.RButton();
             this.rButton5 = new BancoFrontend.Resources.RButton();
+            this.lblBienvenido = new System.Windows.Forms.Label();
             this.PanelTransaccionDropDown = new System.Windows.Forms.Panel();
             this.btnDestinatarios = new BancoFrontend.Resources.RButton();
             this.btnNvaTransferencia = new BancoFrontend.Resources.RButton();
@@ -84,18 +84,6 @@ namespace BancoFrontend
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(230, 450);
             this.panel2.TabIndex = 14;
-            // 
-            // lblBienvenido
-            // 
-            this.lblBienvenido.AutoSize = true;
-            this.lblBienvenido.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblBienvenido.Location = new System.Drawing.Point(64, 16);
-            this.lblBienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(100, 23);
-            this.lblBienvenido.TabIndex = 16;
-            this.lblBienvenido.Text = "Bienvenido";
-            this.lblBienvenido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlAltaProductosDD
             // 
@@ -214,6 +202,18 @@ namespace BancoFrontend
             this.rButton5.Text = "Tarjetas de Crédito";
             this.rButton5.TextColor = System.Drawing.Color.White;
             this.rButton5.UseVisualStyleBackColor = false;
+            // 
+            // lblBienvenido
+            // 
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBienvenido.Location = new System.Drawing.Point(64, 16);
+            this.lblBienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(100, 23);
+            this.lblBienvenido.TabIndex = 16;
+            this.lblBienvenido.Text = "Bienvenido";
+            this.lblBienvenido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PanelTransaccionDropDown
             // 
@@ -377,10 +377,10 @@ namespace BancoFrontend
             // pContainer
             // 
             this.pContainer.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
-            this.pContainer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pContainer.Location = new System.Drawing.Point(232, 0);
+            this.pContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pContainer.Location = new System.Drawing.Point(230, 0);
             this.pContainer.Name = "pContainer";
-            this.pContainer.Size = new System.Drawing.Size(698, 450);
+            this.pContainer.Size = new System.Drawing.Size(800, 450);
             this.pContainer.TabIndex = 15;
             // 
             // timer2
@@ -393,7 +393,7 @@ namespace BancoFrontend
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(930, 450);
+            this.ClientSize = new System.Drawing.Size(1030, 450);
             this.Controls.Add(this.pContainer);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -423,7 +423,7 @@ namespace BancoFrontend
         private Resources.RButton btnDestinatarios;
         private Resources.RButton btnNvaTransferencia;
         private Resources.RButton btnTransaccion;
-        private System.Windows.Forms.Panel pContainer;
+        internal System.Windows.Forms.Panel pContainer;
         private System.Windows.Forms.Panel pnlAltaProductosDD;
         private Resources.RButton rButton6;
         private Resources.RButton rButton5;

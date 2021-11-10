@@ -60,22 +60,6 @@ namespace BancoFrontend
                 MessageBox.Show("Error al intentar registrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return true;
-            //using (var client = new HttpClient())
-            //{
-            //    var json = JsonConvert.SerializeObject(oCliente);
-            //    var result = await client.PostAsync(url, new StringContent(json, Encoding.UTF8, "application/json"));
-            //    if (result.IsSuccessStatusCode)
-            //    {
-            //        MessageBox.Show("Se ha registrado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        this.Dispose();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Error al intentar registrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-
-            //}
-            //return true;
         }
     }
 }

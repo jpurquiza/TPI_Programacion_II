@@ -17,7 +17,7 @@ namespace BancoBackend.DataAccess
 
         private HelperDao()
         {
-            connectionString = @"Data Source=DESKTOP-VO7FRO7\SQLEXPRESS;Initial Catalog=db_banco;Integrated Security=True";
+            connectionString = @"Data Source=DRAGONSTONE\SQLEXPRESS;Initial Catalog=banco;Integrated Security=True";
         }
         public static HelperDao ObtenerInstancia()
         {

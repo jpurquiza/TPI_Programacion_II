@@ -38,7 +38,7 @@ namespace BancoFrontend
 
         private void lblRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmRegistro FRegistro = new FrmRegistro() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
+            FrmRegistro FRegistro = new FrmRegistro() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             pPrincipal.BringToFront();
             pPrincipal.Controls.Add(FRegistro);
             pPrincipal.Visible = true;
@@ -79,21 +79,11 @@ namespace BancoFrontend
 
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
+                MessageBox.Show("Solo se permiten valores numéricos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
+                return;
             }
         }
     }

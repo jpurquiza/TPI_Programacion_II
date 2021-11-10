@@ -20,5 +20,7 @@ namespace BancoBackend.DataAccess
         bool UpdateDestinatario(Destinatarios oDestinatario);
         bool DeleteDestinatario(int idDestinatario);
 
+        bool InsertTransferencia(Transferencia oTransferencia);
+
     }
 }

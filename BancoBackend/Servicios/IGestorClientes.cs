@@ -21,5 +21,7 @@ namespace BancoBackend.Servicios
         bool EditarDestinatario(Destinatarios oDestinatario);
         bool GrabarDestinatario(Destinatarios oDestinatario);
         bool EliminarDestinatario(int idDestinatario);
+
+        bool GrabarTransferencia(Transferencia oTransferencia);
     }
 }

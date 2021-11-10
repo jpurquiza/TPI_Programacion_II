@@ -52,7 +52,7 @@ namespace BancoFrontend
             this.panel1.Controls.Add(this.txtImporte);
             this.panel1.Controls.Add(this.lblFecha);
             this.panel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(160, 16);
+            this.panel1.Location = new System.Drawing.Point(208, 16);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 416);
@@ -106,9 +106,9 @@ namespace BancoFrontend
             this.btnAgregarDest.FlatAppearance.BorderSize = 0;
             this.btnAgregarDest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarDest.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarDest.Location = new System.Drawing.Point(112, 296);
+            this.btnAgregarDest.Location = new System.Drawing.Point(104, 296);
             this.btnAgregarDest.Name = "btnAgregarDest";
-            this.btnAgregarDest.Size = new System.Drawing.Size(150, 30);
+            this.btnAgregarDest.Size = new System.Drawing.Size(168, 40);
             this.btnAgregarDest.TabIndex = 6;
             this.btnAgregarDest.Text = "Nuevo destinatario";
             this.btnAgregarDest.TextColor = System.Drawing.Color.White;
@@ -192,7 +192,7 @@ namespace BancoFrontend
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -30,11 +30,13 @@ namespace BancoFrontend
         private async void FrmNuevoDestinatario_Load(object sender, EventArgs e)
         {
            await CargarDestinatario();
-        }   
+        }
 
         private async void add_FormClosed(object sender, FormClosedEventArgs e)
         {
-          await  CargarDestinatario();
+            await CargarDestinatario();
+            pNuevoDestinatario.SendToBack();
+            pNuevoDestinatario.Visible = false;
         }
 
         private async void dgvDestinatarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,14 +45,14 @@ namespace BancoFrontend
             {
                 var destinatario = lst[dgvDestinatarios.CurrentCell.RowIndex];
 
-                INSERTDESTPRUEBA principal = new INSERTDESTPRUEBA(destinatario, 1);
+                INSERTDESTPRUEBA INSERTDESTPRUEBA = new INSERTDESTPRUEBA(destinatario, 1) {TopLevel = false, TopMost = true };
+                pNuevoDestinatario.BringToFront();
+                pNuevoDestinatario.Controls.Add(INSERTDESTPRUEBA);
+                pNuevoDestinatario.Visible = true;
+                INSERTDESTPRUEBA.Show();
 
+                INSERTDESTPRUEBA.FormClosed += add_FormClosed;
 
-
-                principal.FormClosed += add_FormClosed;
-                principal.Show();
-
-                //   q esta pasando akiiii
             }
 
             if (dgvDestinatarios.CurrentCell.ColumnIndex == 6)
@@ -70,11 +72,11 @@ namespace BancoFrontend
                 }
             }
             
-            CargarDestinatario();
+            await CargarDestinatario();
         }
 
 
-        private async Task CargarDestinatario()
+        internal async Task CargarDestinatario()
         {
 
             string url = "https://localhost:44328/api/Clientes/destinatarios";
@@ -111,10 +113,6 @@ namespace BancoFrontend
             }
         }
 
-
-
-
-
         private void rButton1_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -126,11 +124,14 @@ namespace BancoFrontend
 
         private void rbtnAgregar_Click(object sender, EventArgs e)
         {
-            INSERTDESTPRUEBA principal = new INSERTDESTPRUEBA(null,2);
+            INSERTDESTPRUEBA INSERTDESTPRUEBA = new INSERTDESTPRUEBA(null, 2) { TopLevel = false, TopMost = true };
+            pNuevoDestinatario.BringToFront();
+            pNuevoDestinatario.Controls.Add(INSERTDESTPRUEBA);
+            pNuevoDestinatario.Visible = true;
+            INSERTDESTPRUEBA.Show();
 
-            principal.FormClosed += add_FormClosed;
-            principal.Show();
-
+            INSERTDESTPRUEBA.FormClosed += add_FormClosed;
         }
+
     }
 }

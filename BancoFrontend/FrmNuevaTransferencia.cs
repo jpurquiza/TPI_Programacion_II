@@ -17,13 +17,11 @@ namespace BancoFrontend
 {
     public partial class FrmNuevaTransferencia : Form
     {
-        GestorClientes _gestorClientes;
         Transferencia oTransferencia;
         public FrmNuevaTransferencia()
         {
             InitializeComponent();
             oTransferencia = new Transferencia();
-            _gestorClientes = new GestorClientes();
         }
 
         private void rbtnCancelar_Click(object sender, EventArgs e)
@@ -40,29 +38,8 @@ namespace BancoFrontend
         private async void rbtnConfirmar_Click(object sender, EventArgs e)
         {
             await GrabarTransferenciaAsync(oTransferencia);
-            //GrabarTransferencia();
 
         }
-
-        //private void GrabarTransferencia()
-        //{
-        //    oTransferencia.IdCuenta = cboOrigen.SelectedValue.ToString();
-        //    oTransferencia.IdDestinatario = cboDestinatario.SelectedValue.ToString();
-        //    oTransferencia.Fecha = DateTime.Now.ToString("dd/MM/yyyy");
-        //    oTransferencia.Importe = Convert.ToDouble(txtImporte.Texts);
-        //    oTransferencia.Concepto = txtConcepto.Texts;
-
-        //    if (_gestorClientes.GrabarTransferencia(oTransferencia))
-        //    {
-        //        MessageBox.Show("La transferencia se realizó correctamente!", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        this.Dispose();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("La transferencia no se realizó. Favor de verificar los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    };
-        //}
 
         private void rbtnCancelar_Click_1(object sender, EventArgs e)
         {
@@ -73,18 +50,7 @@ namespace BancoFrontend
             await CargarCboDestinatariosAsync();
             await CargarCboCuetnasAsync();
             lblFecha.Text = DateTime.Now.ToLongDateString();
-            //await GetProximoIDAsync();
         }
-
-        //private async Task GetProximoIDAsync()
-        //{
-        //    string url = "https://localhost:44328/api/Clientes/proximoID";
-        //    using (HttpClient cliente = new HttpClient())
-        //    {
-        //        var result = await cliente.GetStringAsync(url);
-        //        oTransferencia.IdTransferencia = Int32.Parse(result);
-        //    }
-        //}
 
         private async Task CargarCboCuetnasAsync()
         {
@@ -94,7 +60,9 @@ namespace BancoFrontend
                 var result = await cliente.GetAsync(url);
                 var bodyJSON = await result.Content.ReadAsStringAsync();
                 List<Cuenta> lst = JsonConvert.DeserializeObject<List<Cuenta>>(bodyJSON);
+                cboOrigen.Items.Insert(0, "Selecciona la cuenta de origen");
                 cboOrigen.DataSource = lst;
+                cboOrigen.SelectedIndex = 0;
                 cboOrigen.ValueMember = "IdCuenta";
                 cboOrigen.DisplayMember = "TipoCuenta";
             }
@@ -108,7 +76,9 @@ namespace BancoFrontend
                 var result = await cliente.GetAsync(url);
                 var bodyJSON = await result.Content.ReadAsStringAsync();
                 List<Destinatarios> lst = JsonConvert.DeserializeObject<List<Destinatarios>>(bodyJSON);
+                cboDestinatario.Items.Insert(0, "Selecciona el destinatario");
                 cboDestinatario.DataSource = lst;
+                cboDestinatario.SelectedIndex = 0;
                 cboDestinatario.ValueMember = "IdDestinatario";
                 cboDestinatario.DisplayMember = "CboAux";
             }
@@ -116,30 +86,20 @@ namespace BancoFrontend
         
         private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
+                MessageBox.Show("Solo se permiten valores numéricos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
+                return;
             }
         }
 
         private async Task<bool> GrabarTransferenciaAsync(Transferencia oTransferencia)
         {
-            oTransferencia.IdCuenta = cboOrigen.SelectedValue.ToString();
-            oTransferencia.IdDestinatario = cboDestinatario.SelectedValue.ToString();
+            oTransferencia.IdCuenta = Convert.ToInt32(cboOrigen.SelectedValue.ToString());
+            oTransferencia.IdDestinatario = Convert.ToInt32(cboDestinatario.SelectedValue.ToString());
             oTransferencia.Fecha = DateTime.Now.ToString("dd/MM/yyyy");
-            oTransferencia.Importe = Convert.ToDouble(txtImporte.Texts);
+            oTransferencia.Monto = Convert.ToDouble(txtImporte.Texts);
             oTransferencia.Concepto = txtConcepto.Texts;
 
             string url = "https://localhost:44328/api/Clientes/altaTransferencia";

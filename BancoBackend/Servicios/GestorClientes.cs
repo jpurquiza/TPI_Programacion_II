@@ -60,9 +60,16 @@ namespace BancoBackend.Servicios
         {
             return _clienteDao.ValidateDestinatario(idCliente, CBU, DNI);
         }
-        /*public bool ValidarModificarDestinatario(int CBU, int DNI,int idDestinatario)
+
+        public bool GrabarTransferencia(Transferencia oTransferencia)
         {
-            return _clienteDao.ValidateModifyDestinatario(CBU, DNI, idDestinatario);
-        }*/
+            return _clienteDao.InsertTransferencia(oTransferencia);
+        }
+
+        /*public bool ValidarModificarDestinatario(int CBU, int DNI,int idDestinatario)
+{
+   return _clienteDao.ValidateModifyDestinatario(CBU, DNI, idDestinatario);
+}*/
+
     }
 }

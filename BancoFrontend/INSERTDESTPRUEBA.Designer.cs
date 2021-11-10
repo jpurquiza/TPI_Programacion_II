@@ -49,9 +49,10 @@ namespace BancoFrontend
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(75, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 15);
+            this.label1.Size = new System.Drawing.Size(37, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "CBU";
             // 
@@ -76,9 +77,10 @@ namespace BancoFrontend
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(75, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 15);
+            this.label2.Size = new System.Drawing.Size(33, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "DNI";
             // 
@@ -93,9 +95,10 @@ namespace BancoFrontend
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(75, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
+            this.label3.Size = new System.Drawing.Size(60, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nombre";
             // 
@@ -110,9 +113,10 @@ namespace BancoFrontend
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(75, 206);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
+            this.label4.Size = new System.Drawing.Size(62, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "Apellido";
             // 
@@ -126,9 +130,10 @@ namespace BancoFrontend
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(75, 244);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 15);
+            this.label5.Size = new System.Drawing.Size(45, 19);
             this.label5.TabIndex = 9;
             this.label5.Text = "Email";
             // 
@@ -147,9 +152,9 @@ namespace BancoFrontend
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtDNI);
-            this.panel1.Location = new System.Drawing.Point(80, 12);
+            this.panel1.Location = new System.Drawing.Point(232, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 383);
+            this.panel1.Size = new System.Drawing.Size(336, 392);
             this.panel1.TabIndex = 19;
             // 
             // rbtnCancelar
@@ -161,10 +166,11 @@ namespace BancoFrontend
             this.rbtnCancelar.BorderSize = 0;
             this.rbtnCancelar.FlatAppearance.BorderSize = 0;
             this.rbtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rbtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.rbtnCancelar.Location = new System.Drawing.Point(170, 318);
+            this.rbtnCancelar.Location = new System.Drawing.Point(184, 318);
             this.rbtnCancelar.Name = "rbtnCancelar";
-            this.rbtnCancelar.Size = new System.Drawing.Size(114, 38);
+            this.rbtnCancelar.Size = new System.Drawing.Size(126, 38);
             this.rbtnCancelar.TabIndex = 7;
             this.rbtnCancelar.Text = " Cancelar";
             this.rbtnCancelar.TextColor = System.Drawing.Color.White;
@@ -180,8 +186,9 @@ namespace BancoFrontend
             this.rbtnAgregar.BorderSize = 0;
             this.rbtnAgregar.FlatAppearance.BorderSize = 0;
             this.rbtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnAgregar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rbtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.rbtnAgregar.Location = new System.Drawing.Point(38, 318);
+            this.rbtnAgregar.Location = new System.Drawing.Point(32, 318);
             this.rbtnAgregar.Name = "rbtnAgregar";
             this.rbtnAgregar.Size = new System.Drawing.Size(126, 38);
             this.rbtnAgregar.TabIndex = 6;
@@ -203,14 +210,13 @@ namespace BancoFrontend
             // 
             // INSERTDESTPRUEBA
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(518, 421);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "INSERTDESTPRUEBA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INSERTDESTPRUEBA";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
