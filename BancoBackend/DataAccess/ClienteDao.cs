@@ -46,16 +46,8 @@ namespace BancoBackend.DataAccess
                 oDestinatarios.Dni = Convert.ToInt32(row[3].ToString());
                 oDestinatarios.Apellido = row[1].ToString();
                 oDestinatarios.Nombre = row[2].ToString();
-<<<<<<< HEAD
-                oDestinatarios.Apellido = row[3].ToString();
-                oDestinatarios.CboAux = row[4].ToString();
-                oDestinatarios.Dni = Convert.ToInt32(row[5].ToString());
-                oDestinatarios.Email = row[6].ToString();
-
-=======
                 oDestinatarios.Email = row[4].ToString();
                 oDestinatarios.IdDestinatario = Convert.ToInt32(row[5].ToString());
->>>>>>> valentina2
                 lstDestinatarios.Add(oDestinatarios);
             }
             return lstDestinatarios;

@@ -10,15 +10,6 @@ namespace BancoBackend.Entities
     {
         public int IdDestinatario { get; set; }
         public int NroCbu { get; set; }
-<<<<<<< HEAD
-        public string CboAux { get; set; }
-        public Destinatarios() { }
-        public Destinatarios (int idDestinatario, int nroCbu, string cboAux, string nombre, string apellido, int dni, string email) : base(nombre, apellido, dni, email)
-        {
-            IdDestinatario = idDestinatario;
-            NroCbu = nroCbu;
-            CboAux = cboAux;
-=======
         public int IdCliente { get; set; }
 
         public Destinatarios() { }
@@ -27,7 +18,6 @@ namespace BancoBackend.Entities
             IdDestinatario = idDestinatario;
             NroCbu = nroCbu;
             IdCliente = idCliente;
->>>>>>> valentina2
         }
 
 
