@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMovimientos" targetNamespace="http://tempuri.org/dsMovimientos.xsd" xmlns:mstns="http://tempuri.org/dsMovimientos.xsd" xmlns="http://tempuri.org/dsMovimientos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=DESKTOP-3TFHJBS\SQLEXPRESS01;Initial Catalog=db_banco;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="desktop-3tfhjbs\sqlexpress01.db_banco.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dsMovimientosTableAdapter" GeneratorDataComponentClassName="dsMovimientosTableAdapter" Name="dsMovimientos" UserDataComponentName="dsMovimientosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="desktop-3tfhjbs\sqlexpress01.db_banco.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TRANSACCIONES.fecha, TRANSACCIONES.monto, DESTINATARIOS.nro_cbu, DESTINATARIOS.apellido
+FROM            CLIENTES INNER JOIN
+                         CUENTAS ON CLIENTES.id_cuenta = CUENTAS.id_cuenta INNER JOIN
+                         DESTINATARIOS ON CLIENTES.id_destinatario = DESTINATARIOS.id_destinatario INNER JOIN
+                         TIPOS_CUENTA ON CUENTAS.id_tipo_cuenta = TIPOS_CUENTA.id_tipo_cuenta INNER JOIN
+                         TRANSACCIONES ON CUENTAS.id_cuenta = TRANSACCIONES.id_cuenta AND DESTINATARIOS.id_destinatario = TRANSACCIONES.id_destinatario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="monto" DataSetColumn="monto" />
+              <Mapping SourceColumn="nro_cbu" DataSetColumn="nro_cbu" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMovimientos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMovimientos" msprop:Generator_UserDSName="dsMovimientos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsMovimientos" msprop:Generator_TableClassName="dsMovimientosDataTable" msprop:Generator_TableVarName="tabledsMovimientos" msprop:Generator_TablePropName="_dsMovimientos" msprop:Generator_RowDeletingName="dsMovimientosRowDeleting" msprop:Generator_RowChangingName="dsMovimientosRowChanging" msprop:Generator_RowEvHandlerName="dsMovimientosRowChangeEventHandler" msprop:Generator_RowDeletedName="dsMovimientosRowDeleted" msprop:Generator_UserTableName="dsMovimientos" msprop:Generator_RowChangedName="dsMovimientosRowChanged" msprop:Generator_RowEvArgName="dsMovimientosRowChangeEvent" msprop:Generator_RowClassName="dsMovimientosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nro_cbu" msprop:Generator_ColumnVarNameInTable="columnnro_cbu" msprop:Generator_ColumnPropNameInRow="nro_cbu" msprop:Generator_ColumnPropNameInTable="nro_cbuColumn" msprop:Generator_UserColumnName="nro_cbu" type="xs:int" minOccurs="0" />
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

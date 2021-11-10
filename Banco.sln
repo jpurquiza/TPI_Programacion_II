@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoBackend", "..\TPI_Programacion_II\BancoBackend\BancoBackend.csproj", "{35820B17-C091-4F71-B3D0-AAA323CF0A18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoBackend", "BancoBackend\BancoBackend.csproj", "{35820B17-C091-4F71-B3D0-AAA323CF0A18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoWebAPI", "..\TPI_Programacion_II\BancoWebAPI\BancoWebAPI.csproj", "{DD91892B-A59C-4CEE-AB8A-9AB9F934D38D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoWebAPI", "BancoWebAPI\BancoWebAPI.csproj", "{DD91892B-A59C-4CEE-AB8A-9AB9F934D38D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoFrontend", "..\TPI_Programacion_II\BancoFrontend\BancoFrontend.csproj", "{0B851D5D-F748-41D3-9E78-FE2E32DC55F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BancoFrontend", "BancoFrontend\BancoFrontend.csproj", "{0B851D5D-F748-41D3-9E78-FE2E32DC55F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoReporte", "BancoReporte\BancoReporte.csproj", "{3661EABE-CD3D-4EAB-8B1A-7AAF88641FF9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35820B17-C091-4F71-B3D0-AAA323CF0A18} = {35820B17-C091-4F71-B3D0-AAA323CF0A18}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +32,10 @@ Global
 		{0B851D5D-F748-41D3-9E78-FE2E32DC55F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B851D5D-F748-41D3-9E78-FE2E32DC55F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B851D5D-F748-41D3-9E78-FE2E32DC55F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3661EABE-CD3D-4EAB-8B1A-7AAF88641FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3661EABE-CD3D-4EAB-8B1A-7AAF88641FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3661EABE-CD3D-4EAB-8B1A-7AAF88641FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3661EABE-CD3D-4EAB-8B1A-7AAF88641FF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
