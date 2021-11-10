@@ -411,6 +411,6 @@ namespace BancoFrontend
         private Resources.RButton btnAltaCuenta;
         private Resources.RButton btnAltaProductos;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Label lblBienvenido;
+        internal System.Windows.Forms.Label lblBienvenido;
     }
 }
