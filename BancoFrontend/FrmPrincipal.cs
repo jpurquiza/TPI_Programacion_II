@@ -114,12 +114,12 @@ namespace BancoFrontend
 
         private void btnAltaTC_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Por el momento no podemos ofrecerte este producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnAltaPrestamo_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Por el momento no podemos ofrecerte este producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

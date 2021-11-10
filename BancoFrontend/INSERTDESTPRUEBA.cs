@@ -79,8 +79,8 @@ namespace BancoFrontend
                 {
                     if (MessageBox.Show("¡Destinatario modificado con éxito!", "Confirmación",
                         MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                        this.Dispose();
-                    LimpiarCampos();
+                        LimpiarCampos();
+                        Close();
                 }
                 else
                 {
@@ -97,8 +97,9 @@ namespace BancoFrontend
                 {
                     if (MessageBox.Show("¡Destinatario registrado con éxito!", "Confirmación",
                         MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                        this.Dispose();
-                    LimpiarCampos();
+                        LimpiarCampos();
+                        Close();
+                    
                 }
                 else
                 {
@@ -158,7 +159,7 @@ namespace BancoFrontend
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)))
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
                 MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
@@ -168,7 +169,7 @@ namespace BancoFrontend
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)))
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
                 MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;

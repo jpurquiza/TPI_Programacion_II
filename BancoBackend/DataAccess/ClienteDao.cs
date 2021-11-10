@@ -145,7 +145,7 @@ namespace BancoBackend.DataAccess
 
         public bool ValidateDestinatario(int idCliente, int CBU, int DNI)
         {
-            throw new NotImplementedException();
+            return HelperDao.ObtenerInstancia().ValidacionInsertDestinatario(idCliente, CBU, DNI);
         }
 
         public bool InsertTransferencia(Transferencia oTransferencia)
