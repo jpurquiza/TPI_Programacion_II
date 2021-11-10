@@ -205,10 +205,83 @@ namespace BancoBackend.DataAccess
             }
             finally { this.CloseConnection(cnn); }
 
-
             return filasAfectadas;
         }
         //
+
+
+
+
+        //ver estoooooooooooooooooo
+        public bool ValidacionInsertDestinatario(int idCliente, int CBU,int DNI)
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                cnn.ConnectionString = connectionString;
+                cnn.Open();
+
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_VALIDAR_INSERT_DESTINATARIO";
+                cmd.Parameters.AddWithValue("@idCliente", UserCache.IdClienteLogin);
+                cmd.Parameters.AddWithValue("@nro_cbu", CBU);
+                cmd.Parameters.AddWithValue("@nro_dni", DNI);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                   
+                    return false;
+                }
+                else return true;
+            }
+            catch (SqlException e)
+            {
+                var a = e;
+                throw;
+            }
+            finally { this.CloseConnection(cnn); }
+        }
+
+
+
+        /*public bool ValidacionModifyDestinatario( int CBU, int DNI, int idDestinatario)
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                cnn.ConnectionString = connectionString;
+                cnn.Open();
+
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_VALIDAR_IMODIFY_DESTINATARIO";
+                //cmd.Parameters.AddWithValue("@idCliente", UserCache.IdClienteLogin);
+                cmd.Parameters.AddWithValue("@nro_cbu", CBU);
+                cmd.Parameters.AddWithValue("@nro_dni", DNI);
+                cmd.Parameters.AddWithValue("@id_destinatario", idDestinatario);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+
+                    return false;
+                }
+                else return true;
+            }
+            catch (SqlException e)
+            {
+                var a = e;
+                throw;
+            }
+            finally { this.CloseConnection(cnn); }
+        }*/
+
 
 
         private void CloseConnection(SqlConnection cnn)

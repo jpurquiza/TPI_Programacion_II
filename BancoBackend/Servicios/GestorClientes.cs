@@ -56,5 +56,13 @@ namespace BancoBackend.Servicios
             return _clienteDao.DeleteDestinatario(idDestinatario);
         }
 
+        public bool ValidarDestinatario(int idCliente, int CBU, int DNI)
+        {
+            return _clienteDao.ValidateDestinatario(idCliente, CBU, DNI);
+        }
+        /*public bool ValidarModificarDestinatario(int CBU, int DNI,int idDestinatario)
+        {
+            return _clienteDao.ValidateModifyDestinatario(CBU, DNI, idDestinatario);
+        }*/
     }
 }

@@ -38,6 +38,7 @@ namespace BancoFrontend
             this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.rbtnCancelar = new BancoFrontend.Resources.RButton();
+            this.rbtnAgregar = new BancoFrontend.Resources.RButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,12 +132,33 @@ namespace BancoFrontend
             this.rbtnCancelar.UseVisualStyleBackColor = false;
             this.rbtnCancelar.Click += new System.EventHandler(this.rbtnCancelar_Click_1);
             // 
+            // rbtnAgregar
+            // 
+            this.rbtnAgregar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rbtnAgregar.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rbtnAgregar.BorderColor = System.Drawing.Color.Transparent;
+            this.rbtnAgregar.BorderRadius = 15;
+            this.rbtnAgregar.BorderSize = 0;
+            this.rbtnAgregar.CausesValidation = false;
+            this.rbtnAgregar.FlatAppearance.BorderSize = 0;
+            this.rbtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.rbtnAgregar.Location = new System.Drawing.Point(326, 400);
+            this.rbtnAgregar.Name = "rbtnAgregar";
+            this.rbtnAgregar.Size = new System.Drawing.Size(168, 38);
+            this.rbtnAgregar.TabIndex = 11;
+            this.rbtnAgregar.Text = "Nuevo";
+            this.rbtnAgregar.TextColor = System.Drawing.Color.White;
+            this.rbtnAgregar.UseVisualStyleBackColor = false;
+            this.rbtnAgregar.Click += new System.EventHandler(this.rbtnAgregar_Click);
+            // 
             // FrmNuevoDestinatario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.rbtnAgregar);
             this.Controls.Add(this.rbtnCancelar);
             this.Controls.Add(this.dgvDestinatarios);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -162,5 +184,6 @@ namespace BancoFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDestinatario;
         private System.Windows.Forms.DataGridViewButtonColumn Acciones;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private Resources.RButton rbtnAgregar;
     }
 }

@@ -66,7 +66,8 @@ namespace BancoBackend.DataAccess
         {
             bool bandera = true;
             try
-            {                
+            {        
+                
                 Dictionary<string, object> insert = new Dictionary<string, object>();
                 insert.Add("@id_cliente", UserCache.IdClienteLogin);
                 insert.Add("@nro_cbu", oDestinatario.NroCbu);
@@ -92,7 +93,6 @@ namespace BancoBackend.DataAccess
             {
                 Dictionary<string, object> update = new Dictionary<string, object>();
                 update.Add("@idDestinatario", oDestinatario.IdDestinatario);
-                update.Add("@idCliente", UserCache.IdClienteLogin);
                 update.Add("@nro_cbu", oDestinatario.NroCbu);
                 update.Add("@nro_dni", oDestinatario.Dni);
                 update.Add("@apellido", oDestinatario.Apellido);
@@ -128,5 +128,17 @@ namespace BancoBackend.DataAccess
             return bandera;
 
         }
+
+        public bool ValidateDestinatario(int idCliente, int CBU, int DNI)
+        {
+            return HelperDao.ObtenerInstancia().ValidacionInsertDestinatario(idCliente, CBU, DNI);
+        }
+
+        
+
+        /*public bool ValidateModifyDestinatario(int CBU, int DNI, int idDestinatario)
+        {
+            return HelperDao.ObtenerInstancia().ValidacionModifyDestinatario(CBU, DNI, idDestinatario);
+        }*/
     }
 }

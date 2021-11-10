@@ -27,24 +27,31 @@ namespace BancoFrontend
 
         }
 
-        private void FrmNuevoDestinatario_Load(object sender, EventArgs e)
+        private async void FrmNuevoDestinatario_Load(object sender, EventArgs e)
         {
-            CargarDestinatario();
-        }
+           await CargarDestinatario();
+        }   
 
+        private async void add_FormClosed(object sender, FormClosedEventArgs e)
+        {
+          await  CargarDestinatario();
+        }
 
         private async void dgvDestinatarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvDestinatarios.CurrentCell.ColumnIndex == 5)
             {
-                //error aca nmo se xq
                 var destinatario = lst[dgvDestinatarios.CurrentCell.RowIndex];
 
                 INSERTDESTPRUEBA principal = new INSERTDESTPRUEBA(destinatario, 1);
 
-                principal.Show();
-            }
 
+
+                principal.FormClosed += add_FormClosed;
+                principal.Show();
+
+                //   q esta pasando akiiii
+            }
 
             if (dgvDestinatarios.CurrentCell.ColumnIndex == 6)
             {
@@ -53,32 +60,21 @@ namespace BancoFrontend
                 var result = await EliminarDestinatarioAsync(destinatario.IdDestinatario.ToString());
                 if (result)
                 {
-                    MessageBox.Show("Destinatario eliminado correctamente",
+                    MessageBox.Show("No se ha podido eliminar el destinatario, intente nuevamente",
                     "Operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido eliminar el destinatario, intente nuevamente",
+                    MessageBox.Show("Destinatario eliminado correctamente",
                     "Operación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+            
+            CargarDestinatario();
         }
 
 
-        /*private async List<Destinatarios> CargarDestinatarios2()
-        {
-            string url = "https://localhost:44328/api/Clientes/modificarDestinatario";
-
-            using (HttpClient client = new HttpClient())
-            {
-                var result = await client.GetAsync(url);
-                string response = await result.Content.ReadAsStringAsync();
-                return response.Equals("Ok");
-            }
-        }*/
-
-
-        private async void CargarDestinatario()
+        private async Task CargarDestinatario()
         {
 
             string url = "https://localhost:44328/api/Clientes/destinatarios";
@@ -100,6 +96,7 @@ namespace BancoFrontend
                      oDestinatario.Email
                 }); ;
             }
+            return;
         }
 
         private async Task<bool> EliminarDestinatarioAsync(string id)
@@ -127,5 +124,13 @@ namespace BancoFrontend
             this.Dispose();
         }
 
+        private void rbtnAgregar_Click(object sender, EventArgs e)
+        {
+            INSERTDESTPRUEBA principal = new INSERTDESTPRUEBA(null,2);
+
+            principal.FormClosed += add_FormClosed;
+            principal.Show();
+
+        }
     }
 }

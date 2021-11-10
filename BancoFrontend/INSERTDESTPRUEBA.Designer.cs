@@ -31,7 +31,6 @@ namespace BancoFrontend
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtCBU = new System.Windows.Forms.TextBox();
-            this.bntAgregar = new System.Windows.Forms.Button();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -40,13 +39,17 @@ namespace BancoFrontend
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbtnCancelar = new BancoFrontend.Resources.RButton();
+            this.rbtnAgregar = new BancoFrontend.Resources.RButton();
+            this.lblDestinatarios = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(181, 51);
+            this.label1.Location = new System.Drawing.Point(75, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 15);
             this.label1.TabIndex = 0;
@@ -54,32 +57,26 @@ namespace BancoFrontend
             // 
             // txtCBU
             // 
-            this.txtCBU.Location = new System.Drawing.Point(272, 48);
+            this.txtCBU.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCBU.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtCBU.Location = new System.Drawing.Point(147, 74);
             this.txtCBU.Name = "txtCBU";
             this.txtCBU.Size = new System.Drawing.Size(100, 23);
             this.txtCBU.TabIndex = 1;
-            // 
-            // bntAgregar
-            // 
-            this.bntAgregar.Location = new System.Drawing.Point(193, 267);
-            this.bntAgregar.Name = "bntAgregar";
-            this.bntAgregar.Size = new System.Drawing.Size(75, 23);
-            this.bntAgregar.TabIndex = 2;
-            this.bntAgregar.Text = "Agregar";
-            this.bntAgregar.UseVisualStyleBackColor = true;
-            this.bntAgregar.Click += new System.EventHandler(this.bntAgregar_Click);
+            this.txtCBU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCBU_KeyPress);
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(272, 94);
+            this.txtDNI.Location = new System.Drawing.Point(147, 120);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(100, 23);
-            this.txtDNI.TabIndex = 4;
+            this.txtDNI.TabIndex = 2;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 97);
+            this.label2.Location = new System.Drawing.Point(75, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 15);
             this.label2.TabIndex = 3;
@@ -87,15 +84,16 @@ namespace BancoFrontend
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(272, 137);
+            this.txtNombre.Location = new System.Drawing.Point(147, 163);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 23);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(181, 140);
+            this.label3.Location = new System.Drawing.Point(75, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 15);
             this.label3.TabIndex = 5;
@@ -103,15 +101,16 @@ namespace BancoFrontend
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(272, 180);
+            this.txtApellido.Location = new System.Drawing.Point(147, 206);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 23);
-            this.txtApellido.TabIndex = 8;
+            this.txtApellido.TabIndex = 4;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(181, 183);
+            this.label4.Location = new System.Drawing.Point(75, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 15);
             this.label4.TabIndex = 7;
@@ -119,51 +118,103 @@ namespace BancoFrontend
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(272, 218);
+            this.txtEmail.Location = new System.Drawing.Point(147, 244);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 23);
-            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(181, 221);
+            this.label5.Location = new System.Drawing.Point(75, 244);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "Email";
             // 
-            // btnCancelar
+            // panel1
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(297, 267);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.panel1.Controls.Add(this.rbtnCancelar);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.rbtnAgregar);
+            this.panel1.Controls.Add(this.txtApellido);
+            this.panel1.Controls.Add(this.lblDestinatarios);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtNombre);
+            this.panel1.Controls.Add(this.txtCBU);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtDNI);
+            this.panel1.Location = new System.Drawing.Point(80, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(336, 383);
+            this.panel1.TabIndex = 19;
+            // 
+            // rbtnCancelar
+            // 
+            this.rbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.rbtnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.rbtnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbtnCancelar.BorderRadius = 15;
+            this.rbtnCancelar.BorderSize = 0;
+            this.rbtnCancelar.FlatAppearance.BorderSize = 0;
+            this.rbtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.rbtnCancelar.Location = new System.Drawing.Point(170, 318);
+            this.rbtnCancelar.Name = "rbtnCancelar";
+            this.rbtnCancelar.Size = new System.Drawing.Size(114, 38);
+            this.rbtnCancelar.TabIndex = 7;
+            this.rbtnCancelar.Text = " Cancelar";
+            this.rbtnCancelar.TextColor = System.Drawing.Color.White;
+            this.rbtnCancelar.UseVisualStyleBackColor = false;
+            this.rbtnCancelar.Click += new System.EventHandler(this.rbtnCancelar_Click);
+            // 
+            // rbtnAgregar
+            // 
+            this.rbtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(164)))), ((int)(((byte)(84)))));
+            this.rbtnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(164)))), ((int)(((byte)(84)))));
+            this.rbtnAgregar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbtnAgregar.BorderRadius = 15;
+            this.rbtnAgregar.BorderSize = 0;
+            this.rbtnAgregar.FlatAppearance.BorderSize = 0;
+            this.rbtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.rbtnAgregar.Location = new System.Drawing.Point(38, 318);
+            this.rbtnAgregar.Name = "rbtnAgregar";
+            this.rbtnAgregar.Size = new System.Drawing.Size(126, 38);
+            this.rbtnAgregar.TabIndex = 6;
+            this.rbtnAgregar.Text = "Agregar";
+            this.rbtnAgregar.TextColor = System.Drawing.Color.White;
+            this.rbtnAgregar.UseVisualStyleBackColor = false;
+            this.rbtnAgregar.Click += new System.EventHandler(this.rbtnAgregar_Click);
+            // 
+            // lblDestinatarios
+            // 
+            this.lblDestinatarios.AutoSize = true;
+            this.lblDestinatarios.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDestinatarios.Location = new System.Drawing.Point(85, 23);
+            this.lblDestinatarios.Name = "lblDestinatarios";
+            this.lblDestinatarios.Size = new System.Drawing.Size(162, 23);
+            this.lblDestinatarios.TabIndex = 21;
+            this.lblDestinatarios.Text = "Nuevo destinatario";
+            this.lblDestinatarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // INSERTDESTPRUEBA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtDNI);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.bntAgregar);
-            this.Controls.Add(this.txtCBU);
-            this.Controls.Add(this.label1);
+            this.BackgroundImage = global::BancoFrontend.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(518, 421);
+            this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Name = "INSERTDESTPRUEBA";
             this.Text = "INSERTDESTPRUEBA";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -171,7 +222,6 @@ namespace BancoFrontend
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCBU;
-        private System.Windows.Forms.Button bntAgregar;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
@@ -180,6 +230,9 @@ namespace BancoFrontend
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblDestinatarios;
+        private Resources.RButton rbtnAgregar;
+        private Resources.RButton rbtnCancelar;
     }
 }
