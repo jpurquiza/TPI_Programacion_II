@@ -76,6 +76,7 @@ namespace BancoFrontend
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
            lblBienvenido.Text = "Bienvenido\n" +  UserCache.NombreLogin;
+            timer3.Enabled = true;
         }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
@@ -120,6 +121,25 @@ namespace BancoFrontend
         private void btnAltaPrestamo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Por el momento no podemos ofrecerte este producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void lblRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmAcercaDe frmAcercaDe = new FrmAcercaDe() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            pContainer.Controls.Add(frmAcercaDe);
+            pContainer.Visible = true;
+            frmAcercaDe.Show();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer3_Tick_1(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

@@ -29,18 +29,28 @@ namespace BancoFrontend
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.txtDNI = new BancoFrontend.Resources.RTextBox();
             this.txtClave = new BancoFrontend.Resources.RTextBox();
             this.lblRegistro = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnIngresar = new BancoFrontend.Resources.RButton();
             this.pPrincipal = new System.Windows.Forms.Panel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.btnMinimizar);
+            this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.txtDNI);
             this.panel2.Controls.Add(this.txtClave);
             this.panel2.Controls.Add(this.lblRegistro);
@@ -52,6 +62,29 @@ namespace BancoFrontend
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 450);
             this.panel2.TabIndex = 10;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Image = global::BancoFrontend.Properties.Resources.horizontal_line;
+            this.btnMinimizar.Location = new System.Drawing.Point(288, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(24, 24);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimizar.TabIndex = 16;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::BancoFrontend.Properties.Resources.x_96;
+            this.btnCerrar.Location = new System.Drawing.Point(320, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(24, 24);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 15;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // txtDNI
             // 
@@ -174,6 +207,9 @@ namespace BancoFrontend
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,6 +223,9 @@ namespace BancoFrontend
         private Resources.RButton btnIngresar;
         private Resources.RTextBox txtClave;
         private System.Windows.Forms.Panel pPrincipal;
+        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 

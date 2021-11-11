@@ -32,7 +32,6 @@ namespace BancoFrontend
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbtnCancelar = new BancoFrontend.Resources.RButton();
             this.rbtnConfirmar = new BancoFrontend.Resources.RButton();
-            this.btnAgregarDest = new BancoFrontend.Resources.RButton();
             this.cboDestinatario = new System.Windows.Forms.ComboBox();
             this.cboOrigen = new System.Windows.Forms.ComboBox();
             this.txtConcepto = new BancoFrontend.Resources.RTextBox();
@@ -45,7 +44,6 @@ namespace BancoFrontend
             // 
             this.panel1.Controls.Add(this.rbtnCancelar);
             this.panel1.Controls.Add(this.rbtnConfirmar);
-            this.panel1.Controls.Add(this.btnAgregarDest);
             this.panel1.Controls.Add(this.cboDestinatario);
             this.panel1.Controls.Add(this.cboOrigen);
             this.panel1.Controls.Add(this.txtConcepto);
@@ -68,7 +66,7 @@ namespace BancoFrontend
             this.rbtnCancelar.FlatAppearance.BorderSize = 0;
             this.rbtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.rbtnCancelar.Location = new System.Drawing.Point(200, 360);
+            this.rbtnCancelar.Location = new System.Drawing.Point(200, 344);
             this.rbtnCancelar.Name = "rbtnCancelar";
             this.rbtnCancelar.Size = new System.Drawing.Size(168, 38);
             this.rbtnCancelar.TabIndex = 8;
@@ -87,7 +85,7 @@ namespace BancoFrontend
             this.rbtnConfirmar.FlatAppearance.BorderSize = 0;
             this.rbtnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbtnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.rbtnConfirmar.Location = new System.Drawing.Point(16, 360);
+            this.rbtnConfirmar.Location = new System.Drawing.Point(16, 344);
             this.rbtnConfirmar.Name = "rbtnConfirmar";
             this.rbtnConfirmar.Size = new System.Drawing.Size(168, 38);
             this.rbtnConfirmar.TabIndex = 7;
@@ -96,28 +94,10 @@ namespace BancoFrontend
             this.rbtnConfirmar.UseVisualStyleBackColor = false;
             this.rbtnConfirmar.Click += new System.EventHandler(this.rbtnConfirmar_Click);
             // 
-            // btnAgregarDest
-            // 
-            this.btnAgregarDest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.btnAgregarDest.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.btnAgregarDest.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAgregarDest.BorderRadius = 15;
-            this.btnAgregarDest.BorderSize = 0;
-            this.btnAgregarDest.FlatAppearance.BorderSize = 0;
-            this.btnAgregarDest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarDest.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarDest.Location = new System.Drawing.Point(104, 296);
-            this.btnAgregarDest.Name = "btnAgregarDest";
-            this.btnAgregarDest.Size = new System.Drawing.Size(168, 40);
-            this.btnAgregarDest.TabIndex = 6;
-            this.btnAgregarDest.Text = "Nuevo destinatario";
-            this.btnAgregarDest.TextColor = System.Drawing.Color.White;
-            this.btnAgregarDest.UseVisualStyleBackColor = false;
-            // 
             // cboDestinatario
             // 
             this.cboDestinatario.FormattingEnabled = true;
-            this.cboDestinatario.Location = new System.Drawing.Point(40, 240);
+            this.cboDestinatario.Location = new System.Drawing.Point(48, 264);
             this.cboDestinatario.Name = "cboDestinatario";
             this.cboDestinatario.Size = new System.Drawing.Size(304, 27);
             this.cboDestinatario.TabIndex = 4;
@@ -126,7 +106,7 @@ namespace BancoFrontend
             // cboOrigen
             // 
             this.cboOrigen.FormattingEnabled = true;
-            this.cboOrigen.Location = new System.Drawing.Point(40, 184);
+            this.cboOrigen.Location = new System.Drawing.Point(48, 208);
             this.cboOrigen.Name = "cboOrigen";
             this.cboOrigen.Size = new System.Drawing.Size(304, 27);
             this.cboOrigen.TabIndex = 3;
@@ -141,7 +121,7 @@ namespace BancoFrontend
             this.txtConcepto.BorderSize = 2;
             this.txtConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConcepto.ForeColor = System.Drawing.Color.Black;
-            this.txtConcepto.Location = new System.Drawing.Point(80, 120);
+            this.txtConcepto.Location = new System.Drawing.Point(88, 144);
             this.txtConcepto.Margin = new System.Windows.Forms.Padding(4);
             this.txtConcepto.Multiline = false;
             this.txtConcepto.Name = "txtConcepto";
@@ -163,7 +143,7 @@ namespace BancoFrontend
             this.txtImporte.BorderSize = 2;
             this.txtImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtImporte.ForeColor = System.Drawing.Color.DimGray;
-            this.txtImporte.Location = new System.Drawing.Point(80, 64);
+            this.txtImporte.Location = new System.Drawing.Point(88, 88);
             this.txtImporte.Margin = new System.Windows.Forms.Padding(4);
             this.txtImporte.Multiline = false;
             this.txtImporte.Name = "txtImporte";
@@ -211,7 +191,6 @@ namespace BancoFrontend
         private System.Windows.Forms.Panel panel1;
         private Resources.RButton rbtnCancelar;
         private Resources.RButton rbtnConfirmar;
-        private Resources.RButton btnAgregarDest;
         private System.Windows.Forms.ComboBox cboDestinatario;
         private System.Windows.Forms.ComboBox cboOrigen;
         private Resources.RTextBox txtConcepto;

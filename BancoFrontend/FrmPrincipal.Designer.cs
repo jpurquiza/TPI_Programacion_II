@@ -33,9 +33,10 @@ namespace BancoFrontend
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblRegistro = new System.Windows.Forms.LinkLabel();
             this.pnlAltaProductosDD = new System.Windows.Forms.Panel();
-            this.btnAltaPrestamo = new BancoFrontend.Resources.RButton();
             this.btnAltaProductos = new BancoFrontend.Resources.RButton();
+            this.btnAltaPrestamo = new BancoFrontend.Resources.RButton();
             this.btnAltaCuenta = new BancoFrontend.Resources.RButton();
             this.btnAltaTC = new BancoFrontend.Resources.RButton();
             this.lblBienvenido = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@ namespace BancoFrontend
             this.rbtnAcercaDe = new BancoFrontend.Resources.RButton();
             this.pContainer = new System.Windows.Forms.Panel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.pnlAltaProductosDD.SuspendLayout();
             this.PanelTransaccionDropDown.SuspendLayout();
@@ -69,6 +71,7 @@ namespace BancoFrontend
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblRegistro);
             this.panel2.Controls.Add(this.pnlAltaProductosDD);
             this.panel2.Controls.Add(this.lblBienvenido);
             this.panel2.Controls.Add(this.PanelTransaccionDropDown);
@@ -84,40 +87,38 @@ namespace BancoFrontend
             this.panel2.Size = new System.Drawing.Size(230, 450);
             this.panel2.TabIndex = 14;
             // 
+            // lblRegistro
+            // 
+            this.lblRegistro.ActiveLinkColor = System.Drawing.Color.Black;
+            this.lblRegistro.AutoSize = true;
+            this.lblRegistro.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRegistro.LinkArea = new System.Windows.Forms.LinkArea(0, 19);
+            this.lblRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.lblRegistro.Location = new System.Drawing.Point(64, 424);
+            this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(108, 23);
+            this.lblRegistro.TabIndex = 17;
+            this.lblRegistro.TabStop = true;
+            this.lblRegistro.Text = "Acerca de la app";
+            this.lblRegistro.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblRegistro.UseCompatibleTextRendering = true;
+            this.lblRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblRegistro_LinkClicked);
+            // 
             // pnlAltaProductosDD
             // 
             this.pnlAltaProductosDD.Controls.Add(this.btnAltaProductos);
             this.pnlAltaProductosDD.Controls.Add(this.btnAltaPrestamo);
             this.pnlAltaProductosDD.Controls.Add(this.btnAltaCuenta);
             this.pnlAltaProductosDD.Controls.Add(this.btnAltaTC);
-            this.pnlAltaProductosDD.Location = new System.Drawing.Point(14, 88);
+            this.pnlAltaProductosDD.Location = new System.Drawing.Point(16, 120);
             this.pnlAltaProductosDD.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAltaProductosDD.MaximumSize = new System.Drawing.Size(200, 232);
             this.pnlAltaProductosDD.MinimumSize = new System.Drawing.Size(200, 40);
             this.pnlAltaProductosDD.Name = "pnlAltaProductosDD";
             this.pnlAltaProductosDD.Size = new System.Drawing.Size(200, 40);
             this.pnlAltaProductosDD.TabIndex = 15;
-            // 
-            // btnAltaPrestamo
-            // 
-            this.btnAltaPrestamo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.btnAltaPrestamo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
-            this.btnAltaPrestamo.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAltaPrestamo.BorderRadius = 20;
-            this.btnAltaPrestamo.BorderSize = 0;
-            this.btnAltaPrestamo.FlatAppearance.BorderSize = 0;
-            this.btnAltaPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaPrestamo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAltaPrestamo.ForeColor = System.Drawing.Color.White;
-            this.btnAltaPrestamo.Location = new System.Drawing.Point(0, 192);
-            this.btnAltaPrestamo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAltaPrestamo.Name = "btnAltaPrestamo";
-            this.btnAltaPrestamo.Size = new System.Drawing.Size(200, 40);
-            this.btnAltaPrestamo.TabIndex = 15;
-            this.btnAltaPrestamo.Text = "Préstamos";
-            this.btnAltaPrestamo.TextColor = System.Drawing.Color.White;
-            this.btnAltaPrestamo.UseVisualStyleBackColor = false;
-            this.btnAltaPrestamo.Click += new System.EventHandler(this.btnAltaPrestamo_Click);
             // 
             // btnAltaProductos
             // 
@@ -141,6 +142,27 @@ namespace BancoFrontend
             this.btnAltaProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAltaProductos.UseVisualStyleBackColor = false;
             this.btnAltaProductos.Click += new System.EventHandler(this.btnAltaProductos_Click);
+            // 
+            // btnAltaPrestamo
+            // 
+            this.btnAltaPrestamo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaPrestamo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(106)))), ((int)(((byte)(152)))));
+            this.btnAltaPrestamo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAltaPrestamo.BorderRadius = 20;
+            this.btnAltaPrestamo.BorderSize = 0;
+            this.btnAltaPrestamo.FlatAppearance.BorderSize = 0;
+            this.btnAltaPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaPrestamo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAltaPrestamo.ForeColor = System.Drawing.Color.White;
+            this.btnAltaPrestamo.Location = new System.Drawing.Point(0, 192);
+            this.btnAltaPrestamo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAltaPrestamo.Name = "btnAltaPrestamo";
+            this.btnAltaPrestamo.Size = new System.Drawing.Size(200, 40);
+            this.btnAltaPrestamo.TabIndex = 15;
+            this.btnAltaPrestamo.Text = "Préstamos";
+            this.btnAltaPrestamo.TextColor = System.Drawing.Color.White;
+            this.btnAltaPrestamo.UseVisualStyleBackColor = false;
+            this.btnAltaPrestamo.Click += new System.EventHandler(this.btnAltaPrestamo_Click);
             // 
             // btnAltaCuenta
             // 
@@ -188,7 +210,7 @@ namespace BancoFrontend
             // 
             this.lblBienvenido.AutoSize = true;
             this.lblBienvenido.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblBienvenido.Location = new System.Drawing.Point(64, 16);
+            this.lblBienvenido.Location = new System.Drawing.Point(64, 48);
             this.lblBienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBienvenido.Name = "lblBienvenido";
             this.lblBienvenido.Size = new System.Drawing.Size(100, 23);
@@ -201,7 +223,7 @@ namespace BancoFrontend
             this.PanelTransaccionDropDown.Controls.Add(this.btnDestinatarios);
             this.PanelTransaccionDropDown.Controls.Add(this.btnNvaTransferencia);
             this.PanelTransaccionDropDown.Controls.Add(this.btnTransaccion);
-            this.PanelTransaccionDropDown.Location = new System.Drawing.Point(16, 152);
+            this.PanelTransaccionDropDown.Location = new System.Drawing.Point(16, 184);
             this.PanelTransaccionDropDown.Margin = new System.Windows.Forms.Padding(4);
             this.PanelTransaccionDropDown.MaximumSize = new System.Drawing.Size(200, 168);
             this.PanelTransaccionDropDown.MinimumSize = new System.Drawing.Size(200, 40);
@@ -285,7 +307,7 @@ namespace BancoFrontend
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(16, 216);
+            this.btnReportes.Location = new System.Drawing.Point(16, 248);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(200, 40);
@@ -305,7 +327,7 @@ namespace BancoFrontend
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(16, 400);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(16, 368);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(200, 40);
@@ -369,6 +391,10 @@ namespace BancoFrontend
             this.timer2.Interval = 15;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick_1);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -412,5 +438,7 @@ namespace BancoFrontend
         private Resources.RButton btnAltaProductos;
         private System.Windows.Forms.Timer timer2;
         internal System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.LinkLabel lblRegistro;
+        private System.Windows.Forms.Timer timer3;
     }
 }

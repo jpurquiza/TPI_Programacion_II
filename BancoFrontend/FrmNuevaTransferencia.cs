@@ -116,5 +116,17 @@ namespace BancoFrontend
             }
             return true;
         }
+
+        private void btnAgregarDest_Click_1(object sender, EventArgs e)
+        {
+            FrmNuevoDestinatario FrmNuevoDestinatario = new FrmNuevoDestinatario();
+            INSERTDESTPRUEBA INSERTDESTPRUEBA = new INSERTDESTPRUEBA(null, 2) { TopLevel = false, TopMost = true };
+            FrmNuevoDestinatario.pNuevoDestinatario.BringToFront();
+            FrmNuevoDestinatario.pNuevoDestinatario.Controls.Add(INSERTDESTPRUEBA);
+            FrmNuevoDestinatario.pNuevoDestinatario.Visible = true;
+            INSERTDESTPRUEBA.Show();
+            this.Close();
+
+        }
     }
 }
